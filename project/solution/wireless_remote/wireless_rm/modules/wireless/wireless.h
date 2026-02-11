@@ -1,0 +1,39 @@
+#ifndef _WIRELESS_H
+#define _WIRELESS_H
+#include "wireless_adv.h"
+#include "wireless_hid.h"
+#include "wireless_voice.h"
+
+#define wireless_set_work_mode              ble_set_work_mode
+#define wireless_get_work_mode              ble_get_work_mode
+
+
+/*  Wireless Packet Format
+ *  __________________________________________________________
+ *      TYPE(1B)    |    LENGTH(1B)    |    VALUE(0 or nB)
+ *  __________________________________________________________
+ */
+
+#define WIRELESS_PACKET_TYPE_HID                     0x01
+#define WIRELESS_PACKET_TYPE_AUDIO                   0x02
+#define WIRELESS_PACKET_TYPE_CTRL                    0x04
+
+typedef struct PACKED {
+    bool            valid;
+    uint8_t         address_type;
+    uint8_t         addr[6];
+} wireless_addr_info_typedef;
+
+void bsp_wireless_link_info_write(wireless_addr_info_typedef *addr_info);
+bool bsp_wireless_link_info_read(wireless_addr_info_typedef *addr_info);
+
+void wireless_module_init(void);
+void wireless_module_deinit(void);
+void wireless_service_init(void);
+void wireless_service_process(void);
+
+void wireless_enter_sleep_hook(void);
+void wireless_exit_sleep_hook(void);
+
+uint16_t wireless_con_handle_get(void);
+#endif // _WIRELESS_H

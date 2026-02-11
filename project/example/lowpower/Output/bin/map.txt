@@ -1,0 +1,1511 @@
+Archive member included to satisfy reference by file (symbol)
+
+..\..\..\libs\cpu\libplatform.a(main.o)
+                              Output\obj\project\example\lowpower\main.o (delay_5ms)
+..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                              Output\obj\driver\driver_gpio.o (sys_irq_init)
+..\..\..\libs\cpu\libplatform.a(startup.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (sys_startup)
+..\..\..\libs\cpu\libplatform.a(sys_hook.o)
+                              ..\..\..\libs\cpu\libplatform.a(startup.o) (sys_hook_init)
+..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+                              ..\..\..\libs\cpu\libplatform.a(startup.o) (thread_aupcm_entry)
+..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+                              ..\..\..\libs\cpu\libplatform.a(startup.o) (thread_driver_entry)
+..\..\..\libs\cpu\libplatform.a(pll.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (pll0_disable)
+..\..\..\libs\cpu\libplatform.a(pmu.o)
+                              Output\obj\driver\driver_lowpwr.o (pmu_get_vddcore)
+..\..\..\libs\cpu\libplatform.a(rc.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (rc_compile)
+..\..\..\libs\cpu\libplatform.a(reset.o)
+                              (_start)
+..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (spiflash_read)
+..\..\..\libs\cpu\libplatform.a(debug.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (debug_set)
+..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+                              ..\..\..\libs\cpu\libplatform.a(spiflash.o) (ota_pack_is_update_success)
+..\..\..\libs\cpu\libplatform.a(lock.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (lock_init)
+..\..\..\libs\cpu\libplatform.a(patch.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (patch_init)
+..\..\..\libs\cpu\libplatform.a(s_sys.o)
+                              ..\..\..\libs\cpu\libplatform.a(startup.o) (dummy_func)
+..\..\..\libs\cpu\libplatform.a(sleep.o)
+                              Output\obj\driver\driver_lowpwr.o (lowpwr_sleep_sfr_save)
+..\..\..\libs\cpu\libplatform.a(sys.o)
+                              ..\..\..\libs\cpu\libplatform.a(pmu.o) (rc2m_clk_nhz_cal)
+..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                              Output\obj\driver\driver_uart.o (sys_clk_nhz_get)
+..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+                              Output\obj\driver\driver_saradc.o (pmu_get_vbatdet)
+..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (xosc_24m_div_get)
+..\..\..\libs\cpu\libplatform.a(sdadc.o)
+                              ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o) (sdadc_dma_done_do)
+..\..\..\libs\cpu\libplatform.a(sddac.o)
+                              ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o) (sddac_dma_done_do)
+..\..\..\libs\cpu\libplatform.a(bt.o)
+                              ..\..\..\libs\cpu\libplatform.a(startup.o) (thread_btstack_entry)
+..\..\..\libs\cpu\libplatform.a(os_flash.o)
+                              ..\..\..\libs\cpu\libplatform.a(main.o) (os_spiflash_cap_id_get)
+..\..\..\libs\cpu\libplatform.a(crc.o)
+                              ..\..\..\libs\cpu\libplatform.a(fot_pack.o) (calc_crc32)
+
+Allocating common symbols
+Common symbol       size              file
+
+sfr_user_backup     0x8               Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 Output\obj\driver\driver_clk.o
+ .data          0x0000000000000000        0x0 Output\obj\driver\driver_clk.o
+ .bss           0x0000000000000000        0x0 Output\obj\driver\driver_clk.o
+ .text.clk_gate1_cmd
+                0x0000000000000000       0x16 Output\obj\driver\driver_clk.o
+ .text.clk_gate2_cmd
+                0x0000000000000000       0x16 Output\obj\driver\driver_clk.o
+ .text.clk_clkout_set
+                0x0000000000000000       0x4e Output\obj\driver\driver_clk.o
+ .text.clk_clk32k_rtc_set
+                0x0000000000000000       0x28 Output\obj\driver\driver_clk.o
+ .text.clk_clk32k_rtc_get
+                0x0000000000000000       0x46 Output\obj\driver\driver_clk.o
+ .text.clk_hsut0_clk_set
+                0x0000000000000000       0x4a Output\obj\driver\driver_clk.o
+ .text.clk_saradc_clk_set
+                0x0000000000000000       0x18 Output\obj\driver\driver_clk.o
+ .text.clk_saradc_clk_get
+                0x0000000000000000       0x46 Output\obj\driver\driver_clk.o
+ .text.clk_udet_clk_set
+                0x0000000000000000       0x18 Output\obj\driver\driver_clk.o
+ .text.clk_hsut0_clk_get
+                0x0000000000000000       0x6c Output\obj\driver\driver_clk.o
+ .text.clk_tmr_inc_set
+                0x0000000000000000       0x18 Output\obj\driver\driver_clk.o
+ .text.clk_tmr_inc_get
+                0x0000000000000000       0x60 Output\obj\driver\driver_clk.o
+ .text.clk_uart_inc_set
+                0x0000000000000000       0x16 Output\obj\driver\driver_clk.o
+ .text.clk_clk2m_ks_set
+                0x0000000000000000       0x18 Output\obj\driver\driver_clk.o
+ .text.clk_clk2m_ks_get
+                0x0000000000000000       0x3a Output\obj\driver\driver_clk.o
+ .text.clk_sdadda_clk_set
+                0x0000000000000000       0x40 Output\obj\driver\driver_clk.o
+ .text.clk_sdadda_clk_get
+                0x0000000000000000       0x54 Output\obj\driver\driver_clk.o
+ .text.clk_ledc_clk_set
+                0x0000000000000000       0x18 Output\obj\driver\driver_clk.o
+ .text.clk_ledc_clk_get
+                0x0000000000000000       0x24 Output\obj\driver\driver_clk.o
+ .text.clk_touch_key_clk_set
+                0x0000000000000000       0x54 Output\obj\driver\driver_clk.o
+ .text.clk_touch_key_clk_get
+                0x0000000000000000       0x34 Output\obj\driver\driver_clk.o
+ .text.clk_ttmr_inc_set
+                0x0000000000000000       0x16 Output\obj\driver\driver_clk.o
+ .text.clk_ttmr_inc_get
+                0x0000000000000000       0x60 Output\obj\driver\driver_clk.o
+ .text.clk_qdec_set
+                0x0000000000000000       0x16 Output\obj\driver\driver_clk.o
+ .text          0x0000000000000000        0x0 Output\obj\driver\driver_gpio.o
+ .data          0x0000000000000000        0x0 Output\obj\driver\driver_gpio.o
+ .bss           0x0000000000000000        0x0 Output\obj\driver\driver_gpio.o
+ .text.gpio_deinit
+                0x0000000000000000       0x1c Output\obj\driver\driver_gpio.o
+ .com_periph.gpio.set
+                0x0000000000000000        0x4 Output\obj\driver\driver_gpio.o
+ .com_periph.gpio.reset
+                0x0000000000000000        0x4 Output\obj\driver\driver_gpio.o
+ .com_periph.gpio.write
+                0x0000000000000000        0x4 Output\obj\driver\driver_gpio.o
+ .com_periph.gpio.toggle
+                0x0000000000000000        0x8 Output\obj\driver\driver_gpio.o
+ .com_periph.gpio.read_data
+                0x0000000000000000        0x8 Output\obj\driver\driver_gpio.o
+ .text.gpio_func_mapping_clear
+                0x0000000000000000       0x84 Output\obj\driver\driver_gpio.o
+ .com_periph.gpio.pending_clr
+                0x0000000000000000        0xc Output\obj\driver\driver_gpio.o
+ .com_periph.gpio.pending_is
+                0x0000000000000000       0x12 Output\obj\driver\driver_gpio.o
+ .text.gpio_edge_pic_config
+                0x0000000000000000       0x32 Output\obj\driver\driver_gpio.o
+ .text.gpio_edge_pic_disable
+                0x0000000000000000       0x1c Output\obj\driver\driver_gpio.o
+ .text.gpio_reset_init
+                0x0000000000000000       0x84 Output\obj\driver\driver_gpio.o
+ .text.gpio_reset_10s_sel
+                0x0000000000000000       0x3a Output\obj\driver\driver_gpio.o
+ .text          0x0000000000000000        0x0 Output\obj\driver\driver_lowpwr.o
+ .data          0x0000000000000000        0x0 Output\obj\driver\driver_lowpwr.o
+ .com_sleep.lv2_get_wksrc
+                0x0000000000000000        0xa Output\obj\driver\driver_lowpwr.o
+ .com_sleep.lv2_clr_wksrc
+                0x0000000000000000        0xa Output\obj\driver\driver_lowpwr.o
+ .text.lowpwr_clr_wakeup_pending
+                0x0000000000000000       0x1c Output\obj\driver\driver_lowpwr.o
+ .com_periph.lowpwr.sleep
+                0x0000000000000000       0x24 Output\obj\driver\driver_lowpwr.o
+ .text.lowpwr_wakeup_config_2
+                0x0000000000000000        0xc Output\obj\driver\driver_lowpwr.o
+ .text.lowpwr_wakeup_source_enable
+                0x0000000000000000       0xb8 Output\obj\driver\driver_lowpwr.o
+ .text.lowpwr_wakeup_source_disable
+                0x0000000000000000       0xce Output\obj\driver\driver_lowpwr.o
+ .text.lowpwr_pwroff_mode1_do
+                0x0000000000000000      0x400 Output\obj\driver\driver_lowpwr.o
+ .com_sleep.lv2
+                0x0000000000000000        0x4 Output\obj\driver\driver_lowpwr.o
+ .text          0x0000000000000000        0x0 Output\obj\driver\driver_rtc.o
+ .data          0x0000000000000000        0x0 Output\obj\driver\driver_rtc.o
+ .bss           0x0000000000000000        0x0 Output\obj\driver\driver_rtc.o
+ .com_periph.rtc.cnt_set
+                0x0000000000000000        0x8 Output\obj\driver\driver_rtc.o
+ .com_periph.rtc.cnt_get
+                0x0000000000000000        0x8 Output\obj\driver\driver_rtc.o
+ .com_periph.rtc.alarm_set
+                0x0000000000000000        0x8 Output\obj\driver\driver_rtc.o
+ .com_periph.rtc.alarm_get
+                0x0000000000000000        0x8 Output\obj\driver\driver_rtc.o
+ .text.rtc_prescale_set
+                0x0000000000000000       0x16 Output\obj\driver\driver_rtc.o
+ .text.rtc_prescale_get
+                0x0000000000000000        0xc Output\obj\driver\driver_rtc.o
+ .text.rtc_pic_config
+                0x0000000000000000       0x90 Output\obj\driver\driver_rtc.o
+ .com_periph.rct.get
+                0x0000000000000000       0x36 Output\obj\driver\driver_rtc.o
+ .com_periph.rct.clear
+                0x0000000000000000       0x1a Output\obj\driver\driver_rtc.o
+ .comment       0x0000000000000000       0x12 Output\obj\driver\driver_rtc.o
+ .text          0x0000000000000000        0x0 Output\obj\driver\driver_saradc.o
+ .data          0x0000000000000000        0x0 Output\obj\driver\driver_saradc.o
+ .bss           0x0000000000000000        0x0 Output\obj\driver\driver_saradc.o
+ .text.saradc_init
+                0x0000000000000000       0x72 Output\obj\driver\driver_saradc.o
+ .text.saradc_channel_init
+                0x0000000000000000      0x19e Output\obj\driver\driver_saradc.o
+ .text.saradc_cmd
+                0x0000000000000000       0x16 Output\obj\driver\driver_saradc.o
+ .com_periph.saradc.kick
+                0x0000000000000000       0x26 Output\obj\driver\driver_saradc.o
+ .text.saradc_set_baud
+                0x0000000000000000       0x2e Output\obj\driver\driver_saradc.o
+ .text.saradc_pic_config
+                0x0000000000000000       0x34 Output\obj\driver\driver_saradc.o
+ .com_periph.saradc.get
+                0x0000000000000000       0x10 Output\obj\driver\driver_saradc.o
+ .com_periph.saradc.get_channel
+                0x0000000000000000       0x1c Output\obj\driver\driver_saradc.o
+ .com_periph.saradc.clear
+                0x0000000000000000       0x10 Output\obj\driver\driver_saradc.o
+ .com_periph.saradc.get_data
+                0x0000000000000000       0x70 Output\obj\driver\driver_saradc.o
+ .text          0x0000000000000000        0x0 Output\obj\driver\driver_uart.o
+ .data          0x0000000000000000        0x0 Output\obj\driver\driver_uart.o
+ .bss           0x0000000000000000        0x0 Output\obj\driver\driver_uart.o
+ .text.uart_deinit
+                0x0000000000000000       0x2e Output\obj\driver\driver_uart.o
+ .com_periph.uart.send
+                0x0000000000000000        0x8 Output\obj\driver\driver_uart.o
+ .com_periph.uart.recv
+                0x0000000000000000       0x14 Output\obj\driver\driver_uart.o
+ .text.uart_pic_config
+                0x0000000000000000       0x5c Output\obj\driver\driver_uart.o
+ .com_periph.uart.get_flag
+                0x0000000000000000       0x18 Output\obj\driver\driver_uart.o
+ .com_periph.uart.clear_flag
+                0x0000000000000000       0x34 Output\obj\driver\driver_uart.o
+ .text.uart_baud_config
+                0x0000000000000000       0x86 Output\obj\driver\driver_uart.o
+ .text          0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\bsp_io_key.o
+ .data          0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\bsp_io_key.o
+ .bss           0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\bsp_io_key.o
+ .text          0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\bsp_uart_debug.o
+ .data          0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\bsp_uart_debug.o
+ .bss           0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\bsp_uart_debug.o
+ .text          0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+ .data          0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+ .bss           0x0000000000000000        0x0 Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+ .text          0x0000000000000000        0x0 Output\obj\project\example\lowpower\main.o
+ .data          0x0000000000000000        0x0 Output\obj\project\example\lowpower\main.o
+ .bss           0x0000000000000000        0x0 Output\obj\project\example\lowpower\main.o
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(main.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(main.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(main.o)
+ .text.compiler
+                0x0000000000000000       0x20 ..\..\..\libs\cpu\libplatform.a(main.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .text.sys_irq_init
+                0x0000000000000000       0x96 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .rodata.watch_point_set.str1.4
+                0x0000000000000000       0x19 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .text.watch_point_set
+                0x0000000000000000       0x48 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .text.wdt_init
+                0x0000000000000000       0x3a ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .text.usb_irq_init
+                0x0000000000000000       0x2e ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .text.thread_bthw_create
+                0x0000000000000000        0x2 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .text.bt_set_timer_enable
+                0x0000000000000000       0x1a ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .text.sys_set_tmr_enable
+                0x0000000000000000       0x24 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys_hook.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys_hook.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys_hook.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+ .com_text.thread.driver
+                0x0000000000000000       0x30 ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .com_text.thread.driver
+                0x0000000000000000       0x26 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .com_text.thread.driver.usb
+                0x0000000000000000       0x4e ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .com_text.thread.driver.vs
+                0x0000000000000000       0x4e ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .text.thread.driver.usb
+                0x0000000000000000       0x38 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .text.thread.driver.vs
+                0x0000000000000000       0x38 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(pll.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(pll.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(pll.o)
+ .text.pll_clk_nhz_get
+                0x0000000000000000       0x22 ..\..\..\libs\cpu\libplatform.a(pll.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .com_text.trim.vddio_get
+                0x0000000000000000        0xa ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .com_text.trim.vbg_get
+                0x0000000000000000        0xa ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .com_text.trim.vddio_set
+                0x0000000000000000       0x2c ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .com_text.trim.core_set
+                0x0000000000000000       0x16 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .com_text.trim.lvd_get
+                0x0000000000000000        0xa ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .com_text.pmu.vddbt_set
+                0x0000000000000000        0xe ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .com_text.pmu.vddbt_get
+                0x0000000000000000        0x8 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .text.compiler
+                0x0000000000000000        0x2 ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .text.sleep.rc
+                0x0000000000000000       0x3e ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .com_sleep.sleep.rc
+                0x0000000000000000       0x4e ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .comment       0x0000000000000000       0x13 ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .riscv.attributes
+                0x0000000000000000       0x32 ..\..\..\libs\cpu\libplatform.a(rc.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(reset.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(reset.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(reset.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash
+                0x0000000000000000       0x84 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.refactor
+                0x0000000000000000      0x112 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.program
+                0x0000000000000000       0x36 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.erase
+                0x0000000000000000       0x3a ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.read_kick
+                0x0000000000000000       0x20 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.read_wait
+                0x0000000000000000       0x30 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.byte_addr
+                0x0000000000000000      0x164 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.erase_32k
+                0x0000000000000000       0x50 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.erase_32k.byte_addr
+                0x0000000000000000       0x48 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.erase_64k
+                0x0000000000000000       0x50 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.erase_64k.byte_addr
+                0x0000000000000000       0x48 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .btmem.spi     0x0000000000000000       0x1c ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .text.debug_dump_info_nanos_schedule
+                0x0000000000000000        0x2 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .text.debug_dump_info_nanos_timer
+                0x0000000000000000        0x2 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.ota_pack
+                0x0000000000000000      0x590 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.ota_pack_deinit
+                0x0000000000000000       0x2a ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.ota_pack_get_curaddr
+                0x0000000000000000        0xa ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.ota_pack_get_err
+                0x0000000000000000       0x14 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.ota_pack_is_update_success
+                0x0000000000000000        0xa ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.ota_pack_done
+                0x0000000000000000       0x56 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.fot.cache
+                0x0000000000000000      0x1a6 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text.ota_pack_breakpoint_info_read
+                0x0000000000000000       0xde ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .fot_data.com.pack
+                0x0000000000000000       0x68 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .sbss.fot_update_init
+                0x0000000000000000        0x1 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .sbss.fot_update_success
+                0x0000000000000000        0x1 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .sbss.spiflash_protect_dis
+                0x0000000000000000        0x1 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .comment       0x0000000000000000       0x13 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .riscv.attributes
+                0x0000000000000000       0x32 ..\..\..\libs\cpu\libplatform.a(fot_pack.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .rodata.lock_code_usbdev.str1.4
+                0x0000000000000000       0x16 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .text.lock_code_usbdev
+                0x0000000000000000       0x54 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .text.unlock_code_usbdev
+                0x0000000000000000       0x38 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .rodata.lock_code_alg.str1.4
+                0x0000000000000000       0x1f ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .text.lock_code_alg
+                0x0000000000000000       0x60 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .text.unlock_code_alg
+                0x0000000000000000       0x38 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(patch.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(patch.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(patch.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(s_sys.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(s_sys.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(s_sys.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sleep.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sleep.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sleep.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.sys_rst_init
+                0x0000000000000000       0x7c ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .rodata.sys_rst_dump.str1.4
+                0x0000000000000000       0x51 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.sys_rst_dump
+                0x0000000000000000       0x92 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.dbg_clk_out
+                0x0000000000000000       0x46 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.sys_get_rand_key
+                0x0000000000000000       0x6c ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.bsp.param
+                0x0000000000000000       0x32 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.bt_restore_xosc_cap
+                0x0000000000000000        0x8 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.bt_get_xosc_cap
+                0x0000000000000000        0xc ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.bt_set_xosc_cap
+                0x0000000000000000       0x18 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.bt_adj_xosc_cap
+                0x0000000000000000       0x72 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.__divdi3
+                0x0000000000000000       0x5c ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.__umoddi3
+                0x0000000000000000       0x30 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.get_random
+                0x0000000000000000       0x26 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.random_init
+                0x0000000000000000        0xa ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .com_text.sys  0x0000000000000000       0x1e ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.sw_reset_source_get
+                0x0000000000000000       0x2a ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .text.periph_cacl_clkdiv
+                0x0000000000000000        0x2 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .text.sys_clk_lower_limit_lock
+                0x0000000000000000       0x84 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .text.sys_clk_lower_limit_unlock
+                0x0000000000000000       0x6c ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .text.sys_clk_lower_limit_all_unlock
+                0x0000000000000000       0x50 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .srodata.rtc_clk_div_coef
+                0x0000000000000000        0x4 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .text.charge_const_curr_trim
+                0x0000000000000000       0x7c ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .text.charge_cutoff_curr_trim
+                0x0000000000000000       0x70 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .com_text.get.vrtc24_mv
+                0x0000000000000000        0xa ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .com_text.get.vbatdet
+                0x0000000000000000       0x28 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .rodata.voltage_trim_value_dump.str1.4
+                0x0000000000000000       0xa1 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .text.voltage_trim_value_dump
+                0x0000000000000000       0xf8 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .rodata.ichsel
+                0x0000000000000000       0x80 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .rodata.iends  0x0000000000000000       0x10 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .text.param_xosc_write
+                0x0000000000000000        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .text.dongle_alg_tbl_get
+                0x0000000000000000        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .text.dongle_soft_key_get
+                0x0000000000000000        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .com_text.ret.stack.thread
+                0x0000000000000000        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.mic_trimin
+                0x0000000000000000       0x32 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.mic_adc_init
+                0x0000000000000000      0x194 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.mic_adc_deinit
+                0x0000000000000000       0x14 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.mic_bias_open
+                0x0000000000000000       0x30 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.mic_bias_close
+                0x0000000000000000       0x10 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.mic_bias_level_set
+                0x0000000000000000       0x20 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.mic_analog_gain_set
+                0x0000000000000000       0x14 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text.sdadc_done_callback_set
+                0x0000000000000000        0xc ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .com_text.irq.sdadc
+                0x0000000000000000       0x26 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .text.sddac_done_callback_set
+                0x0000000000000000        0xc ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .com_text.irq.sddac
+                0x0000000000000000       0x2a ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .com_text.bthw
+                0x0000000000000000        0x4 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .com_text.stack.api
+                0x0000000000000000       0x34 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .com_text.stack.thread
+                0x0000000000000000       0x36 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .com_text.spiflash.id
+                0x0000000000000000       0x82 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .com_text.spiflash.read
+                0x0000000000000000       0x46 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .com_text.spiflash
+                0x0000000000000000      0x16a ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .com_text.spiflash.erase_2
+                0x0000000000000000       0x76 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .com_text.spiflash.erase_32k
+                0x0000000000000000       0x72 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .com_text.spiflash.erase_64k
+                0x0000000000000000       0x72 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+ .text          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .data          0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .bss           0x0000000000000000        0x0 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .text.calc_crc32
+                0x0000000000000000       0x2e ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .text.calc_crc16
+                0x0000000000000000       0x2a ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .com_text.crc8
+                0x0000000000000000       0x28 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .com_rodata.crc.tbl
+                0x0000000000000000      0x100 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .rodata.crc.tbl
+                0x0000000000000000      0x200 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .rodata.dfu_crc32_table
+                0x0000000000000000      0x400 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .comment       0x0000000000000000       0x13 ..\..\..\libs\cpu\libplatform.a(crc.o)
+ .riscv.attributes
+                0x0000000000000000       0x32 ..\..\..\libs\cpu\libplatform.a(crc.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+init             0x0000000010000000 0x0000000000000200
+flash            0x0000000010000200 0x000000000001e000 xr
+comm             0x0000000000013800 0x0000000000004800 xr
+stack            0x0000000000010800 0x0000000000000400
+heap             0x0000000000010c00 0x0000000000001c00
+data             0x0000000000012800 0x0000000000001000
+bram             0x0000000000018000 0x0000000000006c00
+cram             0x000000000001ec00 0x0000000000001400
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD Output\obj\driver\driver_clk.o
+LOAD Output\obj\driver\driver_gpio.o
+LOAD Output\obj\driver\driver_lowpwr.o
+LOAD Output\obj\driver\driver_rtc.o
+LOAD Output\obj\driver\driver_saradc.o
+LOAD Output\obj\driver\driver_uart.o
+LOAD Output\obj\project\example\lowpower\hardware\bsp_io_key.o
+LOAD Output\obj\project\example\lowpower\hardware\bsp_uart_debug.o
+LOAD Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+LOAD Output\obj\project\example\lowpower\main.o
+                0x000000000001e000                __max_flash_size = 0x1e000
+                0x0000000010000000                __base = 0x10000000
+                0x0000000000010600                __cache_stack_vma = 0x10600
+                0x0000000000000200                __cache_stack_size = 0x200
+                0x0000000000010800                __stack_vma = 0x10800
+                0x0000000000000400                __stack_ram_size = 0x400
+                0x0000000000010c00                __heap_vma = 0x10c00
+                0x0000000000001c00                __heap_ram_size = 0x1c00
+                0x0000000000012800                __data_vma = 0x12800
+                0x0000000000001000                __data_ram_size = 0x1000
+                0x0000000000013800                __comm_vma = 0x13800
+                0x0000000000004800                __comm_ram_size = 0x4800
+                0x0000000000018000                __bram_vma = 0x18000
+                0x0000000000006c00                __bram_ram_size = 0x6c00
+                0x000000000001ec00                __cram_vma = 0x1ec00
+                0x0000000000001400                __cram_ram_size = 0x1400
+
+.init           0x0000000010000000       0x4e
+ *(.reset)
+ .reset         0x0000000010000000       0x4e ..\..\..\libs\cpu\libplatform.a(reset.o)
+                0x0000000010000000                _start
+
+.comm           0x0000000000013800     0x1200 load address 0x0000000010000200
+ *(.vector)
+ .vector        0x0000000000013800      0x19a ..\..\..\libs\cpu\libplatform.a(reset.o)
+                0x00000000000138a0                _exception_isr
+                0x00000000000138a2                nop_isr
+ *(.com_text*)
+ .com_text.pwroff.mode2
+                0x000000000001399a      0x13e Output\obj\driver\driver_lowpwr.o
+ .com_text.lp_port_init
+                0x0000000000013ad8       0x32 Output\obj\driver\driver_lowpwr.o
+                0x0000000000013ad8                lp_port_init
+ .com_text.pwroff_mode2
+                0x0000000000013b0a       0x84 Output\obj\driver\driver_lowpwr.o
+                0x0000000000013b0a                lowpwr_pwroff_mode2_do
+ .com_text.exception.hook
+                0x0000000000013b8e       0x3e ..\..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000000013b8e                sys_error_hook
+ .com_text.exception
+                0x0000000000013bcc       0x7e ..\..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000000013bcc                exception_isr
+ .com_text.delay
+                0x0000000000013c4a       0x54 ..\..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000000013c4a                delay_5ms
+                0x0000000000013c64                delay_ms
+                0x0000000000013c7c                delay_us
+                0x0000000000013c94                delay
+ .com_text.irq  0x0000000000013c9e       0xe0 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000000013c9e                tick0_isr
+                0x0000000000013cfa                register_isr
+                0x0000000000013d34                tick_get
+                0x0000000000013d3c                tick_check_expire
+                0x0000000000013d4e                watch_point_isr
+ .com_text.timer
+                0x0000000000013d7e        0xe ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .com_text.thread.aupcm
+                0x0000000000013d8c       0x52 ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+                0x0000000000013d8c                thread_aupcm_entry
+ .com_text.thread.driver.enter
+                0x0000000000013dde       0x56 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+                0x0000000000013dde                thread_driver_entry
+ .com_text.trim.core_get
+                0x0000000000013e34        0x8 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+                0x0000000000013e34                pmu_get_vddcore
+ .com_text.trim.lvd_set
+                0x0000000000013e3c       0x2c ..\..\..\libs\cpu\libplatform.a(pmu.o)
+                0x0000000000013e3c                pmu_set_lvd
+ .com_text.pmu.flash
+                0x0000000000013e68        0xc ..\..\..\libs\cpu\libplatform.a(pmu.o)
+                0x0000000000013e68                pmu_vddio_to_flash
+ .com_text.irq  0x0000000000013e74       0x52 ..\..\..\libs\cpu\libplatform.a(reset.o)
+                0x0000000000013e74                cpu_irq_comm
+ .com_text.util.isr
+                0x0000000000013ec6        0x6 ..\..\..\libs\cpu\libplatform.a(reset.o)
+                0x0000000000013ec6                kick_soft_isr
+ .com_text.spiflash.delay
+                0x0000000000013ecc        0xc ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013ecc                spi_delay
+ .com_text.spiflash.get
+                0x0000000000013ed8       0x28 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013ed8                spi_getbyte
+ .com_text.spiflash.send
+                0x0000000000013f00       0x1a ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013f00                spi_sendbyte
+ .com_text.spiflash.w_en
+                0x0000000000013f1a       0x16 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.rssr
+                0x0000000000013f30       0x20 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.busy
+                0x0000000000013f50       0x10 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .com_text.spiflash.read
+                0x0000000000013f60        0x4 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013f60                spiflash_read
+ .com_text.spiflash.wrsr
+                0x0000000000013f64       0x1e ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013f64                spiflash_wrsr
+ .com_text.spiflash.protect.en
+                0x0000000000013f82        0x4 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013f82                spiflash_data_protect_en
+ .com_text.spiflash.protect_do
+                0x0000000000013f86       0x4c ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013f86                spiflash_data_protect
+ .com_text.spiflash.is_protect
+                0x0000000000013fd2       0x3a ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000013fd2                spiflash_data_is_protect
+ .com_text.spiflash.addr.size
+                0x000000000001400c        0x4 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x000000000001400c                spiflash_addr_4byte
+ .com_text.debug
+                0x0000000000014010       0x68 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .com_text.sys  0x0000000000014078       0x68 ..\..\..\libs\cpu\libplatform.a(s_sys.o)
+                0x0000000000014078                s_ff1
+                0x000000000001407e                s_fl1
+                0x0000000000014084                s_log2
+                0x000000000001408c                s_clb
+                0x0000000000014092                s_bcnt
+                0x0000000000014098                s_ror
+                0x000000000001409e                s_swapw
+                0x00000000000140a4                s_bitrvti
+                0x00000000000140aa                s_clip16
+                0x00000000000140b0                s_abs
+                0x00000000000140b6                mul_r
+                0x00000000000140c2                dummy_func
+                0x00000000000140c4                __ashrdi3
+                0x00000000000140d2                __ashldi3
+ .com_text.timer
+                0x00000000000140e0        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x00000000000140e0                usr_tmr5ms_thread_callback
+                0x00000000000140e2                usr_tmr1ms_isr_callback
+ .com_text.stack.api
+                0x00000000000140e4        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x00000000000140e4                bt_get_status
+ .com_text.bb.isr
+                0x00000000000140e8        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x00000000000140e8                bb_hal_isr
+ .com_text.isr  0x00000000000140ea        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x00000000000140ea                bt_timer_isr
+ .com_text.stack.run_loop
+                0x00000000000140ec        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x00000000000140ec                btstack_run_loop_execute_once
+ .com_text.sdadc.done
+                0x00000000000140ee        0xc ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+                0x00000000000140ee                sdadc_dma_done_do
+ .com_text.sddac.done
+                0x00000000000140fa        0xc ..\..\..\libs\cpu\libplatform.a(sddac.o)
+                0x00000000000140fa                sddac_dma_done_do
+ .com_text.stack.run_loop
+                0x0000000000014106       0x6c ..\..\..\libs\cpu\libplatform.a(bt.o)
+                0x0000000000014106                thread_btstack_entry
+ .com_text.spiflash.dev_id
+                0x0000000000014172       0x34 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+                0x0000000000014172                os_spiflash_cap_id_get
+ .com_text.spiflash.protect.weak
+                0x00000000000141a6       0x34 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+                0x00000000000141a6                os_spiflash_data_protect
+                0x00000000000141c0                os_spiflash_data_is_protect
+ *(.com_rodata*)
+ *fill*         0x00000000000141da        0x2 
+ .com_rodata.exception
+                0x00000000000141dc       0x49 ..\..\..\libs\cpu\libplatform.a(main.o)
+ *fill*         0x0000000000014225        0x3 
+ .com_rodata.irq
+                0x0000000000014228       0x1b ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000000014228                watch_point_str
+ *fill*         0x0000000000014243        0x1 
+ .com_rodata.miss
+                0x0000000000014244       0x29 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ *debug.o(.rodata*)
+ *(.com_sleep*)
+ *fill*         0x000000000001426d        0x1 
+ .com_sleep.lv2_do
+                0x000000000001426e       0x84 Output\obj\driver\driver_lowpwr.o
+                0x000000000001426e                lp_sleep_lv2_do
+ .com_sleep.lv2_proc
+                0x00000000000142f2      0x2e4 Output\obj\driver\driver_lowpwr.o
+                0x00000000000142f2                lp_sleep_lv2_proc
+                0x0000000000014436                lowpwr_sleep_lv2_proc
+ .com_sleep.lv2_wakeup
+                0x00000000000145d6      0x1b0 Output\obj\driver\driver_lowpwr.o
+                0x00000000000145d6                lp_wakeup_lv2_proc
+ .com_sleep.sleep
+                0x0000000000014786        0x2 Output\obj\driver\driver_lowpwr.o
+                0x0000000000014786                lowpwr_sleep_proc
+ .com_sleep.lv2
+                0x0000000000014788       0x38 Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+                0x0000000000014788                lowpwr_sleep_sfr_user_save
+                0x00000000000147a0                lowpwr_sleep_sfr_user_resume
+ .com_sleep.lp.sleep
+                0x00000000000147c0      0x15e ..\..\..\libs\cpu\libplatform.a(sleep.o)
+                0x00000000000147c0                lowpwr_sleep_sfr_save
+                0x00000000000147e6                lowpwr_sleep_sfr_resume
+ *(.com_periph.*)
+ .com_periph.gpio.read_bit
+                0x000000000001491e        0xa Output\obj\driver\driver_gpio.o
+                0x000000000001491e                gpio_read_bit
+ .com_periph.wk0.read_bit
+                0x0000000000014928        0xa Output\obj\driver\driver_gpio.o
+                0x0000000000014928                wko_io_read_bit
+ *(.data*)
+ *(.sdata*)
+ *(.mp3_text*)
+                0x0000000000014a00                . = ALIGN (0x200)
+ *fill*         0x0000000000014932       0xce 
+
+.flash          0x0000000010001400     0x2400
+                0x0000000010001400                __code_start_sleep = .
+                0x0000000010001400                . = ALIGN (0x200)
+                0x0000000010001400                __code_end_sleep = .
+                0x0000000010001400                __code_start_update = .
+ *(.text.update*)
+                0x0000000010001400                . = ALIGN (0x200)
+                0x0000000010001400                __code_end_update = .
+                0x0000000010001400                __code_start_fota = .
+ *(.text.fot.cache*)
+                0x0000000010001400                . = ALIGN (0x200)
+                0x0000000010001400                __code_end_fota = .
+ *(.irq_init.aligned)
+                0x0000000010001400                . = ALIGN (0x200)
+ *(.text.ble.chmap*)
+                0x0000000010001400                . = ALIGN (0x200)
+ *(.text*)
+ .text.clk_gate0_cmd
+                0x0000000010001400       0x16 Output\obj\driver\driver_clk.o
+                0x0000000010001400                clk_gate0_cmd
+ .text.clk_udet_clk_get
+                0x0000000010001416       0x3c Output\obj\driver\driver_clk.o
+                0x0000000010001416                clk_udet_clk_get
+ .text.clk_uart_inc_get
+                0x0000000010001452       0x32 Output\obj\driver\driver_clk.o
+                0x0000000010001452                clk_uart_inc_get
+ .text.gpio_init
+                0x0000000010001484      0x10e Output\obj\driver\driver_gpio.o
+                0x0000000010001484                gpio_init
+ .text.gpio_func_mapping_config
+                0x0000000010001592       0xc6 Output\obj\driver\driver_gpio.o
+                0x0000000010001592                gpio_func_mapping_config
+ .text.wko_io_config
+                0x0000000010001658       0x4e Output\obj\driver\driver_gpio.o
+                0x0000000010001658                wko_io_config
+ .text.wk0_edge_capture_config
+                0x00000000100016a6       0x5a Output\obj\driver\driver_gpio.o
+                0x00000000100016a6                wk0_edge_capture_config
+ .text.gpio_edge_capture_idx_get
+                0x0000000010001700       0x4a Output\obj\driver\driver_gpio.o
+                0x0000000010001700                gpio_edge_capture_idx_get
+ .text.gpio_edge_capture_config
+                0x000000001000174a       0xa6 Output\obj\driver\driver_gpio.o
+                0x000000001000174a                gpio_edge_capture_config
+ .text.lowpwr_get_wakeup_source
+                0x00000000100017f0       0xb0 Output\obj\driver\driver_lowpwr.o
+                0x00000000100017f0                lowpwr_get_wakeup_source
+ .text.lowpwr_wakeup_disable
+                0x00000000100018a0       0x38 Output\obj\driver\driver_lowpwr.o
+                0x00000000100018a0                lowpwr_wakeup_disable
+ .text.lowpwr_wk0_wakeup_config
+                0x00000000100018d8       0x6e Output\obj\driver\driver_lowpwr.o
+                0x00000000100018d8                lowpwr_wk0_wakeup_config
+ .text.lowpwr_gpio_wakeup_config
+                0x0000000010001946       0x5a Output\obj\driver\driver_lowpwr.o
+                0x0000000010001946                lowpwr_gpio_wakeup_config
+ .text.lowpwr_wakeup_config_do
+                0x00000000100019a0       0xf4 Output\obj\driver\driver_lowpwr.o
+                0x00000000100019a0                lowpwr_wakeup_config_do
+ .text.lowpwr_wakeup_config
+                0x0000000010001a94       0x14 Output\obj\driver\driver_lowpwr.o
+                0x0000000010001a94                lowpwr_wakeup_config
+ .text.saradc_deinit
+                0x0000000010001aa8       0xba Output\obj\driver\driver_saradc.o
+                0x0000000010001aa8                saradc_deinit
+ .text.uart_init
+                0x0000000010001b62       0xa0 Output\obj\driver\driver_uart.o
+                0x0000000010001b62                uart_init
+ .text.uart_cmd
+                0x0000000010001c02       0x10 Output\obj\driver\driver_uart.o
+                0x0000000010001c02                uart_cmd
+ .text.bsp_io_key_init
+                0x0000000010001c12       0x32 Output\obj\project\example\lowpower\hardware\bsp_io_key.o
+                0x0000000010001c12                bsp_io_key_init
+ .text.bsp_get_io_key_id
+                0x0000000010001c44       0x2c Output\obj\project\example\lowpower\hardware\bsp_io_key.o
+                0x0000000010001c44                bsp_get_io_key_id
+ .text.bsp_uart_debug_init
+                0x0000000010001c70       0x70 Output\obj\project\example\lowpower\hardware\bsp_uart_debug.o
+                0x0000000010001c70                bsp_uart_debug_init
+ .text.lowpwr_sleep_wakeup_config
+                0x0000000010001ce0       0x2e Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+                0x0000000010001ce0                lowpwr_sleep_wakeup_config
+ .text.lowpwr.sleep
+                0x0000000010001d0e       0x8c Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+                0x0000000010001d0e                sleep_process
+ .text.lowpwr_pwroff_wakeup_config
+                0x0000000010001d9a       0x1a Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+                0x0000000010001d9a                lowpwr_pwroff_wakeup_config
+ .text.func_pwroff
+                0x0000000010001db4       0x2e Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+                0x0000000010001db4                func_pwroff
+ .text.user_get_sleep_stat
+                0x0000000010001de2        0x8 Output\obj\project\example\lowpower\main.o
+                0x0000000010001de2                user_get_sleep_stat
+ .text.bsp_periph_init
+                0x0000000010001dea        0xc Output\obj\project\example\lowpower\main.o
+                0x0000000010001dea                bsp_periph_init
+ .text.user_set_sleep_stat
+                0x0000000010001df6        0x8 Output\obj\project\example\lowpower\main.o
+                0x0000000010001df6                user_set_sleep_stat
+ .text.user_poweron_check
+                0x0000000010001dfe       0x58 Output\obj\project\example\lowpower\main.o
+                0x0000000010001dfe                user_poweron_check
+ .text.user_poweroff_check
+                0x0000000010001e56       0x5c Output\obj\project\example\lowpower\main.o
+                0x0000000010001e56                user_poweroff_check
+ .text.user_sleep_check
+                0x0000000010001eb2       0x30 Output\obj\project\example\lowpower\main.o
+                0x0000000010001eb2                user_sleep_check
+ .text.startup.main
+                0x0000000010001ee2       0x70 Output\obj\project\example\lowpower\main.o
+                0x0000000010001ee2                main
+ .text.platform_main
+                0x0000000010001f52      0x1e6 ..\..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000010001f52                platform_main
+ .text.main_startup
+                0x0000000010002138        0xc ..\..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000010002138                main_startup
+ .text.soft_irq_init
+                0x0000000010002144       0x3c ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000010002144                soft_irq_init
+ .text.bthw_irq_init
+                0x0000000010002180       0x12 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000010002180                bthw_irq_init
+ .text.sys_timer_init
+                0x0000000010002192       0x84 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000010002192                sys_timer_init
+ .text.mem_heap_size_get
+                0x0000000010002216        0x8 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000010002216                mem_heap_size_get
+ .text.thread_cfg_get
+                0x000000001000221e        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x000000001000221e                thread_cfg_get
+ .text.thread_driver_create
+                0x0000000010002222       0x7c ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000010002222                thread_driver_create
+ .text.thread_aupcm_create
+                0x000000001000229e       0x6c ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x000000001000229e                thread_aupcm_create
+ .text.thread_btstack_create
+                0x000000001000230a       0x8a ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x000000001000230a                thread_btstack_create
+ .text.thread_create_callback
+                0x0000000010002394        0xe ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000010002394                thread_create_callback
+ .text.thread_main_entry
+                0x00000000100023a2       0x82 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .text.startup.init
+                0x0000000010002424      0x104 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000010002424                platform_init
+                0x000000001000242c                sys_startup
+ .text.sys_hook_init
+                0x0000000010002528        0x2 ..\..\..\libs\cpu\libplatform.a(sys_hook.o)
+                0x0000000010002528                sys_hook_init
+ .text.pll0_vco_band_trimming
+                0x000000001000252a       0x5a ..\..\..\libs\cpu\libplatform.a(pll.o)
+                0x000000001000252a                pll0_vco_band_trimming
+ .text.pll0_init
+                0x0000000010002584       0xd4 ..\..\..\libs\cpu\libplatform.a(pll.o)
+                0x0000000010002584                pll0_init
+ .text.pll0_disable
+                0x0000000010002658       0x48 ..\..\..\libs\cpu\libplatform.a(pll.o)
+                0x0000000010002658                pll0_disable
+ .text.pmu_set_buck_mode
+                0x00000000100026a0       0x9e ..\..\..\libs\cpu\libplatform.a(pmu.o)
+                0x00000000100026a0                pmu_set_buck_mode
+ .text.pmu_voltage_configure
+                0x000000001000273e       0x6a ..\..\..\libs\cpu\libplatform.a(pmu.o)
+                0x000000001000273e                pmu_voltage_configure
+ .text.pmu_init
+                0x00000000100027a8      0x302 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+                0x00000000100027a8                pmu_init
+ .text.debug_set
+                0x0000000010002aaa       0x1a ..\..\..\libs\cpu\libplatform.a(debug.o)
+                0x0000000010002aaa                debug_set
+ .text.lock_init
+                0x0000000010002ac4       0x1c ..\..\..\libs\cpu\libplatform.a(lock.o)
+                0x0000000010002ac4                lock_init
+ .text.patch_init
+                0x0000000010002ae0       0x1e ..\..\..\libs\cpu\libplatform.a(patch.o)
+                0x0000000010002ae0                patch_init
+ .text.udivmoddi4
+                0x0000000010002afe       0x96 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .text.rc2m_clk_nhz_cal
+                0x0000000010002b94      0x100 ..\..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010002b94                rc2m_clk_nhz_cal
+ .text.rc2m_clk_nhz_get
+                0x0000000010002c94       0x10 ..\..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010002c94                rc2m_clk_nhz_get
+ .text.sys_get_rand_key_init
+                0x0000000010002ca4        0xa ..\..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010002ca4                sys_get_rand_key_init
+ .text.xosc_init
+                0x0000000010002cae       0x92 ..\..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010002cae                xosc_init
+ .text.__udivdi3
+                0x0000000010002d40        0x4 ..\..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010002d40                __udivdi3
+ .text.sys_clk_cacl_curr
+                0x0000000010002d44       0x28 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ *fill*         0x0000000010002d6c       0x94 
+ .text.set_sys_clk_do
+                0x0000000010002e00      0x1ea ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                0x0000000010002e00                set_sys_clk_do
+ .text.sys_clk  0x0000000010002fea      0x1ea ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                0x0000000010002fea                sys_clk_get_cur
+                0x0000000010002ff2                sys_clk_set_do
+ .text.sys_clk_nhz_get
+                0x00000000100031d4       0x5c ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                0x00000000100031d4                sys_clk_nhz_get
+ .text.sys_clk_get
+                0x0000000010003230        0x8 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                0x0000000010003230                sys_clk_get
+ .text.sys_clk_set
+                0x0000000010003238       0x5c ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                0x0000000010003238                sys_clk_set
+ *fill*         0x0000000010003294        0x0 
+ .text.sys_clk.table
+                0x0000000010003294       0x1a ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                0x0000000010003294                sysclk_info_tbl
+ .text.voltage.trim
+                0x00000000100032ae      0x1a2 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+                0x00000000100032ae                bt_get_ft_trim_value
+                0x00000000100032f8                voltage_trim_value_init
+ .text.xosc_24m_div_get
+                0x0000000010003450        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003450                xosc_24m_div_get
+ .text.xosc_get_xcfg
+                0x0000000010003454        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003454                xosc_get_xcfg
+ .text.param_xosc_read
+                0x0000000010003456        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003456                param_xosc_read
+ .text.sys_clk_change_callback
+                0x0000000010003458        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003458                sys_clk_change_callback
+ .text.uart_debug_init_callback
+                0x000000001000345a        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x000000001000345a                uart_debug_init_callback
+ .text.rf_ft_trim_dig_gain_adjust
+                0x000000001000345c        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x000000001000345c                rf_ft_trim_dig_gain_adjust
+ .text.bb_run_loop
+                0x0000000010003460        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003460                bb_run_loop
+ .text.nanos_var_init
+                0x0000000010003462       0x18 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003462                nanos_var_init
+ .text.btstack_message
+                0x000000001000347a        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x000000001000347a                btstack_message
+ .text.btstack_var_init
+                0x000000001000347e        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x000000001000347e                btstack_var_init
+ .text.bb_patch_init
+                0x0000000010003480        0x4 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003480                bb_patch_init
+ .text.bb_nanos_mem_init
+                0x0000000010003484        0x2 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000010003484                bb_nanos_mem_init
+ *(.rodata*)
+ *fill*         0x0000000010003486        0x2 
+ .rodata        0x0000000010003488       0x80 Output\obj\driver\driver_gpio.o
+                0x0000000010003488                separate_wakeup_io
+ .rodata.str1.4
+                0x0000000010003508       0x5f Output\obj\driver\driver_lowpwr.o
+ *fill*         0x0000000010003567        0x1 
+ .rodata        0x0000000010003568        0xc Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+ .rodata.str1.4
+                0x0000000010003574       0x20 Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+ .rodata.str1.4
+                0x0000000010003594       0xd7 Output\obj\project\example\lowpower\main.o
+ *fill*         0x000000001000366b        0x1 
+ .rodata.platform_main.str1.4
+                0x000000001000366c       0x10 ..\..\..\libs\cpu\libplatform.a(main.o)
+ .rodata.thread_driver_create.str1.4
+                0x000000001000367c        0x8 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .rodata.thread_aupcm_create.str1.4
+                0x0000000010003684        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .rodata.thread_btstack_create.str1.4
+                0x0000000010003688        0xc ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .rodata.thread_main_entry.str1.4
+                0x0000000010003694        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .rodata.startup.init.str1.4
+                0x0000000010003698       0x2c ..\..\..\libs\cpu\libplatform.a(startup.o)
+                                         0x2b (size before relaxing)
+ .rodata.volt_trim
+                0x00000000100036c4       0x40 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ *(.srodata*)
+ *(.rela*)
+ .rela.text.clk_clk32k_rtc_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_saradc_clk_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_udet_clk_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_hsut0_clk_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_tmr_inc_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_clk2m_ks_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_sdadda_clk_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_touch_key_clk_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.clk_ttmr_inc_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.wk0_edge_capture_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.gpio_edge_capture_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.gpio_edge_pic_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_sleep.lv2_proc
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_sleep.lv2_wakeup
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr_get_wakeup_source
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr_wk0_wakeup_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr_gpio_wakeup_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr_wakeup_config_do
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr_pwroff_mode1_do
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.lp_port_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.pwroff_mode2
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_sleep.sleep
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.rtc_pic_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.saradc_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.saradc_deinit
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.saradc_set_baud
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.saradc_pic_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_periph.saradc.get_data
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.uart_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.uart_pic_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.uart_baud_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.bsp_io_key_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.bsp_get_io_key_id
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.bsp_uart_debug_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_sleep.lv2
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr_sleep_wakeup_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr.sleep
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lowpwr_pwroff_wakeup_config
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.func_pwroff
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.bsp_periph_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.user_poweron_check
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.user_poweroff_check
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.user_sleep_check
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.startup.main
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.exception.hook
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.exception
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.delay
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.platform_main
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.main_startup
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.compiler
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.irq
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.sys_irq_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.soft_irq_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.bthw_irq_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.watch_point_set
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.usb_irq_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.sys_timer_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.timer
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.thread_driver_create
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.thread_aupcm_create
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.thread_btstack_create
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.thread_create_callback
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.thread_main_entry
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.startup.init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.thread.driver
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.thread.aupcm
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.thread.driver.usb
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.thread.driver.vs
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.thread.driver.usb
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.thread.driver.vs
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.thread.driver.enter
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.pll0_vco_band_trimming
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.pll0_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.trim.vddio_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.trim.vbg_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.trim.vddio_set
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.trim.core_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.trim.core_set
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.trim.lvd_get
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.trim.lvd_set
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.pmu_voltage_configure
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.pmu_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.reset    0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.program
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.erase
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.protect_do
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.is_protect
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.read_kick
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.ota_pack
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.ota_pack_deinit
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.ota_pack_done
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.fot.cache
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.ota_pack_breakpoint_info_read
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.lock_code_usbdev
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.patch_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_sleep.lp.sleep
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.xosc_init
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.bsp.param
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.set_sys_clk_do
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.sys_clk
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.sys_clk_set
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.sys_clk_lower_limit_lock
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.sys_clk_lower_limit_unlock
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.text.voltage.trim
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.stack.api
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.stack.run_loop
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.read
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.erase_2
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.erase_32k
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+ .rela.com_text.spiflash.erase_64k
+                0x0000000010003704        0x0 Output\obj\driver\driver_clk.o
+                0x0000000010003704        0x4 LONG 0x0
+                0x0000000010003800                . = ALIGN (0x200)
+ *fill*         0x0000000010003708       0xf8 
+
+.stack          0x0000000000010800      0x400
+                0x0000000000010800                __irq_stack_start = .
+                0x0000000000000400                . = 0x400
+ *fill*         0x0000000000010800      0x400 
+                0x0000000000010c00                __irq_stack = .
+                0x0000000000000400                __irq_stack_size = (__irq_stack - __irq_stack_start)
+
+.bss            0x0000000000012800      0x258
+                0x0000000000012800                __bss_start = .
+ *(COMMON)
+ COMMON         0x0000000000012800        0x8 Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+                0x0000000000012800                sfr_user_backup
+ *(.bss*)
+ .bss           0x0000000000012808       0x60 Output\obj\driver\driver_lowpwr.o
+ .bss.cpu_gprs  0x0000000000012868       0x80 ..\..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000000012868                cpu_gprs
+ .bss.sys       0x00000000000128e8       0x18 ..\..\..\libs\cpu\libplatform.a(main.o)
+                0x00000000000128e8                sys
+ .bss.irq_tbl   0x0000000000012900       0x84 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000000012900                tbl_irq_vector
+                0x0000000000012980                irq_mask
+ .bss.soft_timer
+                0x0000000000012984       0x28 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .bss.thread.aupcm
+                0x00000000000129ac        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x00000000000129ac                pmq_aupcm
+ .bss.thread.btstack
+                0x00000000000129b0        0x8 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x00000000000129b0                psem_btstack
+                0x00000000000129b4                pmq_btstack
+ .bss.thread.driver
+                0x00000000000129b8        0x8 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x00000000000129b8                pmq_driver
+                0x00000000000129bc                psem_driver
+ .bss.lock_cb   0x00000000000129c0       0x10 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .bss.fix_buf   0x00000000000129d0        0xc ..\..\..\libs\cpu\libplatform.a(sleep.o)
+                0x00000000000129d0                fix_buf
+ .bss.sys_trim  0x00000000000129dc       0x10 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+                0x00000000000129dc                sys_trim
+ .bss.heap_buf  0x00000000000129ec       0x14 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .bss.heap_size_buf
+                0x0000000000012a00        0xa ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ *(.sbss*)
+ *fill*         0x0000000000012a0a        0x2 
+ .sbss          0x0000000000012a0c        0x4 Output\obj\driver\driver_lowpwr.o
+ .sbss          0x0000000000012a10        0x3 Output\obj\project\example\lowpower\main.o
+ *fill*         0x0000000000012a13        0x1 
+ .sbss.ms_tick  0x0000000000012a14        0x4 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000000012a14                ms_tick
+ .sbss.os_tick_cnt
+                0x0000000000012a18        0x4 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000000012a18                os_tick_cnt
+ .sbss.p_thread_cfg_cb
+                0x0000000000012a1c        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000000012a1c                p_thread_cfg_cb
+ .sbss.pmutex_clk
+                0x0000000000012a20        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000000012a20                pmutex_clk
+ .sbss.pmutex_cm
+                0x0000000000012a24        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000000012a24                pmutex_cm
+ .sbss.soft_timer_isr_en
+                0x0000000000012a28        0x4 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000000012a28                soft_timer_isr_en
+ .sbss.thread_driver_usb_enter_func
+                0x0000000000012a2c        0x4 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+                0x0000000000012a2c                thread_driver_usb_enter_func
+ .sbss.thread_driver_vs_enter_func
+                0x0000000000012a30        0x4 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+                0x0000000000012a30                thread_driver_vs_enter_func
+ .sbss.flash_manufacturer_id
+                0x0000000000012a34        0x1 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+                0x0000000000012a34                flash_manufacturer_id
+ *fill*         0x0000000000012a35        0x3 
+ .sbss.lowpwr_sfr_save
+                0x0000000000012a38        0x8 ..\..\..\libs\cpu\libplatform.a(sleep.o)
+ .sbss.cfg_spiflash_speed_up_en
+                0x0000000000012a40        0x1 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+                0x0000000000012a40                cfg_spiflash_speed_up_en
+ .sbss.cfg_bt_work_mode
+                0x0000000000012a41        0x1 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+                0x0000000000012a41                cfg_bt_work_mode
+ *fill*         0x0000000000012a42        0x2 
+ .sbss.p_sdadc_done
+                0x0000000000012a44        0x4 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .sbss.p_sddac_done
+                0x0000000000012a48        0x4 ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .sbss.bt_thread_res
+                0x0000000000012a4c        0x4 ..\..\..\libs\cpu\libplatform.a(bt.o)
+                0x0000000000012a4c                bt_thread_res
+ .sbss.spi_baud_r
+                0x0000000000012a50        0x4 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+                0x0000000000012a50                spi_baud_r
+ .sbss.spi_baud_w
+                0x0000000000012a54        0x4 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+                0x0000000000012a54                spi_baud_w
+ *(.buf*)
+ *(.btmem.stack.l2cap)
+                0x0000000000012a58                __bss_end = .
+                0x0000000000000258                __bss_size = (__bss_end - __bss_start)
+
+.heap           0x0000000000010c00     0x1c00
+ *(.mem_heap)
+ .mem_heap      0x0000000000010c00     0x1c00 ..\..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000000010c00                mem_heap
+
+.bram
+ *(.btmem.bthw)
+ *(.btmem*)
+ *(.ble_cache*)
+ *(.ble_buf*)
+ *(.codec*)
+
+.cram_aac
+ *(.dut.huart_buf)
+ *(.hci.h3*)
+
+.cram_fot
+ *(.fot_data.*)
+                0x0000000000002400                __bank_size = SIZEOF (.flash)
+                0x0000000010000200                __comm_lma = LOADADDR (.comm)
+                0x0000000000001200                __comm_size = SIZEOF (.comm)
+LOAD ..\..\..\libs\cpu\libplatform.a
+LOAD ..\..\..\libs\cpu\libm.a
+LOAD ..\..\..\libs\cpu\libc.a
+LOAD ..\..\..\libs\cpu\libgcc.a
+OUTPUT(Output\bin\app.rv32 elf32-littleriscv)
+
+.comment        0x0000000000000000       0x23
+ .comment       0x0000000000000000       0x11 Output\obj\driver\driver_clk.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 Output\obj\driver\driver_gpio.o
+ .comment       0x0000000000000011       0x12 Output\obj\driver\driver_lowpwr.o
+ .comment       0x0000000000000011       0x12 Output\obj\driver\driver_saradc.o
+ .comment       0x0000000000000011       0x12 Output\obj\driver\driver_uart.o
+ .comment       0x0000000000000011       0x12 Output\obj\project\example\lowpower\hardware\bsp_io_key.o
+ .comment       0x0000000000000011       0x12 Output\obj\project\example\lowpower\hardware\bsp_uart_debug.o
+ .comment       0x0000000000000011       0x12 Output\obj\project\example\lowpower\hardware\func_lowpwr.o
+ .comment       0x0000000000000011       0x12 Output\obj\project\example\lowpower\main.o
+ .comment       0x0000000000000011       0x12 ..\..\..\libs\cpu\libplatform.a(main.o)
+                                         0x13 (size before relaxing)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(sys_hook.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(pll.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(patch.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(sleep.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .comment       0x0000000000000023       0x13 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
+
+.riscv.attributes
+                0x0000000000000000      0x47e
+ .riscv.attributes
+                0x0000000000000000       0x32 ..\..\..\libs\cpu\libplatform.a(main.o)
+ .riscv.attributes
+                0x0000000000000032       0x32 ..\..\..\libs\cpu\libplatform.a(interrupt.o)
+ .riscv.attributes
+                0x0000000000000064       0x32 ..\..\..\libs\cpu\libplatform.a(startup.o)
+ .riscv.attributes
+                0x0000000000000096       0x32 ..\..\..\libs\cpu\libplatform.a(sys_hook.o)
+ .riscv.attributes
+                0x00000000000000c8       0x32 ..\..\..\libs\cpu\libplatform.a(thread_aupcm.o)
+ .riscv.attributes
+                0x00000000000000fa       0x32 ..\..\..\libs\cpu\libplatform.a(thread_driver.o)
+ .riscv.attributes
+                0x000000000000012c       0x32 ..\..\..\libs\cpu\libplatform.a(pll.o)
+ .riscv.attributes
+                0x000000000000015e       0x32 ..\..\..\libs\cpu\libplatform.a(pmu.o)
+ .riscv.attributes
+                0x0000000000000190       0x34 ..\..\..\libs\cpu\libplatform.a(reset.o)
+ .riscv.attributes
+                0x00000000000001c4       0x32 ..\..\..\libs\cpu\libplatform.a(spiflash.o)
+ .riscv.attributes
+                0x00000000000001f6       0x32 ..\..\..\libs\cpu\libplatform.a(debug.o)
+ .riscv.attributes
+                0x0000000000000228       0x32 ..\..\..\libs\cpu\libplatform.a(lock.o)
+ .riscv.attributes
+                0x000000000000025a       0x32 ..\..\..\libs\cpu\libplatform.a(patch.o)
+ .riscv.attributes
+                0x000000000000028c       0x30 ..\..\..\libs\cpu\libplatform.a(s_sys.o)
+ .riscv.attributes
+                0x00000000000002bc       0x32 ..\..\..\libs\cpu\libplatform.a(sleep.o)
+ .riscv.attributes
+                0x00000000000002ee       0x32 ..\..\..\libs\cpu\libplatform.a(sys.o)
+ .riscv.attributes
+                0x0000000000000320       0x32 ..\..\..\libs\cpu\libplatform.a(sys_clk.o)
+ .riscv.attributes
+                0x0000000000000352       0x32 ..\..\..\libs\cpu\libplatform.a(voltage_trim.o)
+ .riscv.attributes
+                0x0000000000000384       0x32 ..\..\..\libs\cpu\libplatform.a(weak_symbol.o)
+ .riscv.attributes
+                0x00000000000003b6       0x32 ..\..\..\libs\cpu\libplatform.a(sdadc.o)
+ .riscv.attributes
+                0x00000000000003e8       0x32 ..\..\..\libs\cpu\libplatform.a(sddac.o)
+ .riscv.attributes
+                0x000000000000041a       0x32 ..\..\..\libs\cpu\libplatform.a(bt.o)
+ .riscv.attributes
+                0x000000000000044c       0x32 ..\..\..\libs\cpu\libplatform.a(os_flash.o)
