@@ -1,6 +1,7 @@
 #include "include.h"
 #include "driver_lowpwr.h"
 #include "bsp_saradc_key.h"
+#include "user_api.h"
 
 xcfg_cb_t xcfg_cb;
 sys_cb_t sys_cb AT(.buf.bsp.sys_cb);
@@ -205,6 +206,8 @@ void bsp_sys_init(void)
 #if SYS_SLEEP_EN
     lowpwr_sleep_wakeup_config();
 #endif
+
+    user_init();
 
     printf("%s\n",__func__);
 

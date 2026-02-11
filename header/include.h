@@ -12,4 +12,6 @@
 //bsp头文件
 #include "bsp.h"
 
+#include "user_config.h"
+
 #endif // _INCLUDE_H

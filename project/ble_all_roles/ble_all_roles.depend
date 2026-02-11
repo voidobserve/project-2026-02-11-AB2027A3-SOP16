@@ -1,0 +1,660 @@
+# depslib dependency file v1.0
+1757064023 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_adv_timer.c
+	"driver_adv_timer.h"
+
+1757064023 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_adv_timer.h
+	"driver_com.h"
+
+1752586523 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_com.h
+	"global.h"
+	"api.h"
+	"driver_clk.h"
+
+1681357605 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\header\global.h
+	<stddef.h>
+	<stdarg.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	"typedef.h"
+	"macro.h"
+	"clib.h"
+	"sfr.h"
+
+1681370977 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\header\typedef.h
+
+1749815663 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\header\macro.h
+
+1692174457 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\header\clib.h
+
+1692174457 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\header\sfr.h
+
+1759046628 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\api.h
+	"api_interrupt.h"
+	"api_btstack.h"
+	"api_cm.h"
+	"api_update.h"
+	"api_sysclk.h"
+	"api_msg.h"
+	"api_sys.h"
+	"api_pwr.h"
+	"api_key.h"
+	"api_sdadc.h"
+	"api_codec.h"
+	"api_usb.h"
+	"api_device.h"
+	"api_os.h"
+	"api_list.h"
+
+1726112666 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_interrupt.h
+
+1764227803 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\ble\api_btstack.h
+
+1734512080 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_cm.h
+
+1764582512 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_update.h
+
+1716364032 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_sysclk.h
+
+1681357605 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_msg.h
+
+1763040482 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_sys.h
+
+1718281019 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_pwr.h
+
+1701306842 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_key.h
+
+1725884089 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_sdadc.h
+
+1730194907 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_codec.h
+
+1764828115 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\usb\api_usb.h
+	"usb_define.h"
+
+1758770517 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\usb\usb_define.h
+
+1733303608 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\usb\api_device.h
+
+1761621995 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_os.h
+
+1759046628 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\libs\cpu\api_list.h
+
+1752632357 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_clk.h
+	"global.h"
+	"api.h"
+
+1751470914 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_charge.c
+	"driver_charge.h"
+
+1745993153 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_charge.h
+	"driver_com.h"
+
+1752586523 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_clk.c
+	"driver_clk.h"
+
+1753698985 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_gpio.c
+	"driver_gpio.h"
+
+1750247971 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_gpio.h
+	"driver_com.h"
+
+1695301485 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_hsuart.c
+	"driver_hsuart.h"
+
+1692272097 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_hsuart.h
+	"driver_com.h"
+
+1757064023 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_iic.c
+	"driver_iic.h"
+
+1761829993 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_iic.h
+	"driver_com.h"
+
+1706603398 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_irrx.c
+	"driver_ir.h"
+
+1708997754 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_ir.h
+	"driver_com.h"
+
+1708997754 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_irtx.c
+	"driver_ir.h"
+	"driver_gpio.h"
+	"macro.h"
+
+1708677057 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_keyscan.c
+	"driver_keyscan.h"
+
+1706594461 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_keyscan.h
+	"driver_com.h"
+
+1750079636 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_ledc.c
+	"driver_ledc.h"
+
+1691641855 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_ledc.h
+	"driver_com.h"
+
+1761546706 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_lowpwr.c
+	"driver_gpio.h"
+	"driver_saradc.h"
+	"driver_lowpwr.h"
+
+1695092048 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_saradc.h
+	"driver_com.h"
+
+1731641111 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_lowpwr.h
+	"driver_com.h"
+
+1691641855 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_lpwm.c
+	"driver_lpwm.h"
+
+1692272097 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_lpwm.h
+	"driver_com.h"
+
+1764919609 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_qdec.c
+	"driver_qdec.h"
+
+1752586523 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_qdec.h
+	"driver_com.h"
+
+1730712251 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_rtc.c
+	"driver_rtc.h"
+
+1730460110 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_rtc.h
+	"driver_com.h"
+
+1741682541 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_saradc.c
+	"driver_saradc.h"
+
+1724061152 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_sdadc.c
+	"driver_sdadc.h"
+	"driver_clk.h"
+
+1695021625 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_sdadc.h
+	"driver_com.h"
+
+1752290232 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_sddac.c
+	"driver_sddac.h"
+	"driver_clk.h"
+
+1748261450 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_sddac.h
+	"driver_com.h"
+
+1761621995 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_spi.c
+	"driver_spi.h"
+
+1747884851 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_spi.h
+	"driver_com.h"
+
+1734082013 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_tmr.c
+	"driver_tmr.h"
+
+1692272097 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_tmr.h
+	"driver_com.h"
+
+1744941034 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_touch_key.c
+	"driver_touch_key.h"
+	"driver_gpio.h"
+
+1744941034 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_touch_key.h
+	"driver_com.h"
+
+1694162602 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_uart.c
+	"driver_uart.h"
+
+1694162602 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_uart.h
+	"driver_com.h"
+
+1694504641 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_wdt.c
+	"driver_wdt.h"
+
+1692272097 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\driver\driver_wdt.h
+	"driver_com.h"
+
+1764901929 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\modules\utils\utils_ring_buffer.c
+	"include.h"
+	"utils_ring_buffer.h"
+
+1770798986 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\header\include.h
+	"global.h"
+	"xcfg.h"
+	"config.h"
+	"api.h"
+	"bsp.h"
+	"user_config.h"
+
+1713940829 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\xcfg.h
+
+1770793186 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config.h
+	"config_define.h"
+	"config_extra.h"
+
+1764582512 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config_define.h
+
+1754731634 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config_extra.h
+
+1710385876 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp.h
+	"bsp_param.h"
+	"bsp_sys.h"
+	"ble_service.h"
+	"ble_init.h"
+	"ble_client.h"
+	"ble_proc.h"
+	"bsp_uart_debug.h"
+	"bsp_saradc.h"
+	"bsp_saradc_vbat.h"
+	"bsp_key.h"
+	"bsp_touch_key.h"
+	"bsp_charge.h"
+	"bsp_led.h"
+	"bsp_huart_iodm.h"
+	"func.h"
+	"msg.h"
+	"ble_app.h"
+	"prod_test.h"
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_param.h
+
+1752545349 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_sys.h
+
+1700810850 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_service.h
+
+1742540452 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_init.h
+
+1710385876 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_client.h
+
+1710385876 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_proc.h
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_uart_debug.h
+
+1705287263 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_saradc.h
+
+1752722337 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_saradc_vbat.h
+
+1708497989 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_key.h
+
+1744941034 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_touch_key.h
+	"driver_com.h"
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_charge.h
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_led.h
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_huart_iodm.h
+
+1712742838 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func.h
+	"func_bt.h"
+	"func_le_fcc.h"
+	"func_le_bqb_rf.h"
+	"func_iodm.h"
+	"func_idle.h"
+	"func_lowpwr.h"
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_bt.h
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_le_fcc.h
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_le_bqb_rf.h
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_iodm.h
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_idle.h
+
+1752545349 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_lowpwr.h
+
+1708497989 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\msg.h
+
+1762828517 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_app.h
+	"include.h"
+
+1712742838 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\prod_test.h
+	"prod_test_iodm.h"
+	"prod_test_tbox.h"
+
+1712742838 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\iodm\prod_test_iodm.h
+
+1712742838 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\prod_test_tbox.h
+	"include.h"
+
+1764901929 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\modules\utils\utils_ring_buffer.h
+
+1770792901 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func.c
+	"include.h"
+	"user_api.h"
+
+1770790921 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_bt.c
+	"include.h"
+	"func.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_idle.c
+	"include.h"
+	"func.h"
+	"func_idle.h"
+
+1752545349 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_iodm.c
+	"include.h"
+	"func.h"
+
+1752545349 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_le_bqb_rf.c
+	"include.h"
+	"func.h"
+
+1752545349 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_le_fcc.c
+	"include.h"
+	"func.h"
+
+1760689489 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_lowpwr.c
+	"include.h"
+	"driver_lowpwr.h"
+	"driver_gpio.h"
+	"driver_charge.h"
+	"ble_user_service.h"
+	"bsp_io_key.h"
+
+1770801047 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_user_service.h
+
+1709728829 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_io_key.h
+	"driver_gpio.h"
+
+1751025230 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_tbox.c
+	"include.h"
+	"func.h"
+	"func_tbox.h"
+	"prod_test_tbox.h"
+
+1712742838 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_tbox.h
+
+1762933386 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\msg_bt.c
+	"include.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\msg_idle.c
+	"include.h"
+	"func.h"
+	"func_idle.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\msg_iodm.c
+	"include.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\msg_le_bqb_rf.c
+	"include.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\msg_le_fcc.c
+	"include.h"
+
+1712742838 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\msg_tbox.c
+	"include.h"
+	"tbox_key.h"
+
+1712742838 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\tbox_key.h
+	"include.h"
+
+1764919925 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_app.c
+	"ble_app.h"
+	"ble_init.h"
+
+1762766301 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_client.c
+	"include.h"
+	"ble_client.h"
+	"ble_user_service.h"
+
+1764582512 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_fota_service.c
+	"include.h"
+
+1750402645 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_init.c
+	"include.h"
+	"ble_client.h"
+
+1742540452 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_proc.c
+	"include.h"
+	"ble_user_service.h"
+	"ble_fota_service.h"
+	"ble_app.h"
+
+1710385876 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_fota_service.h
+
+1710385876 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_service.c
+	"include.h"
+	"ble_service.h"
+	"ble_user_service.h"
+	"ble_fota_service.h"
+
+1770801043 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_user_service.c
+	"include.h"
+	"ble_service.h"
+	"ble_init.h"
+
+1710207134 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_charge.c
+	"include.h"
+	"driver_charge.h"
+	"bsp_charge.h"
+	"bsp_saradc_vbat.h"
+
+1731292149 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_huart.c
+	"include.h"
+	"bsp_huart.h"
+	"api.h"
+	"driver_com.h"
+	"driver_hsuart.h"
+	"ble_init.h"
+	"driver_gpio.h"
+	"config.h"
+
+1722255943 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_huart.h
+
+1703315374 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_huart_iodm.c
+	"include.h"
+	"bsp_huart_iodm.h"
+	"driver_hsuart.h"
+	"prod_test_iodm.h"
+	"driver_gpio.h"
+
+1760337637 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_io_key.c
+	"include.h"
+	"bsp_io_key.h"
+
+1715237257 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_key.c
+	"include.h"
+	"driver_com.h"
+	"bsp_saradc_key.h"
+	"bsp_io_key.h"
+
+1699870213 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_saradc_key.h
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_led.c
+	"include.h"
+	"driver_gpio.h"
+	"bsp_led.h"
+
+1758781778 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_param.c
+	"include.h"
+
+1706076853 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_saradc.c
+	"include.h"
+	"driver_saradc.h"
+	"bsp_saradc.h"
+	"bsp_saradc_vbat.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_saradc_key.c
+	"include.h"
+	"driver_saradc.h"
+	"bsp_saradc_key.h"
+	"bsp_key.h"
+
+1752722337 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_saradc_vbat.c
+	"include.h"
+	"driver_saradc.h"
+	"driver_charge.h"
+	"bsp_saradc_vbat.h"
+
+1770792748 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_sys.c
+	"include.h"
+	"driver_lowpwr.h"
+	"bsp_saradc_key.h"
+	"user_api.h"
+
+1755662285 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_touch_key.c
+	"include.h"
+	"driver_touch_key.h"
+	"bsp_touch_key.h"
+
+1742302791 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_uart_debug.c
+	"include.h"
+	"driver_gpio.h"
+	"driver_uart.h"
+	"bsp_uart_debug.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\main.c
+	"include.h"
+	"driver_lowpwr.h"
+
+1721957498 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\output\bin\app.xm
+	"config.h"
+
+1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\output\bin\download.xm
+
+1713940829 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\output\bin\xcfg.xm
+
+1712742838 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\iodm\prod_test_iodm.c
+	"include.h"
+	"prod_test_iodm.h"
+	"bsp_huart_iodm.h"
+
+1712742838 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\prod_test.c
+	"include.h"
+	"prod_test.h"
+
+1715247669 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\prod_test_tbox.c
+	"include.h"
+	"tbox_key.h"
+	"tbox_voice.h"
+	"prod_test_tbox.h"
+
+1713231859 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\tbox_voice.h
+	"include.h"
+
+1712742838 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\tbox_key.c
+	"include.h"
+	"tbox_key.h"
+	"prod_test_tbox.h"
+
+1764901929 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\tbox_voice.c
+	"include.h"
+	"tbox_key.h"
+	"tbox_voice.h"
+	"api_sysclk.h"
+	"prod_test_tbox.h"
+	"tbox_voice_sdadc.h"
+	"utils_ring_buffer.h"
+
+1712742838 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\tbox_voice_sdadc.h
+	"api_sdadc.h"
+
+1764901929 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\production_test\tbox\tbox_voice_sdadc.c
+	"include.h"
+	"driver_gpio.h"
+	"tbox_voice_sdadc.h"
+	"utils_ring_buffer.h"
+	"driver_sdadc.h"
+
+1756102057 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ram.ld
+	"config.h"
+
+1764582512 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\strong_symbol.c
+	"include.h"
+	"driver_uart.h"
+
+1770799867 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_my_effect.c
+	"include.h"
+	"ws2812fx.H"
+	"ws2812_Adafruit_NeoPixel.H"
+	"ws2812fx_effect.h"
+
+1718359305 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx.h
+	"include.h"
+	<stdint.h>
+	<stdint.h>
+	"ws2812_bsp.h"
+	"ws2812_binary.h"
+
+1717835287 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_bsp.h
+	"include.h"
+	<stdint.h>
+
+1715679341 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_binary.h
+
+1717835665 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_adafruit_neopixel.h
+	"include.h"
+	<stdint.h>
+	"ws2812_bsp.h"
+
+1718269495 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx_effect.h
+	"include.h"
+
+1718266943 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.c
+	"include.h"
+	"ws2812_Adafruit_NeoPixel.h"
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+
+1770799950 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx2.c
+	"include.h"
+	"ws2812fx.h"
+	"ws2812_Adafruit_NeoPixel.h"
+	<stdlib.h>
+	<string.h>
+
+1770802850 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
+	"user_config.h"
+
+1770799648 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_config.h
+	"include.h"
+	"ws2812fx.h"
+	"ws2812_Adafruit_NeoPixel.h"
+	"ws2812fx_effect.h"
+	"ws2812_my_effect.h"
+
+1718359603 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_my_effect.h
+	"include.h"
+	<stdint.h>
+
+1717835807 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx_tool.c
+	"include.h"
+	"ws2812fx.h"
+	"ws2812_Adafruit_NeoPixel.h"
+	<stdlib.h>
+	<string.h>
+
+1770792475 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx_effect.c
+	"include.h"
+	"ws2812fx.h"
+	"ws2812fx_tool.h"
+	"ws2812_Adafruit_NeoPixel.h"
+
+1717835814 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx_tool.h
+
+1770799366 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_driver.c
+	"include.h"
+	"driver_gpio.h"
+	"ws2812_bsp.h"
+	"ws2812_my_effect.h"
+	"driver_ledc.h"
+
+1770792826 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_api.h
+	"include.h"
+
+1717836430 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\bsp_rgbcw_halfpower.c
+	"include.h"
+	"driver_tmr.h"
+	"bsp_rgbcw_halfpower.h"
+
+1715848937 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\bsp_rgbcw_halfpower.h
+	"driver_adv_timer.h"
+	"driver_gpio.h"
+
+1770801260 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart\user_uart.c
+	"user_uart.h"
+
+1770801249 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart\user_uart.h
+	"include.h"
+

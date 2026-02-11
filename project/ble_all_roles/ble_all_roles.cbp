@@ -11,6 +11,10 @@
 				<Option object_output="Output/obj/" />
 				<Option type="1" />
 				<Option compiler="riscv32" />
+				<Compiler>
+					<Add directory="user/ws2812_lib" />
+					<Add directory="user" />
+				</Compiler>
 			</Target>
 		</Build>
 		<Compiler>
@@ -350,6 +354,49 @@
 		<Unit filename="strong_symbol.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="user/ble_user_service.h" />
+		<Unit filename="user/user_api.h" />
+		<Unit filename="user/user_config.h" />
+		<Unit filename="user/user_for_driver_on_chip/user_uart/user_uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/user_for_driver_on_chip/user_uart/user_uart.h" />
+		<Unit filename="user/user_for_driver_on_chip/user_uart_fot/user_uart_fot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/user_for_driver_on_chip/user_uart_fot/user_uart_fot.h" />
+		<Unit filename="user/user_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/bsp_rgbcw_halfpower.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/bsp_rgbcw_halfpower.h" />
+		<Unit filename="user/ws2812_lib/ws2812_Adafruit_NeoPixel.h" />
+		<Unit filename="user/ws2812_lib/ws2812_binary.h" />
+		<Unit filename="user/ws2812_lib/ws2812_bsp.h" />
+		<Unit filename="user/ws2812_lib/ws2812_driver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/ws2812_my_effect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/ws2812_my_effect.h" />
+		<Unit filename="user/ws2812_lib/ws2812_neo_pixel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/ws2812fx.h" />
+		<Unit filename="user/ws2812_lib/ws2812fx2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/ws2812fx_effect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/ws2812fx_effect.h" />
+		<Unit filename="user/ws2812_lib/ws2812fx_tool.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/ws2812_lib/ws2812fx_tool.h" />
 		<Unit filename="xcfg.h" />
 		<Extensions />
 	</Project>

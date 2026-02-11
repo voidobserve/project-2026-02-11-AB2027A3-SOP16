@@ -1,5 +1,5 @@
 #include "include.h"
-
+#include "user_api.h"
 
 func_cb_t func_cb AT(.buf.func_cb);
 
@@ -21,6 +21,9 @@ void func_process(void)
 #endif
 
     prod_test_process();
+
+    user_ws2812_service();
+
 }
 
 //func common message process
