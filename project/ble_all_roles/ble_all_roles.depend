@@ -224,13 +224,13 @@
 
 1713940829 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\xcfg.h
 
-1770793186 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config.h
+1771904647 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config.h
 	"config_define.h"
 	"config_extra.h"
 
 1764582512 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config_define.h
 
-1754731634 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config_extra.h
+1771914468 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config_extra.h
 
 1710385876 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp.h
 	"bsp_param.h"
@@ -317,7 +317,7 @@
 
 1764901929 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\modules\utils\utils_ring_buffer.h
 
-1770792901 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func.c
+1771920990 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func.c
 	"include.h"
 	"user_api.h"
 
@@ -496,15 +496,16 @@
 	"driver_touch_key.h"
 	"bsp_touch_key.h"
 
-1742302791 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_uart_debug.c
+1771896702 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_uart_debug.c
 	"include.h"
 	"driver_gpio.h"
 	"driver_uart.h"
 	"bsp_uart_debug.h"
 
-1699870213 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\main.c
+1771903101 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\main.c
 	"include.h"
 	"driver_lowpwr.h"
+	"driver_gpio.h"
 
 1721957498 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\output\bin\app.xm
 	"config.h"
@@ -558,7 +559,7 @@
 1756102057 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ram.ld
 	"config.h"
 
-1764582512 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\strong_symbol.c
+1771914109 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\strong_symbol.c
 	"include.h"
 	"driver_uart.h"
 
@@ -604,10 +605,12 @@
 	<stdlib.h>
 	<string.h>
 
-1770802850 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
+1771924143 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
 	"user_config.h"
+	"user_uart.h"
+	"user_debug_io.h"
 
-1770799648 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_config.h
+1771921041 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_config.h
 	"include.h"
 	"ws2812fx.h"
 	"ws2812_Adafruit_NeoPixel.h"
@@ -640,8 +643,9 @@
 	"ws2812_my_effect.h"
 	"driver_ledc.h"
 
-1770792826 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_api.h
+1771898027 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_api.h
 	"include.h"
+	"user_uart.h"
 
 1717836430 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\bsp_rgbcw_halfpower.c
 	"include.h"
@@ -652,9 +656,29 @@
 	"driver_adv_timer.h"
 	"driver_gpio.h"
 
-1770801260 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart\user_uart.c
+1771924968 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart\user_uart.c
 	"user_uart.h"
+	"driver_gpio.h"
+	"driver_uart.h"
 
-1770801249 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart\user_uart.h
+1771924045 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart\user_uart.h
 	"include.h"
+
+1771893892 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart_high_speed\user_uart_fot.h
+	"include.h"
+
+1770803940 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_for_driver_on_chip\user_uart_high_speed\user_uart_fot.c
+	"user_uart_fot.h"
+	"include.h"
+	"driver_hsuart.h"
+	"driver_gpio.h"
+	"driver_com.h"
+
+1771922974 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_test\user_debug_io.c
+	"user_debug_io.h"
+	"driver_gpio.h"
+
+1771925953 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_test\user_debug_io.h
+	"include.h"
+	"driver_gpio.h"
 

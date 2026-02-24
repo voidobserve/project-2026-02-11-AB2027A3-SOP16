@@ -25,11 +25,11 @@
 #define BUCK_MODE_EN                    0                       //是否BUCK MODE, 0:LDO MODE  1:BUCK MODE
 #define WK0_10S_RESET                   1                       //WK pin 10秒复位功能
 #define SYS_SLEEP_EN                    1                       //系统休眠使能
-#define SYS_SLEEP_TIME                  10                      //自动休眠时间(秒), 0为不自动休眠
+#define SYS_SLEEP_TIME                  0/*10*/                      //自动休眠时间(秒), 0为不自动休眠
 #define SYS_PWROFF_MODE                 PWROFF_MODE1            //软关机模式选择，模式1 VDDIO掉电，模式2 VDDIO不掉电
 #define SYS_OFF_TIME                    0                       //自动关机时间(秒), 0为不自动关机
 #define SYS_PWRUP_TIME                  2000                    //长按开机时间(毫秒), 0为立即开机
-#define BSP_UART_DEBUG_EN               GPIO_PB3                //串口打印调试使能[Baud=1500000]
+#define BSP_UART_DEBUG_EN               0 /*GPIO_PB3*/                //串口打印调试使能[Baud=1500000]
 #define BSP_ADKEY_EN                    0                       //AD按键使能
 #define BSP_IOKEY_EN                    1                       //IO按鍵使能
 #define BSP_TOUCH_KEY_EN                0                       //触摸按键功能

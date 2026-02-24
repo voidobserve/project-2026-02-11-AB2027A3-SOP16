@@ -14,6 +14,8 @@
 				<Compiler>
 					<Add directory="user/ws2812_lib" />
 					<Add directory="user" />
+					<Add directory="user/user_for_driver_on_chip/user_uart" />
+					<Add directory="user/user_test" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -361,13 +363,15 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="user/user_for_driver_on_chip/user_uart/user_uart.h" />
-		<Unit filename="user/user_for_driver_on_chip/user_uart_fot/user_uart_fot.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="user/user_for_driver_on_chip/user_uart_fot/user_uart_fot.h" />
+		<Unit filename="user/user_for_driver_on_chip/user_uart_high_speed/user_uart_fot.h" />
 		<Unit filename="user/user_main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="user/user_test/user_debug_io.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/user_test/user_debug_io.h" />
 		<Unit filename="user/ws2812_lib/bsp_rgbcw_halfpower.c">
 			<Option compilerVar="CC" />
 		</Unit>

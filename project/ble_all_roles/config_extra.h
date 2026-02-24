@@ -87,7 +87,7 @@
  * Module    : UART打印功能配置
  *****************************************************************************/
 #if !BSP_UART_DEBUG_EN
-    //关闭所以打印信息
+    //关闭所以打印信息 
     #undef printf
     #undef vprintf
     #undef print_r
@@ -109,6 +109,7 @@
     #define print_kr(...)
     #define print_kr16(...)
     #define print_kr32(...)
+
 #endif
 
 

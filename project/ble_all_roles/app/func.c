@@ -24,6 +24,9 @@ void func_process(void)
 
     user_ws2812_service();
 
+
+    // uart_transfer_example();
+    uart_data_handle();
 }
 
 //func common message process
