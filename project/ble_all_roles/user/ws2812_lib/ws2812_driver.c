@@ -3,7 +3,7 @@
 
 #if WS2812_LIB_EN
 
-#include "ws2812_bsp.h" 
+#include "ws2812_bsp.h"
 #include "ws2812_my_effect.h"
 #include "driver_ledc.h"
 
@@ -11,9 +11,9 @@ static unsigned long tick_ms;
 
 u8 ws2815_byte_reversed(u8 data)
 {
-	data = ((data & 0xaa) >> 1) | ((data & 0x55) << 1);
-	data = ((data & 0xcc) >> 2) | ((data & 0x33) << 2);
-	data = (data >> 4) | (data << 4);
+    data = ((data & 0xaa) >> 1) | ((data & 0x55) << 1);
+    data = ((data & 0xcc) >> 2) | ((data & 0x33) << 2);
+    data = (data >> 4) | (data << 4);
     return data;
 }
 
@@ -22,26 +22,40 @@ void ws281x_show(unsigned char *pixels_pattern, unsigned short pattern_size)
     // print_r(pixels_pattern, pattern_size);
 
     // 用三路PWM驱动RGB灯
-// #if WS2812_NEO_TYPE == NEO_RGB
-//     adv_timer_rgbcw_update_rgb(pixels_pattern[0], pixels_pattern[1], pixels_pattern[2]);
-// #elif WS2812_NEO_TYPE == NEO_RBG
-//     adv_timer_rgbcw_update_rgb(pixels_pattern[0], pixels_pattern[2], pixels_pattern[1]);
-// #elif WS2812_NEO_TYPE == NEO_GRB
-//     adv_timer_rgbcw_update_rgb(pixels_pattern[1], pixels_pattern[0], pixels_pattern[2]);
-// #elif WS2812_NEO_TYPE == NEO_GBR
-//     adv_timer_rgbcw_update_rgb(pixels_pattern[1], pixels_pattern[2], pixels_pattern[0]);
-// #elif WS2812_NEO_TYPE == NEO_BRG
-//     adv_timer_rgbcw_update_rgb(pixels_pattern[2], pixels_pattern[0], pixels_pattern[1]);
-// #elif WS2812_NEO_TYPE == NEO_BGR
-//     adv_timer_rgbcw_update_rgb(pixels_pattern[2], pixels_pattern[1], pixels_pattern[0]);
-// #else
-//     #error "plz set current WS2812_NEO_TYPE func api!!!"
-// #endif
+    // #if WS2812_NEO_TYPE == NEO_RGB
+    //     adv_timer_rgbcw_update_rgb(pixels_pattern[0], pixels_pattern[1], pixels_pattern[2]);
+    // #elif WS2812_NEO_TYPE == NEO_RBG
+    //     adv_timer_rgbcw_update_rgb(pixels_pattern[0], pixels_pattern[2], pixels_pattern[1]);
+    // #elif WS2812_NEO_TYPE == NEO_GRB
+    //     adv_timer_rgbcw_update_rgb(pixels_pattern[1], pixels_pattern[0], pixels_pattern[2]);
+    // #elif WS2812_NEO_TYPE == NEO_GBR
+    //     adv_timer_rgbcw_update_rgb(pixels_pattern[1], pixels_pattern[2], pixels_pattern[0]);
+    // #elif WS2812_NEO_TYPE == NEO_BRG
+    //     adv_timer_rgbcw_update_rgb(pixels_pattern[2], pixels_pattern[0], pixels_pattern[1]);
+    // #elif WS2812_NEO_TYPE == NEO_BGR
+    //     adv_timer_rgbcw_update_rgb(pixels_pattern[2], pixels_pattern[1], pixels_pattern[0]);
+    // #else
+    //     #error "plz set current WS2812_NEO_TYPE func api!!!"
+    // #endif
 
 #if WS2812_JUST_DIRECT_RGB == 0
-    //幻彩灯驱动函数
+    // 幻彩灯驱动函数
     for (u16 i = 0; i < pattern_size; i++)
-        pixels_pattern[i] = ws2815_byte_reversed(pixels_pattern[i]);  // 将数据高低位反转
+        pixels_pattern[i] = ws2815_byte_reversed(pixels_pattern[i]); // 将数据高低位反转
+
+    static u8 dir = 0;
+    if (0 == dir)
+    {
+        // 第一路 ledc 引脚
+        gpio_func_mapping_config(WS2812_LEDC_PORT, WS2812_LEDC_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
+        dir = 1;
+    }
+    else
+    {
+        // 第二路 ledc 引脚
+        gpio_func_mapping_config(WS2812_LEDC_2_PORT, WS2812_LEDC_2_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
+        dir = 0;
+    }
     ledc_dma_kick((u32)pixels_pattern, pattern_size);
     ledc_kick();
 #endif
@@ -49,7 +63,6 @@ void ws281x_show(unsigned char *pixels_pattern, unsigned short pattern_size)
 
 void ws281x_none(void)
 {
-    
 }
 
 // 周期10ms
@@ -94,7 +107,7 @@ void ledc_irq_handler(void)
     {
         ledc_clear_flag(LEDC_FLAG_DONE);
     }
-    
+
     if (ledc_get_flag(LEDC_FLAG_DMA))
     {
         ledc_clear_flag(LEDC_FLAG_DMA);
@@ -123,6 +136,14 @@ void ws281x_init()
     gpio_init_struct.gpio_drv = GPIO_DRV_6MA;
     gpio_init(WS2812_LEDC_PORT, &gpio_init_struct);
 
+    gpio_init_struct.gpio_pin = WS2812_LEDC_2_PIN;
+    gpio_init_struct.gpio_dir = GPIO_DIR_OUTPUT;
+    gpio_init_struct.gpio_mode = GPIO_MODE_DIGITAL;
+    gpio_init_struct.gpio_fen = GPIO_FEN_PER;
+    gpio_init_struct.gpio_fdir = GPIO_FDIR_MAP;
+    gpio_init_struct.gpio_drv = GPIO_DRV_6MA;
+    gpio_init(WS2812_LEDC_2_PORT, &gpio_init_struct);
+
     /* Config GPIO Mapping */
     gpio_func_mapping_config(WS2812_LEDC_PORT, WS2812_LEDC_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
 
@@ -135,10 +156,10 @@ void ws281x_init()
     ledc_init(&ledc_init_struct);
 
     /* LEDC Timing Init */
-    ledc_timing_init_struct.baud = 15 - 1;      // period = 1 / (clk_12M / 15) = 1.25us
+    ledc_timing_init_struct.baud = 15 - 1; // period = 1 / (clk_12M / 15) = 1.25us
     ledc_timing_init_struct.delay = 0;
-    ledc_timing_init_struct.code_0_high = 4;    // 1.25us / 15 * 4 = 333ns
-    ledc_timing_init_struct.code_1_high = 11;   // 1.25us / 15 * 11 = 917ns
+    ledc_timing_init_struct.code_0_high = 4;  // 1.25us / 15 * 4 = 333ns
+    ledc_timing_init_struct.code_1_high = 11; // 1.25us / 15 * 11 = 917ns
     ledc_timing_init_struct.reset_high = 20;
     ledc_timing_init_struct.reset_low = 300;
     ledc_timing_init(&ledc_timing_init_struct);
@@ -155,6 +176,5 @@ void ws281x_init()
     /* Startup module, make sure to enable the module before starting DMA */
     ledc_cmd(ENABLE);
 #endif
-
 }
 #endif

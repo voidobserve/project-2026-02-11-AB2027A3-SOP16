@@ -25,11 +25,13 @@ void uws2812_style_powerup_default(void)
 
     uint32_t colors[MAX_NUM_COLORS];
     memset(colors, 0x00, sizeof(colors));
-    colors[0] = RED;
+    // colors[0] = RED;
     // colors[0] = GREEN;
     // colors[0] = BLUE;
+    colors[0] = RED | GREEN | BLUE;
+    // colors[0] = BLACK;
 
-
+    WS2812FX_setBrightness(64); // 亮度
     WS2812FX_set_coloQty(0, 1);
     WS2812FX_setSegment_colorsOptions(
         0,                          // 第0段

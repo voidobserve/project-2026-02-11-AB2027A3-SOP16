@@ -33,8 +33,8 @@
 #define BSP_ADKEY_EN                    0                       //AD按键使能
 #define BSP_IOKEY_EN                    1                       //IO按鍵使能
 #define BSP_TOUCH_KEY_EN                0                       //触摸按键功能
-#define BSP_CHARGE_EN                   1                       //充电功能使能
-#define BSP_LED_EN                      1                       //LED指示灯使能
+#define BSP_CHARGE_EN                   0                       //充电功能使能
+#define BSP_LED_EN                      0                       //LED指示灯使能
 
 /*****************************************************************************
  * Module    : 电池电量检测
@@ -54,6 +54,9 @@
 #define FLASH_QUAD_READ                 0                               //是否支持4线模式
 #define SPIFLASH_SPEED_UP_EN            1                               //SPI FLASH提速
 #define FLASH_PROTECT_EN                0                               //FLASH写保护使能
+
+// #define USERBIN_START_ADDR              0x20000                         //userbin存放的flash基地址
+// #define USERBIN_SIZE                    0x8000                          //userbin存放的flash区域大小
 
 #define CM_SIZE                         0x2000                          //参数区大小，至少8k(需4K对齐)
 #define CM_START                        (FLASH_SIZE - CM_SIZE)          //参数区默认放在flash最后面

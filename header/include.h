@@ -13,5 +13,6 @@
 #include "bsp.h"
 
 #include "user_config.h"
+#include "ws2812_config.h"
 
 #endif // _INCLUDE_H

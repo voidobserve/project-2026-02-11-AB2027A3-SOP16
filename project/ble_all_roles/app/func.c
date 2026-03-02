@@ -1,5 +1,5 @@
 #include "include.h"
-#include "user_api.h"
+#include "user_config.h" 
 
 func_cb_t func_cb AT(.buf.func_cb);
 
@@ -23,10 +23,7 @@ void func_process(void)
     prod_test_process();
 
     user_ws2812_service();
-
-
-    // uart_transfer_example();
-    uart_data_handle();
+    user_main();
 }
 
 //func common message process

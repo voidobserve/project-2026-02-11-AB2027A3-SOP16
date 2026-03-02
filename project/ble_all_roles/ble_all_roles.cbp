@@ -12,10 +12,12 @@
 				<Option type="1" />
 				<Option compiler="riscv32" />
 				<Compiler>
-					<Add directory="user/ws2812_lib" />
 					<Add directory="user" />
-					<Add directory="user/user_for_driver_on_chip/user_uart" />
+					<Add directory="user/driver_on_chip" />
+					<Add directory="user/ws2812_lib" />
 					<Add directory="user/user_test" />
+					<Add directory="user/uart_handle" />
+					<Add directory="user/hardware" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -357,11 +359,20 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="user/ble_user_service.h" />
-		<Unit filename="user/user_api.h" />
-		<Unit filename="user/user_config.h" />
-		<Unit filename="user/user_for_driver_on_chip/user_uart/user_uart.c">
+		<Unit filename="user/driver_on_chip/user_uart.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="user/driver_on_chip/user_uart.h" />
+		<Unit filename="user/hardware/SIT2515.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/hardware/SIT2515.h" />
+		<Unit filename="user/uart_handle/uart_handle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/uart_handle/uart_handle.h" />
+		<Unit filename="user/user_api.h" />
+		<Unit filename="user/user_config.h" />
 		<Unit filename="user/user_for_driver_on_chip/user_uart/user_uart.h" />
 		<Unit filename="user/user_for_driver_on_chip/user_uart_fot/user_uart_fot.h" />
 		<Unit filename="user/user_for_driver_on_chip/user_uart_high_speed/user_uart_fot.h" />

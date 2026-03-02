@@ -1,16 +1,25 @@
 #include "user_config.h"
 #include "user_uart.h"
+#include "SIT2515.h"
 
+#include "uart_handle.h"
 // #include "driver_gpio.h" // 初始化 测试时使用的gpio，需要引用该头文件
-#include "user_debug_io.h"
 
-// // 定义幻彩灯效果控制结构体
-// typedef struct
-// {
-//     /* data */
-// } fantastic_color_effect_t;
+volatile user_data_t user_data = {0};
 
-// volatile fantastic_color_effect_t fc_effect;
+#define USER_DATE_SAVE_START_ADDR 0x00 // 起始地址
+void user_data_write(void)
+{
+    bsp_param_write(&user_data, USER_DATE_SAVE_START_ADDR, sizeof(user_data_t));
+    bsp_param_sync(); // 同步数据到flash
+}
+
+void user_data_read(void)
+{
+    bsp_param_read(&user_data, USER_DATE_SAVE_START_ADDR, sizeof(user_data_t));
+
+    my_printf("save.color == 0x%lx\n", user_data.color);
+}
 
 // 初始化函数，在 bsp_sys.c -> bsp_sys_init() 中调用
 void user_init(void)
@@ -36,7 +45,25 @@ void user_init(void)
     // 初始化串口
     user_uart_init();
 
+#if USER_DEBUG_ENABLE
     user_debug_io_init();
+#endif
+
+    gpio_init_typedef gpio_init_structure;
+
+    gpio_init_structure.gpio_pin = GPIO_PIN_9;
+    gpio_init_structure.gpio_dir = GPIO_DIR_OUTPUT;
+    gpio_init_structure.gpio_fen = GPIO_FEN_GPIO;
+    gpio_init_structure.gpio_fdir = GPIO_FDIR_SELF;
+    gpio_init_structure.gpio_mode = GPIO_MODE_DIGITAL;
+    gpio_init_structure.gpio_drv = GPIO_DRV_6MA;
+    gpio_init(GPIOB_REG, &gpio_init_structure);
+    gpio_set_bits(GPIOB_REG, GPIO_PIN_9); 
+
+    SIT2515_SPICS_Init(); // 初始化片选脚
+    SIT2515_Init();
+
+    user_data_read(); //
 }
 
 // 在 project/ble_all_roles/app/func.c -> func_process() 中调用
@@ -57,408 +84,27 @@ void user_ws2812_service(void)
 #endif
 }
 
-#define UART_DATA_HANDLE_TIMEOUT ((u16)2000) // 接收数据的超时时间，单位：ms
-#define UART_DATA_HANDLE_FORMAT_HEAD 0xA5    // 数据格式头
-
-enum
+void can_test(void)
 {
-    UART_DATA_HANDLE_STATUS_IDLE = 0,
-    UART_DATA_HANDLE_STATUS_FORMAT_HEAD, // 格式头
-    UART_DATA_HANDLE_STATUS_LEN,         // 数据长度
-    UART_DATA_HANDLE_STATUS_END,
-};
+    u8 buf[8] = {0};
+    u8 ret = 0;
+    u8 i;
+    ret = CAN_Receive_Buffer(buf);
+    if (ret == 0)
+    {
+        return;
+    }
 
-void uart_data_handle(void);
-// void uart_data_recv_timeout_add(void);
+    for (i = 0; i < ret; i++)
+    {
+        my_printf("buf[%02d] == %02x\n", (u16)i, buf[i]);
+    }
+}
 
-// 由定时中断调用，累计超时计数
-// void uart_data_recv_timeout_add(void)
-// {
-//     if (timeout_enable)
-//     {
-//         timeout_cnt += 10; // 有计数溢出的风险，要注意在溢出前进行处理
-//     }
-// }
-
-// 处理串口接收到的数据
-void uart_data_handle(void)
+// 在 project/ble_all_roles/app/func.c -> func_process() 中调用
+// 会循环调用，所以该函数内部不用写 while(1)
+void user_main(void)
 {
-#if 1
-    static volatile u8 cmd_buff[10] = {0};    // 存放接收到的一条指令
-    static volatile u8 cur_cmd_buff_len = 0;  // 指示当前接收到的指令的索引（之后会在程序中更新，不用清零）
-    static volatile u8 dest_cmd_buff_len = 0; // 存放最终要接收的指令长度（之后会在程序中更新，不用清零）
-
-    static volatile u8 timeout_enable = 0; // 超时计数使能
-    static volatile u32 timeout_cnt = 0;   // 超时计数（基于系统时基，运行时值不为0）
-
-    static volatile u8 uart_data_handle_status = UART_DATA_HANDLE_STATUS_IDLE; // 状态机
-
-    u8 recv_byte;
-    u8 check_sum = 0; // 存放计算之后的校验和
-    u8 i;             // 循环计数值
-
-    uint32_t colors[MAX_NUM_COLORS];
-
-    USER_DEBUG_IO_TOGGLE(); // 目前最长是 189 ms 调用一次
-
-    // 接收超时处理：
-    if (0 == uart_rxbuffer_get_count())
-    {
-        if (timeout_enable &&
-            tick_check_expire(timeout_cnt, UART_DATA_HANDLE_TIMEOUT))
-        {
-            // 接收超时
-            timeout_cnt = 0;
-            timeout_enable = 0;                                     // 不使能超时计数
-            uart_data_handle_status = UART_DATA_HANDLE_STATUS_IDLE; // 重新开始接收
-
-            // 超时之后，打印缓冲区内的数据
-            my_printf("=================================>\n");
-            my_printf("uart recv timeout\n");
-            for (i = 0; i < ARRAY_SIZE(cmd_buff); i++)
-            {
-                my_printf("%02x", (u16)cmd_buff[i]);
-            }
-            my_printf("=================================^\n");
-        }
-
-        return; // 串口缓冲区的数据为空，直接返回
-    }
-
-    while (1)
-    {
-        if (uart_rxbuffer_get_count() == 0) // 退出条件
-        {
-            break;
-        }
-
-        timeout_enable = 1;       // 使能超时计数
-        timeout_cnt = tick_get(); // 更新超时计数的时基
-        recv_byte = uart_rxbuffer_get_byte();
-
-        switch (uart_data_handle_status)
-        {
-        case UART_DATA_HANDLE_STATUS_IDLE:
-            if (UART_DATA_HANDLE_FORMAT_HEAD == recv_byte)
-            {
-                cmd_buff[0] = recv_byte;
-                cur_cmd_buff_len = 1;
-
-                uart_data_handle_status = UART_DATA_HANDLE_STATUS_FORMAT_HEAD;
-            }
-            break;
-            // ===============================================================
-        case UART_DATA_HANDLE_STATUS_FORMAT_HEAD:
-            cmd_buff[cur_cmd_buff_len++] = recv_byte;
-            dest_cmd_buff_len = recv_byte;                         // 存放要接收的数据长度
-            uart_data_handle_status = UART_DATA_HANDLE_STATUS_LEN; // 表示接收到了数据帧长度
-            // my_printf("len == %bu\n", dest_cmd_buff_len);
-            break;
-            // ===============================================================
-        case UART_DATA_HANDLE_STATUS_LEN:
-            cmd_buff[cur_cmd_buff_len++] = recv_byte;
-            if (cur_cmd_buff_len >= dest_cmd_buff_len) // 如果接收完所有的数据
-            {
-                for (i = 0; i < dest_cmd_buff_len - 1; i++)
-                {
-                    check_sum += cmd_buff[i];
-                }
-
-                if (check_sum != cmd_buff[dest_cmd_buff_len - 1])
-                {
-                    // 校验和错误
-                    my_printf("check sum error\n");
-                    timeout_cnt = 0;
-                    timeout_enable = 0;                                     // 不使能超时计数
-                    uart_data_handle_status = UART_DATA_HANDLE_STATUS_IDLE; // 重新接收数据
-                }
-                else
-                {
-                    // 校验和正确
-                    my_printf("check sum ok\n");
-                    uart_data_handle_status = UART_DATA_HANDLE_STATUS_END;
-                }
-            }
-            break;
-        // ===============================================================
-        default:
-
-            break;
-        }
-    }
-
-    if (UART_DATA_HANDLE_STATUS_END != uart_data_handle_status)
-    {
-        return; // 未接收完数据，不进入下面的处理操作，函数直接返回
-    }
-
-    // 打印接收到的一帧数据
-    // for (i = 0; i < dest_cmd_buff_len; i++)
-    // {
-    //     my_printf("0x%02x ", (u16)cmd_buff[i]);
-    // }
-    // my_printf("\n");
-
-    // 处理一帧数据：
-    switch (cmd_buff[2])
-    {
-        // 判断是哪个电机
-    case 0x01:
-        // my_printf("obj == motor 0 \n");
-        switch (cmd_buff[3])
-        {
-            // 判断要执行什么操作
-        case 0x00: // 停止
-            my_printf("motor 0 stop\n");
-            memset(colors, 0x00, sizeof(colors));
-            colors[0] = BLACK;
-
-            WS2812FX_set_coloQty(0, 1);
-            WS2812FX_setSegment_colorsOptions(
-                0,                        // 第0段
-                0,                        // 起始位置
-                WS2812_LED_NUM_MAX - 1,   // 结束位置
-                &WS2812FX_mode_static,    // 效果
-                colors,                   // 颜色，WS2812FX_setColors设置
-                WS2812FX_getSpeed_seg(0), // 速度
-                SIZE_SMALL                // 选项，这里像素点大小：1
-            );
-            WS2812FX_trigger();
-            WS2812FX_start();
-
-            break;
-        case 0x01: // 正转
-            my_printf("motor 0 forward\n");
-
-            memset(colors, 0x00, sizeof(colors));
-            colors[0] = RED;
-
-            WS2812FX_set_coloQty(0, 1);
-            WS2812FX_setSegment_colorsOptions(
-                0,                        // 第0段
-                0,                        // 起始位置
-                WS2812_LED_NUM_MAX - 1,   // 结束位置
-                &WS2812FX_mode_static,    // 效果
-                colors,                   // 颜色，WS2812FX_setColors设置
-                WS2812FX_getSpeed_seg(0), // 速度
-                SIZE_SMALL                // 选项，这里像素点大小：1
-            );
-            WS2812FX_trigger();
-            WS2812FX_start();
-
-            break;
-        case 0x02: // 反转
-            my_printf("motor 0 reverse\n");
-
-            memset(colors, 0x00, sizeof(colors));
-            colors[0] = GREEN;
-
-            WS2812FX_set_coloQty(0, 1);
-            WS2812FX_setSegment_colorsOptions(
-                0,                        // 第0段
-                0,                        // 起始位置
-                WS2812_LED_NUM_MAX - 1,   // 结束位置
-                &WS2812FX_mode_static,    // 效果
-                colors,                   // 颜色，WS2812FX_setColors设置
-                WS2812FX_getSpeed_seg(0), // 速度
-                SIZE_SMALL                // 选项，这里像素点大小：1
-            );
-            WS2812FX_trigger();
-            WS2812FX_start();
-            break;
-        default:
-            break;
-        }
-        break;
-        // =======================================
-    case 0x02:
-        // my_printf("motor 1 \n");
-        switch (cmd_buff[3])
-        {
-            // 判断要执行什么操作
-        case 0x00: // 停止
-            break;
-        case 0x01: // 正转
-            break;
-        case 0x02: // 反转
-            break;
-        default:
-            break;
-        }
-        break;
-
-    default:
-        break;
-    }
-
-    // 处理完成后，重新接收数据
-    timeout_cnt = 0;
-    timeout_enable = 0; // 不使能超时计数
-    uart_data_handle_status = UART_DATA_HANDLE_STATUS_IDLE;
-
-#if 0
-    timeout_enable = 1;       // 使能超时计数
-    timeout_cnt = tick_get(); // 更新超时计数的时基
-    recv_byte = uart_rxbuffer_get_byte();
-
-    switch (uart_data_handle_status)
-    {
-    case UART_DATA_HANDLE_STATUS_IDLE:
-        if (UART_DATA_HANDLE_FORMAT_HEAD == recv_byte)
-        {
-            cmd_buff[0] = recv_byte;
-            cur_cmd_buff_len = 1;
-
-            uart_data_handle_status = UART_DATA_HANDLE_STATUS_FORMAT_HEAD;
-        }
-        break;
-        // ===============================================================
-    case UART_DATA_HANDLE_STATUS_FORMAT_HEAD:
-        cmd_buff[cur_cmd_buff_len++] = recv_byte;
-        dest_cmd_buff_len = recv_byte;                         // 存放要接收的数据长度
-        uart_data_handle_status = UART_DATA_HANDLE_STATUS_LEN; // 表示接收到了数据帧长度
-        // my_printf("len == %bu\n", dest_cmd_buff_len);
-        break;
-        // ===============================================================
-    case UART_DATA_HANDLE_STATUS_LEN:
-        cmd_buff[cur_cmd_buff_len++] = recv_byte;
-        if (cur_cmd_buff_len >= dest_cmd_buff_len) // 如果接收完所有的数据
-        {
-            for (i = 0; i < dest_cmd_buff_len - 1; i++)
-            {
-                check_sum += cmd_buff[i];
-            }
-
-            if (check_sum != cmd_buff[dest_cmd_buff_len - 1])
-            {
-                // 校验和错误
-                my_printf("check sum error\n");
-                timeout_cnt = 0;
-                timeout_enable = 0;                                     // 不使能超时计数
-                uart_data_handle_status = UART_DATA_HANDLE_STATUS_IDLE; // 重新接收数据
-            }
-            else
-            {
-                // 校验和正确
-                my_printf("check sum ok\n");
-                uart_data_handle_status = UART_DATA_HANDLE_STATUS_END;
-            }
-        }
-        break;
-    // ===============================================================
-    default:
-
-        break;
-    }
-
-    if (UART_DATA_HANDLE_STATUS_END != uart_data_handle_status)
-    {
-        return; // 未接收完数据，不进入下面的处理操作，函数直接返回
-    }
-
-    // 打印接收到的一帧数据
-    // for (i = 0; i < dest_cmd_buff_len; i++)
-    // {
-    //     my_printf("0x%02x ", (u16)cmd_buff[i]);
-    // }
-    // my_printf("\n");
-
-    switch (cmd_buff[2])
-    {
-        // 判断是哪个电机
-    case 0x01:
-        // my_printf("obj == motor 0 \n");
-        switch (cmd_buff[3])
-        {
-            // 判断要执行什么操作
-        case 0x00: // 停止
-            my_printf("motor 0 stop\n");
-            memset(colors, 0x00, sizeof(colors));
-            colors[0] = BLACK;
-
-            WS2812FX_set_coloQty(0, 1);
-            WS2812FX_setSegment_colorsOptions(
-                0,                        // 第0段
-                0,                        // 起始位置
-                WS2812_LED_NUM_MAX - 1,   // 结束位置
-                &WS2812FX_mode_static,    // 效果
-                colors,                   // 颜色，WS2812FX_setColors设置
-                WS2812FX_getSpeed_seg(0), // 速度
-                SIZE_SMALL                // 选项，这里像素点大小：1
-            );
-            WS2812FX_trigger();
-            WS2812FX_start();
-
-            break;
-        case 0x01: // 正转
-            my_printf("motor 0 forward\n");
-
-            memset(colors, 0x00, sizeof(colors));
-            colors[0] = RED;
-
-            WS2812FX_set_coloQty(0, 1);
-            WS2812FX_setSegment_colorsOptions(
-                0,                        // 第0段
-                0,                        // 起始位置
-                WS2812_LED_NUM_MAX - 1,   // 结束位置
-                &WS2812FX_mode_static,    // 效果
-                colors,                   // 颜色，WS2812FX_setColors设置
-                WS2812FX_getSpeed_seg(0), // 速度
-                SIZE_SMALL                // 选项，这里像素点大小：1
-            );
-            WS2812FX_trigger();
-            WS2812FX_start();
-
-            break;
-        case 0x02: // 反转
-            my_printf("motor 0 reverse\n");
-
-            memset(colors, 0x00, sizeof(colors));
-            colors[0] = GREEN;
-
-            WS2812FX_set_coloQty(0, 1);
-            WS2812FX_setSegment_colorsOptions(
-                0,                        // 第0段
-                0,                        // 起始位置
-                WS2812_LED_NUM_MAX - 1,   // 结束位置
-                &WS2812FX_mode_static,    // 效果
-                colors,                   // 颜色，WS2812FX_setColors设置
-                WS2812FX_getSpeed_seg(0), // 速度
-                SIZE_SMALL                // 选项，这里像素点大小：1
-            );
-            WS2812FX_trigger();
-            WS2812FX_start();
-            break;
-        default:
-            break;
-        }
-        break;
-        // =======================================
-    case 0x02:
-        // my_printf("motor 1 \n");
-        switch (cmd_buff[3])
-        {
-            // 判断要执行什么操作
-        case 0x00: // 停止
-            break;
-        case 0x01: // 正转
-            break;
-        case 0x02: // 反转
-            break;
-        default:
-            break;
-        }
-        break;
-
-    default:
-        break;
-    }
-
-    // 处理完成后，重新接收数据
-    timeout_cnt = 0;
-    timeout_enable = 0; // 不使能超时计数
-    uart_data_handle_status = UART_DATA_HANDLE_STATUS_IDLE;
-#endif
-
-#endif
+    uart_data_handle();
+    can_test(); 
 }
