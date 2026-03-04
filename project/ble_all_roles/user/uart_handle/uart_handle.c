@@ -1,6 +1,36 @@
 #include "uart_handle.h"
 #include "user_config.h"
 
+/**
+ * @brief 发送控制命令给单片机
+ *
+ * @param motor_index 电机索引，
+ *              0x01：电机1，
+ *              0x02：电机2
+ * @param cmd
+ *          0x00：停止，
+ *          0x01：正转，
+ *          0x02：反转
+ */
+void uart_send_cmd(motor_index_t motor_index, motor_cmd_t cmd)
+{
+    u8 i;
+    u8 buf[5] = {
+        UART_DATA_HANDLE_FORMAT_HEAD, // 格式头
+        0x05,                         // 整一帧数据的长度
+        motor_index,                  // 电机索引，
+        cmd,                          // 命令
+        0x00,                         // 校验和，后面会计算
+    };
+
+    buf[4] = (buf[0] + buf[1] + buf[2] + buf[3]) & 0xFF; // 计算校验和
+
+    for (i = 0; i < ARRAY_SIZE(buf); i++)
+    {
+        uart_send_data(UART, (u16)buf[i]);
+    }
+}
+
 // 处理串口接收到的数据
 void uart_data_handle(void)
 {
@@ -243,6 +273,7 @@ void uart_data_handle(void)
         break;
     }
 
+    // USER_TO_DO
     if (motor_0_status == 0 && motor_1_status == 0)
     {
         // 如果两个电机都停止，关闭灯光
@@ -264,7 +295,7 @@ void uart_data_handle(void)
     }
     else if (motor_0_status != 0 || motor_1_status != 0)
     {
-        // 如果两个电机都启动，打开灯光 
+        // 如果两个电机都启动，打开灯光
         memset(colors, 0x00, sizeof(colors));
         colors[0] = RED | GREEN | BLUE;
 
@@ -282,7 +313,7 @@ void uart_data_handle(void)
         WS2812FX_start();
     }
 
-    // 修改灯光效果后，需要保存效果到flash 
+    // 修改灯光效果后，需要保存效果到flash
     user_data.color = colors[0];
     user_data_write();
 

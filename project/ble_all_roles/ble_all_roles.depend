@@ -562,7 +562,7 @@
 	"include.h"
 	"driver_uart.h"
 
-1772447090 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_my_effect.c
+1772517006 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_my_effect.c
 	"include.h"
 	"ws2812fx.H"
 	"ws2812_Adafruit_NeoPixel.H"
@@ -604,7 +604,7 @@
 	<stdlib.h>
 	<string.h>
 
-1772445314 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
+1772613596 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
 	"user_config.h"
 	"user_uart.h"
 	"SIT2515.h"
@@ -633,7 +633,7 @@
 
 1717835814 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx_tool.h
 
-1772438312 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_driver.c
+1772447323 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_driver.c
 	"include.h"
 	"driver_gpio.h"
 	"ws2812_bsp.h"
@@ -686,10 +686,10 @@
 	"ws2812fx_effect.h"
 	"ws2812_my_effect.h"
 
-1772004666 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.h
+1772613553 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.h
 	"include.h"
 
-1772430670 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.c
+1772613413 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.c
 	"uart_handle.h"
 	"user_config.h"
 
@@ -701,7 +701,7 @@
 	"driver_gpio.h"
 	"driver_uart.h"
 
-1772433578 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\hardware\sit2515.c
+1772606123 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\hardware\sit2515.c
 	"include.h"
 	"SIT2515.h"
 	"driver_gpio.h"

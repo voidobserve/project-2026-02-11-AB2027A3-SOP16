@@ -13,6 +13,8 @@
 
 volatile unsigned char CAN_R_Buffer[8];  // CAN接收数据保存缓冲区
 volatile unsigned char CAN_R_RecNum = 0; // 接收数据个数
+
+#define STANDARD_ID 0x501
 /**********************************************************************************
  * 文件名  ：SIT2515.c
  * 描述    ：SIT2515驱动
@@ -75,7 +77,7 @@ volatile unsigned char CAN_R_RecNum = 0; // 接收数据个数
 #define SPI_MOSI_IO_PORT GPIOA_REG // SPI MOSI IO对应的端口号
 #define SPI_MOSI_IO_PIN GPIO_PIN_2 // SPI MOSI IO引脚序号
 #define SPI_MOSI_SET() gpio_set_bits(SPI_MOSI_IO_PORT, SPI_MOSI_IO_PIN)
-#define SPI_MOSI_RESET() gpio_set_bits(SPI_MOSI_IO_PORT, SPI_MOSI_IO_PIN)
+#define SPI_MOSI_RESET() gpio_reset_bits(SPI_MOSI_IO_PORT, SPI_MOSI_IO_PIN)
 #define SIT2515_MOSI_INIT()                                 \
     do                                                      \
     {                                                       \
@@ -98,6 +100,8 @@ volatile unsigned char CAN_R_RecNum = 0; // 接收数据个数
 //         GPIOAPU |= BIT(SPI_MISO_PIN);  \
 //     }
 // #define MISO_IS_H() (GPIOA & BIT(SPI_MISO_PIN))
+
+// 输入上拉
 #define SPI_MISO_IO_PORT GPIOA_REG // SPI MISO IO对应的端口号
 #define SPI_MISO_IO_PIN GPIO_PIN_1 // SPI MISO IO引脚序号
 #define SIT2515_MISO_INIT()                                 \
@@ -105,23 +109,25 @@ volatile unsigned char CAN_R_RecNum = 0; // 接收数据个数
     {                                                       \
         gpio_init_typedef gpio_init_structure;              \
         gpio_init_structure.gpio_pin = SPI_MISO_IO_PIN;     \
-        gpio_init_structure.gpio_dir = GPIO_DIR_OUTPUT;     \
+        gpio_init_structure.gpio_dir = GPIO_DIR_INPUT;      \
         gpio_init_structure.gpio_fen = GPIO_FEN_GPIO;       \
         gpio_init_structure.gpio_fdir = GPIO_FDIR_SELF;     \
         gpio_init_structure.gpio_mode = GPIO_MODE_DIGITAL;  \
-        gpio_init_structure.gpio_drv = GPIO_DRV_6MA;        \
+        gpio_init_structure.gpio_pupd = GPIO_PUPD_PU10K;    \
         gpio_init(SPI_MISO_IO_PORT, &gpio_init_structure);  \
         gpio_reset_bits(SPI_MISO_IO_PORT, SPI_MISO_IO_PIN); \
     } while (0)
-#define MISO_IS_H()  gpio_read_bit(SPI_MISO_IO_PORT, SPI_MISO_IO_PIN)
+#define MISO_IS_H() gpio_read_bit(SPI_MISO_IO_PORT, SPI_MISO_IO_PIN)
 
+// #define SPI_MODE_CFG SPI_MODE0
 #define SPI_MODE_CFG SPI_MODE1
 #define SPI_MODE0 0
 #define SPI_MODE1 1
 #define SPI_MODE2 2
 #define SPI_MODE3 3
 
-#define bsp_spi_delay() delay_us(1)
+// #define bsp_spi_delay() delay_us(1)
+#define bsp_spi_delay() delay_us(5)
 
 void SPI_MasterInit1(void)
 {
@@ -278,8 +284,9 @@ unsigned char SIT2515_ReadMultipleData(u8 *pbuf, u8 addr)
     SIT2515_CS_RESET(); // 置SIT2515的CS为低电平
     bsp_spi_delay();
     SPI_SendByte(CAN_READ); // 发送读命令
-    SPI_SendByte(RXB0DLC);  // 发送地址
-    len = SPI_ReadByte();   // 读取数据个数
+    // SPI_SendByte(RXB0DLC);  // 发送地址
+    SPI_SendByte(addr);   // 发送地址
+    len = SPI_ReadByte(); // 读取数据个数
     // printf("read len = %d\n",len);
     for (i = 0; i < len; i++)
     {
@@ -349,8 +356,8 @@ void SIT2515_SPICS_Init(void)
  * 返回值  : 无
  * 说明    : 初始化包括：软件复位、工作波特率设置、标识符相关配置等。
  *******************************************************************************/
-#define STANDARD_ID 0x501
 
+#if 1
 void SIT2515_Init(void)
 {
     unsigned char temp = 0;
@@ -361,8 +368,8 @@ void SIT2515_Init(void)
     SIT2515_Reset(); // 发送复位指令软件复位SIT2515
     delay_5ms(2);    // 通过软件延时约nms(不准确)
 
-    // 设置波特率为250Kbps
-    SIT2515_WriteByte(CNF1, CAN_250Kbps);
+    // 设置波特率 为 500Kbps
+    SIT2515_WriteByte(CNF1, CAN_500Kbps);
     // set CNF2,SAM=0,在采样点对总线进行一次采样，PHSEG1=(2+1)TQ=3TQ,PRSEG=(0+1)TQ=1TQ
     SIT2515_WriteByte(CNF2, 0x80 | PHSEG1_3TQ | PRSEG_1TQ);
     // set CNF3,PHSEG2=(2+1)TQ=3TQ,同时当CANCTRL.CLKEN=1时设定CLKOUT引脚为时间输出使能位
@@ -415,7 +422,15 @@ void SIT2515_Init(void)
     {
         SIT2515_WriteByte(CANCTRL, REQOP_NORMAL | CLKOUT_ENABLED); // 再次将SIT2515设置为正常模式,退出配置模式
     }
+
+    // 添加验证读取
+    my_printf("CNF1 = %02x\n", SIT2515_ReadByte(CNF1));       // 应该返回   (0x00：500Kbps ，0x01: 250Kbps)
+    my_printf("CNF2 = %02x\n", SIT2515_ReadByte(CNF2));       // 应该返回 0x90
+    my_printf("CNF3 = %02x\n", SIT2515_ReadByte(CNF3));       // 应该返回 0x02
+    my_printf("CANCTRL = %02x\n", SIT2515_ReadByte(CANCTRL)); // 正常模式
+    my_printf("CANSTAT = %02x\n", SIT2515_ReadByte(CANSTAT)); // 状态寄存器
 }
+#endif
 
 /*******************************************************************************
  * 函数名  : CAN_Send_Buffer
@@ -449,38 +464,75 @@ void CAN_Send_Buffer(unsigned char *CAN_TX_Buf, unsigned char len)
  *******************************************************************************/
 unsigned char CAN_Receive_Buffer(unsigned char *CAN_RX_Buf)
 {
-    unsigned char len = 0, temp = 0;
+    unsigned char len = 0;
+    unsigned char temp = 0;
+    u8 sid_h = 0;
+    u8 sid_l = 0;
+    u16 sid = 0;
+
     // printf("CAN_RX_STATUS = %02x\n",SIT2515_ReadByte(CAN_RX_STATUS));
     temp = SIT2515_ReadByte(CANINTF);
-    printf("CANINTF = %02x\n", temp);
+
+    // my_printf("CANINTF = %02x\n", temp);
+
     if (temp & 0x01) // RX0
     {
-        u8 rxb0_sidh, rxb0_sidl;
-        u16 sid;
-
-        rxb0_sidh = SIT2515_ReadByte(RXB0SIDH);
-        rxb0_sidl = SIT2515_ReadByte(RXB0SIDL);
-        printf("RXB0SIDH = %02x,  RXB0SIDL = %02x\n", rxb0_sidh, rxb0_sidl);
-        sid = (rxb0_sidh << 3) | (rxb0_sidl >> 5);
-        printf("sid = %x\n", sid);
-        if (sid == STANDARD_ID)
+        sid_h = SIT2515_ReadByte(RXB0SIDH);
+        sid_l = SIT2515_ReadByte(RXB0SIDL);
+        // my_printf("RXB0SIDH = %02x,  RXB0SIDL = %02x\n", sid_h, sid_l);
+        sid = (sid_h << 3) | (sid_l >> 5);
+        // my_printf("sid = %x\n", sid);
+        // if (sid == STANDARD_ID) // USER_TO_DO　测试时，屏蔽这里，接收所有数据帧
         {
-            if ((rxb0_sidl & 0x10) == 0) // 数据帧，非远程帧
+            if ((sid_l & 0x10) == 0) // 数据帧，非远程帧
             {
                 len = SIT2515_ReadMultipleData(CAN_RX_Buf, RXB0DLC); // 接收数据并返回数据长度
-                printf("CAN RX0 (%d):", len);
-                print_r(CAN_RX_Buf, len);
+                // my_printf("CAN RX0 (%d):", len);
+                // my_printf(CAN_RX_Buf, len);
+
+                // u8 i = 0;
+                // for (i = 0; i < len; i++)
+                // {
+                //     my_printf("%02x ", CAN_RX_Buf[i]);
+                // }
+                // my_printf("\n");
             }
         }
+        
         SIT2515_WriteByte(CANINTF, temp & ~(0x03)); // 清除中断标志位(中断标志寄存器必须由MCU清零)
     }
 
     if (temp & 0x02) // RX1
     {
         // len=SIT2515_ReadMultipleData(CAN_RX_Buf,RXB1DLC);//接收数据并返回数据长度
-        // SIT2515_WriteByte(CANINTF,temp&~(0x02));//清除中断标志位(中断标志寄存器必须由MCU清零)
-        printf("CAN RX1: \n");
+
+        // my_printf("CAN RX1: \n");
         // print_r(CAN_RX_Buf, len);
+        sid_h = SIT2515_ReadByte(RXB1SIDH);
+        sid_l = SIT2515_ReadByte(RXB1SIDL);
+        // my_printf("RXB1SIDH = %02x,  RXB1SIDL = %02x\n", sid_h, sid_l);
+        sid = (sid_h << 3) | (sid_l >> 5);
+        // my_printf("sid = %x\n", sid);
+        // if (sid == STANDARD_ID) // USER_TO_DO　测试时，屏蔽这里，接收所有数据帧
+        {
+            // my_printf("sid = %x\n", sid);
+            if ((sid_l & 0x10) == 0) // 数据帧，非远程帧
+            {
+                len = SIT2515_ReadMultipleData(CAN_RX_Buf, RXB1DLC); // 接收数据并返回数据长度
+                // my_printf("CAN RX1 (%d):", len);
+                // my_printf(CAN_RX_Buf, len);
+
+                // u8 i = 0;
+                // for (i = 0; i < len; i++)
+                // {
+                //     my_printf("%02x ", CAN_RX_Buf[i]);
+                // }
+                // my_printf("\n");
+            }
+        }
+
+        SIT2515_WriteByte(CANINTF, temp & ~(0x02)); // 清除中断标志位(中断标志寄存器必须由MCU清零)
     }
+
     return len;
 }

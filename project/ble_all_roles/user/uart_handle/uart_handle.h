@@ -14,7 +14,23 @@ enum
     UART_DATA_HANDLE_STATUS_END,
 };
 
+// 串口控制命令，蓝牙ic->单片机
+enum
+{
+    MOTOR_CMD_STOP = 0x00,
+    MOTOR_CMD_FORWARD = 0x01,
+    MOTOR_CMD_REVERSE = 0x02,
+};
+typedef u8 motor_cmd_t;
+
+enum
+{
+    MOTOR_INDEX_LEFT = 0x00,
+    MOTOR_INDEX_RIGHT = 0x01,
+};
+typedef u8 motor_index_t;
+
+void uart_send_cmd(motor_index_t motor_index, motor_cmd_t cmd);
 void uart_data_handle(void);
 
 #endif
-

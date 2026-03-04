@@ -27,7 +27,8 @@ void user_init(void)
 
 #if WS2812_LIB_EN
     WS2812FX_init(WS2812_LED_NUM_MAX, WS2812_NEO_TYPE);
-    WS2812FX_setBrightness(255);
+    // WS2812FX_setBrightness(255);
+    WS2812FX_setBrightness(255 / 4); // 亮度
 
     // 设置上电默认样式
     uws2812_style_powerup_default();
@@ -49,8 +50,8 @@ void user_init(void)
     user_debug_io_init();
 #endif
 
+    // 幻彩灯电源控制，0：关闭，1：打开
     gpio_init_typedef gpio_init_structure;
-
     gpio_init_structure.gpio_pin = GPIO_PIN_9;
     gpio_init_structure.gpio_dir = GPIO_DIR_OUTPUT;
     gpio_init_structure.gpio_fen = GPIO_FEN_GPIO;
@@ -58,9 +59,8 @@ void user_init(void)
     gpio_init_structure.gpio_mode = GPIO_MODE_DIGITAL;
     gpio_init_structure.gpio_drv = GPIO_DRV_6MA;
     gpio_init(GPIOB_REG, &gpio_init_structure);
-    gpio_set_bits(GPIOB_REG, GPIO_PIN_9); 
-
-    SIT2515_SPICS_Init(); // 初始化片选脚
+    gpio_set_bits(GPIOB_REG, GPIO_PIN_9);
+ 
     SIT2515_Init();
 
     user_data_read(); //
@@ -84,7 +84,8 @@ void user_ws2812_service(void)
 #endif
 }
 
-void can_test(void)
+// 处理can收发器接收到的数据
+void can_handle(void)
 {
     u8 buf[8] = {0};
     u8 ret = 0;
@@ -95,9 +96,47 @@ void can_test(void)
         return;
     }
 
-    for (i = 0; i < ret; i++)
+    if (ret != 6)
     {
-        my_printf("buf[%02d] == %02x\n", (u16)i, buf[i]);
+        // 如果这一帧数据的长度不一致，不处理这一帧数据
+        my_printf("can frame len err\n");
+        return;
+    }
+
+    if (!(buf[0] == 0x00 &&
+          buf[1] == 0x00 &&
+          buf[2] == 0x01 &&
+          buf[3] == 0x2A &&
+          buf[4] == 0xD2))
+    {
+        // 如果数据的前缀不一致，直接返回，不处理这一帧数据
+        my_printf("can prefix err\n");
+        return;
+    }
+
+    switch (buf[5])
+    {
+    case 0xAB:
+    case 0xBA: // 0xAB 0xBA 都是同一个功能
+        // 打开左边电机、打开左边幻彩灯
+        my_printf("left open\n");
+        uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_FORWARD);
+        break;
+
+    case 0xAE:
+    case 0xEA: // 0xAE 0xEA 都是同一个功能
+               // 打开右边电机、打开右边幻彩灯
+        my_printf("right open\n");
+        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_FORWARD);
+        break;
+
+    case 0xAA: // 左边电机、幻彩灯打开了就关闭左边的，右边电机、幻彩灯打开了就关闭右边的
+        my_printf("close\n");
+
+        // 发送反转的控制命令，单片机收到后，执行反转的操作，电机过流或执行超时之后就会停止
+        uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
+        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
+        break;
     }
 }
 
@@ -106,5 +145,5 @@ void can_test(void)
 void user_main(void)
 {
     uart_data_handle();
-    can_test(); 
+    can_handle();
 }
