@@ -1,6 +1,8 @@
 #include "user_config.h"
 #include "user_uart.h"
 #include "SIT2515.h"
+#include "driver_uart.h"
+// #include "driver_gpio.h"
 
 #include "uart_handle.h"
 // #include "driver_gpio.h" // 初始化 测试时使用的gpio，需要引用该头文件
@@ -8,6 +10,7 @@
 volatile user_data_t user_data = {0};
 
 #define USER_DATE_SAVE_START_ADDR 0x00 // 起始地址
+
 void user_data_write(void)
 {
     bsp_param_write(&user_data, USER_DATE_SAVE_START_ADDR, sizeof(user_data_t));
@@ -17,8 +20,9 @@ void user_data_write(void)
 void user_data_read(void)
 {
     bsp_param_read(&user_data, USER_DATE_SAVE_START_ADDR, sizeof(user_data_t));
-
+#if USER_DEBUG_ENABLE
     my_printf("save.color == 0x%lx\n", user_data.color);
+#endif
 }
 
 // 初始化函数，在 bsp_sys.c -> bsp_sys_init() 中调用
@@ -31,7 +35,7 @@ void user_init(void)
     WS2812FX_setBrightness(255 / 4); // 亮度
 
     // 设置上电默认样式
-    uws2812_style_powerup_default();
+    // uws2812_style_powerup_default();
 
 #if UWS_POWERUP_DEFAULT == 0
     WS2812FX_show_cover_ptr(ws281x_none);
@@ -50,20 +54,32 @@ void user_init(void)
     user_debug_io_init();
 #endif
 
-    // 幻彩灯电源控制，0：关闭，1：打开
-    gpio_init_typedef gpio_init_structure;
-    gpio_init_structure.gpio_pin = GPIO_PIN_9;
-    gpio_init_structure.gpio_dir = GPIO_DIR_OUTPUT;
-    gpio_init_structure.gpio_fen = GPIO_FEN_GPIO;
-    gpio_init_structure.gpio_fdir = GPIO_FDIR_SELF;
-    gpio_init_structure.gpio_mode = GPIO_MODE_DIGITAL;
-    gpio_init_structure.gpio_drv = GPIO_DRV_6MA;
-    gpio_init(GPIOB_REG, &gpio_init_structure);
-    gpio_set_bits(GPIOB_REG, GPIO_PIN_9);
- 
-    SIT2515_Init();
+    colorful_light_power_ctl_io_init(); // 幻彩灯的电源控制脚
+    SIT2515_Init();                     // CAN收发器
 
-    user_data_read(); //
+    user_data_read(); // 读取flash保存的数据
+    if (user_data.valid != USER_DATA_VALID_VAL)
+    {
+        // 如果读出来的数据，校验不通过，说明是第一次上电
+        // 初始化变量
+        user_data.valid = USER_DATA_VALID_VAL;
+        user_data.color = RED | GREEN | BLUE;
+
+        user_data_write(); // 将数据写回flash
+#if USER_DEBUG_ENABLE
+        my_printf("is first pwr on\n");
+#endif
+    }
+    else
+    {
+#if USER_DEBUG_ENABLE
+        my_printf("is not first pwr on\n");
+#endif
+    }
+
+    colorful_light_ctl.left_light_enable = 0;
+    colorful_light_ctl.right_light_enable = 0;
+    colorful_light_set_static_color(user_data.color);
 }
 
 // 在 project/ble_all_roles/app/func.c -> func_process() 中调用
@@ -98,8 +114,10 @@ void can_handle(void)
 
     if (ret != 6)
     {
-        // 如果这一帧数据的长度不一致，不处理这一帧数据
+// 如果这一帧数据的长度不一致，不处理这一帧数据
+#if USER_DEBUG_ENABLE
         my_printf("can frame len err\n");
+#endif
         return;
     }
 
@@ -109,8 +127,10 @@ void can_handle(void)
           buf[3] == 0x2A &&
           buf[4] == 0xD2))
     {
-        // 如果数据的前缀不一致，直接返回，不处理这一帧数据
+// 如果数据的前缀不一致，直接返回，不处理这一帧数据
+#if USER_DEBUG_ENABLE
         my_printf("can prefix err\n");
+#endif
         return;
     }
 
@@ -118,24 +138,37 @@ void can_handle(void)
     {
     case 0xAB:
     case 0xBA: // 0xAB 0xBA 都是同一个功能
-        // 打开左边电机、打开左边幻彩灯
+// 打开左边电机、打开左边幻彩灯
+#if USER_DEBUG_ENABLE
         my_printf("left open\n");
+#endif 
         uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_FORWARD);
+        colorful_light_ctl.left_light_enable = 1;
+        COLORFUL_LIGHT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
         break;
 
     case 0xAE:
     case 0xEA: // 0xAE 0xEA 都是同一个功能
-               // 打开右边电机、打开右边幻彩灯
+// 打开右边电机、打开右边幻彩灯
+#if USER_DEBUG_ENABLE
         my_printf("right open\n");
+#endif 
         uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_FORWARD);
+        colorful_light_ctl.right_light_enable = 1;
+        COLORFUL_LIGHT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
         break;
 
     case 0xAA: // 左边电机、幻彩灯打开了就关闭左边的，右边电机、幻彩灯打开了就关闭右边的
+#if USER_DEBUG_ENABLE
         my_printf("close\n");
+#endif
 
         // 发送反转的控制命令，单片机收到后，执行反转的操作，电机过流或执行超时之后就会停止
         uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
-        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
+        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE); 
+        colorful_light_ctl.left_light_enable = 0;
+        colorful_light_ctl.right_light_enable = 0;
+        COLORFUL_LIGHT_POWER_CTL_PIN_RESET(); // 关闭幻彩灯电源
         break;
     }
 }
@@ -146,4 +179,11 @@ void user_main(void)
 {
     uart_data_handle();
     can_handle();
+
+    //     while (uart_get_flag(UART, UART_IT_TX) != SET)
+    //     ; // 等待发送完成
+    // uart_send_data(UART, 0x15);
+    //     while (uart_get_flag(UART, UART_IT_TX) != SET)
+    //     ; // 等待发送完成
+    // uart_send_data(UART, 0x16);
 }

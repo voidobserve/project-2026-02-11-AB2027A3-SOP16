@@ -1,6 +1,6 @@
 #include "user_uart.h"
 #include "driver_gpio.h"
-#include "driver_uart.h" 
+#include "driver_uart.h"
 
 #define UART_RX_BUF_SIZE 128
 
@@ -80,7 +80,7 @@ void uart_isr(void)
     if (uart_get_flag(UART, UART_IT_RX) != RESET)
     {
         byte = (u8)uart_receive_data(UART);
-        uart_rxbuffer_put_byte(byte); 
+        uart_rxbuffer_put_byte(byte);
         uart_clear_flag(UART, UART_IT_RX); // 清空接收标志位
     }
 }
@@ -125,7 +125,6 @@ void uart_transfer_init(u32 baud)
 
     uart_cmd(UART, ENABLE);
 }
- 
 
 void user_uart_putchar(char ch)
 {
@@ -138,7 +137,9 @@ void user_uart_init(void)
 {
     uart_transfer_init(USER_UART_BAUD);
 
-    // USER_TO_DO 只在调试时使用，最终需要去掉这个功能
+#if USER_DEBUG_ENABLE
+    // 只在调试时使用，最终需要去掉这个功能
     my_printf_init(user_uart_putchar); // 注册用户自定义的打印函数
     my_printf("user_uart_init\n");
+#endif
 }

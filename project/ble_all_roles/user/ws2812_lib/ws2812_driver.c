@@ -40,22 +40,65 @@ void ws281x_show(unsigned char *pixels_pattern, unsigned short pattern_size)
 
 #if WS2812_JUST_DIRECT_RGB == 0
     // 幻彩灯驱动函数
-    for (u16 i = 0; i < pattern_size; i++)
-        pixels_pattern[i] = ws2815_byte_reversed(pixels_pattern[i]); // 将数据高低位反转
+    // for (u16 i = 0; i < pattern_size; i++)
+    //     pixels_pattern[i] = ws2815_byte_reversed(pixels_pattern[i]); // 将数据高低位反转
 
-    static u8 dir = 0;
+    static volatile u8 dir = 0;
+#if 1
+    ledc_cmd(DISABLE);
+
     if (0 == dir)
     {
         // 第一路 ledc 引脚
-        gpio_func_mapping_config(WS2812_LEDC_PORT, WS2812_LEDC_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
+        if (0 == colorful_light_ctl.left_light_enable)
+        {
+            // 如果灯没有使能，填充黑色
+            for (u16 i = 0; i < pattern_size; i++)
+            {
+                pixels_pattern[i] = 0;
+            }
+        }
+        else
+        {
+            // 如果灯使能，填充RGB数据
+            for (u16 i = 0; i < pattern_size; i++)
+            {
+                pixels_pattern[i] = ws2815_byte_reversed(pixels_pattern[i]);
+            }
+        }
+
+        gpio_func_mapping_clear(WS2812_LEDC_PORT, WS2812_LEDC_PIN); // 取消映射，否则另外一路也会有同样的效果，会导致灯光闪烁
+        gpio_func_mapping_config(WS2812_LEDC_2_PORT, WS2812_LEDC_2_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
         dir = 1;
     }
     else
     {
         // 第二路 ledc 引脚
-        gpio_func_mapping_config(WS2812_LEDC_2_PORT, WS2812_LEDC_2_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
+        if (0 == colorful_light_ctl.right_light_enable)
+        {
+            // 如果灯没有使能，填充黑色
+            for (u16 i = 0; i < pattern_size; i++)
+            {
+                pixels_pattern[i] = 0;
+            }
+        }
+        else
+        {
+            // 如果灯使能，填充RGB数据
+            for (u16 i = 0; i < pattern_size; i++)
+            {
+                pixels_pattern[i] = ws2815_byte_reversed(pixels_pattern[i]);
+            }
+        }
+
+        gpio_func_mapping_clear(WS2812_LEDC_2_PORT, WS2812_LEDC_2_PIN); // 取消映射，否则另外一路也会有同样的效果，会导致灯光闪烁
+        gpio_func_mapping_config(WS2812_LEDC_PORT, WS2812_LEDC_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
         dir = 0;
     }
+
+    ledc_cmd(ENABLE);
+#endif
+
     ledc_dma_kick((u32)pixels_pattern, pattern_size);
     ledc_kick();
 #endif
@@ -145,7 +188,9 @@ void ws281x_init()
     gpio_init(WS2812_LEDC_2_PORT, &gpio_init_struct);
 
     /* Config GPIO Mapping */
-    gpio_func_mapping_config(WS2812_LEDC_PORT, WS2812_LEDC_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
+    // 使用到再建立映射
+    // gpio_func_mapping_config(WS2812_LEDC_PORT, WS2812_LEDC_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
+    // gpio_func_mapping_config(WS2812_LEDC_2_PORT, WS2812_LEDC_2_PIN, GPIO_CROSSBAR_OUT_LEDCDAT);
 
     /* LEDC Base Ctrl Init */
     ledc_init_struct.output_invert = LEDC_OUT_INV_DIS;      // 电平反转

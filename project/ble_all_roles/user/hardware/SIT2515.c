@@ -11,6 +11,8 @@
 #include "SIT2515.h"
 #include "driver_gpio.h"
 
+#include "user_config.h"
+
 volatile unsigned char CAN_R_Buffer[8];  // CAN接收数据保存缓冲区
 volatile unsigned char CAN_R_RecNum = 0; // 接收数据个数
 
@@ -423,12 +425,14 @@ void SIT2515_Init(void)
         SIT2515_WriteByte(CANCTRL, REQOP_NORMAL | CLKOUT_ENABLED); // 再次将SIT2515设置为正常模式,退出配置模式
     }
 
-    // 添加验证读取
+// 添加验证读取
+#if USER_DEBUG_ENABLE
     my_printf("CNF1 = %02x\n", SIT2515_ReadByte(CNF1));       // 应该返回   (0x00：500Kbps ，0x01: 250Kbps)
     my_printf("CNF2 = %02x\n", SIT2515_ReadByte(CNF2));       // 应该返回 0x90
     my_printf("CNF3 = %02x\n", SIT2515_ReadByte(CNF3));       // 应该返回 0x02
     my_printf("CANCTRL = %02x\n", SIT2515_ReadByte(CANCTRL)); // 正常模式
     my_printf("CANSTAT = %02x\n", SIT2515_ReadByte(CANSTAT)); // 状态寄存器
+#endif
 }
 #endif
 
@@ -498,7 +502,7 @@ unsigned char CAN_Receive_Buffer(unsigned char *CAN_RX_Buf)
                 // my_printf("\n");
             }
         }
-        
+
         SIT2515_WriteByte(CANINTF, temp & ~(0x03)); // 清除中断标志位(中断标志寄存器必须由MCU清零)
     }
 

@@ -17,7 +17,7 @@
 #define WS2812_LIB_EN                   1                       // WS2812库使能
 #define WS2812_JUST_DIRECT_RGB          0                       // WS2812库只用于直驱RGB, 打开这个开关后不会发送幻彩数据, 只会使用这个库来生成RGB效果
 // #define WS2812_LED_NUM_MAX              12                     // 灯珠数量
-#define WS2812_LED_NUM_MAX              255                     // 灯珠数量
+#define WS2812_LED_NUM_MAX              32                     // 灯珠数量
 #define WS2812_NEO_TYPE                 NEO_BRG                 // 幻彩数据RGB排列
 #define WS2812_LEDC_PORT                GPIOA_REG               // 幻彩驱动IO PORT
 #define WS2812_LEDC_PIN                 GPIO_PIN_6              // 幻彩驱动IO PIN
