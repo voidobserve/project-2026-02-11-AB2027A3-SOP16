@@ -604,14 +604,14 @@
 	<stdlib.h>
 	<string.h>
 
-1772694157 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
+1773812440 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
 	"user_config.h"
 	"user_uart.h"
 	"SIT2515.h"
 	"driver_uart.h"
 	"uart_handle.h"
 
-1772691432 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_config.h
+1773814399 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_config.h
 	"include.h"
 	"user_debug_io.h"
 	"colorful_light_ctl.h"
@@ -635,9 +635,10 @@
 
 1717835814 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812fx_tool.h
 
-1772690023 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_driver.c
+1773624900 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_driver.c
 	"include.h"
 	"driver_gpio.h"
+	"user_config.h"
 	"ws2812_bsp.h"
 	"ws2812_my_effect.h"
 	"driver_ledc.h"
@@ -688,10 +689,10 @@
 	"ws2812fx_effect.h"
 	"ws2812_my_effect.h"
 
-1772613553 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.h
+1773813862 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.h
 	"include.h"
 
-1772693848 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.c
+1773813388 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.c
 	"uart_handle.h"
 	"user_config.h"
 	"driver_uart.h"
@@ -712,11 +713,11 @@
 
 1772433602 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\hardware\sit2515.h
 
-1772679288 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.h
+1773624734 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.h
 	"include.h"
 	"user_config.h"
 	"driver_gpio.h"
 
-1772689157 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.c
+1773624304 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.c
 	"colorful_light_ctl.h"
 

@@ -1,5 +1,6 @@
 #include "include.h"
 #include "driver_gpio.h"
+#include "user_config.h"
 
 #if WS2812_LIB_EN
 

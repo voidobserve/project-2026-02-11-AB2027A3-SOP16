@@ -5,12 +5,23 @@
 #include "user_config.h"
 #include "driver_gpio.h"
 
-#define COLORFUL_LIGHT_POWER_CTL_PORT GPIOB_REG // 幻彩灯的电源控制引脚所在的端口
-#define COLORFUL_LIGHT_POWER_CTL_PIN GPIO_PIN_9 // 幻彩灯的电源控制引脚
-#define COLORFUL_LIGHT_POWER_CTL_PIN_SET() \
-    gpio_set_bits(COLORFUL_LIGHT_POWER_CTL_PORT, COLORFUL_LIGHT_POWER_CTL_PIN)
-#define COLORFUL_LIGHT_POWER_CTL_PIN_RESET() \
-    gpio_reset_bits(COLORFUL_LIGHT_POWER_CTL_PORT, COLORFUL_LIGHT_POWER_CTL_PIN)
+// ==================================================================
+// 左侧幻彩灯电源控制引脚： 
+#define COLORFUL_LIGHT_LEFT_POWER_CTL_PORT GPIOB_REG // 幻彩灯的电源控制引脚所在的端口
+#define COLORFUL_LIGHT_LEFT_POWER_CTL_PIN GPIO_PIN_3 // 幻彩灯的电源控制引脚
+#define COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_SET() \
+    gpio_set_bits(COLORFUL_LIGHT_LEFT_POWER_CTL_PORT, COLORFUL_LIGHT_LEFT_POWER_CTL_PIN)
+#define COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET() \
+    gpio_reset_bits(COLORFUL_LIGHT_LEFT_POWER_CTL_PORT, COLORFUL_LIGHT_LEFT_POWER_CTL_PIN)
+
+    // ==================================================================
+// 右侧幻彩灯电源控制引脚： 
+#define COLORFUL_LIGHT_RIGHT_POWER_CTL_PORT GPIOB_REG
+#define COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN GPIO_PIN_9
+#define COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_SET() \
+    gpio_set_bits(COLORFUL_LIGHT_RIGHT_POWER_CTL_PORT, COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN)
+#define COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_RESET() \
+    gpio_reset_bits(COLORFUL_LIGHT_RIGHT_POWER_CTL_PORT, COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN)
 
 typedef struct
 {

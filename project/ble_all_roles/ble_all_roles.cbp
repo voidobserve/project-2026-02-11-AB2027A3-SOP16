@@ -18,6 +18,7 @@
 					<Add directory="user/user_test" />
 					<Add directory="user/uart_handle" />
 					<Add directory="user/hardware" />
+					<Add directory="user/colorful_light_ctl" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -359,6 +360,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="user/ble_user_service.h" />
+		<Unit filename="user/colorful_light_ctl/colorful_light_ctl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/colorful_light_ctl/colorful_light_ctl.h" />
 		<Unit filename="user/driver_on_chip/user_uart.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -390,6 +395,7 @@
 		<Unit filename="user/ws2812_lib/ws2812_Adafruit_NeoPixel.h" />
 		<Unit filename="user/ws2812_lib/ws2812_binary.h" />
 		<Unit filename="user/ws2812_lib/ws2812_bsp.h" />
+		<Unit filename="user/ws2812_lib/ws2812_config.h" />
 		<Unit filename="user/ws2812_lib/ws2812_driver.c">
 			<Option compilerVar="CC" />
 		</Unit>

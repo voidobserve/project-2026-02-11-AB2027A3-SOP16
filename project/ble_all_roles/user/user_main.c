@@ -21,7 +21,7 @@ void user_data_read(void)
 {
     bsp_param_read(&user_data, USER_DATE_SAVE_START_ADDR, sizeof(user_data_t));
 #if USER_DEBUG_ENABLE
-    my_printf("save.color == 0x%lx\n", user_data.color);
+    // my_printf("save.color == 0x%lx\n", user_data.color);
 #endif
 }
 
@@ -51,7 +51,7 @@ void user_init(void)
     user_uart_init();
 
 #if USER_DEBUG_ENABLE
-    user_debug_io_init();
+    // user_debug_io_init();
 #endif
 
     colorful_light_power_ctl_io_init(); // 幻彩灯的电源控制脚
@@ -143,8 +143,8 @@ void can_handle(void)
         my_printf("left open\n");
 #endif 
         uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_FORWARD);
-        colorful_light_ctl.left_light_enable = 1;
-        COLORFUL_LIGHT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
+        // colorful_light_ctl.left_light_enable = 1;
+        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
         break;
 
     case 0xAE:
@@ -154,8 +154,8 @@ void can_handle(void)
         my_printf("right open\n");
 #endif 
         uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_FORWARD);
-        colorful_light_ctl.right_light_enable = 1;
-        COLORFUL_LIGHT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
+        // colorful_light_ctl.right_light_enable = 1;
+        // COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
         break;
 
     case 0xAA: // 左边电机、幻彩灯打开了就关闭左边的，右边电机、幻彩灯打开了就关闭右边的
@@ -166,9 +166,10 @@ void can_handle(void)
         // 发送反转的控制命令，单片机收到后，执行反转的操作，电机过流或执行超时之后就会停止
         uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
         uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE); 
-        colorful_light_ctl.left_light_enable = 0;
-        colorful_light_ctl.right_light_enable = 0;
-        COLORFUL_LIGHT_POWER_CTL_PIN_RESET(); // 关闭幻彩灯电源
+        // colorful_light_ctl.left_light_enable = 0;
+        // colorful_light_ctl.right_light_enable = 0;
+        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET(); // 关闭幻彩灯电源
+        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET();
         break;
     }
 }
@@ -180,10 +181,5 @@ void user_main(void)
     uart_data_handle();
     can_handle();
 
-    //     while (uart_get_flag(UART, UART_IT_TX) != SET)
-    //     ; // 等待发送完成
-    // uart_send_data(UART, 0x15);
-    //     while (uart_get_flag(UART, UART_IT_TX) != SET)
-    //     ; // 等待发送完成
-    // uart_send_data(UART, 0x16);
+    // my_printf("user_main\n");
 }

@@ -78,13 +78,13 @@ void uart_data_handle(void)
 
 #if USER_DEBUG_ENABLE
             // 超时之后，打印缓冲区内的数据
-            my_printf("=================================>\n");
-            my_printf("uart recv timeout\n");
-            for (i = 0; i < ARRAY_SIZE(cmd_buff); i++)
-            {
-                my_printf("%02x ", (u16)cmd_buff[i]);
-            }
-            my_printf("=================================^\n");
+            // my_printf("=================================>\n");
+            // my_printf("uart recv timeout\n");
+            // for (i = 0; i < ARRAY_SIZE(cmd_buff); i++)
+            // {
+            //     my_printf("%02x ", (u16)cmd_buff[i]);
+            // }
+            // my_printf("=================================^\n");
 #endif
         }
 
@@ -144,13 +144,13 @@ void uart_data_handle(void)
                     // 校验和错误
 #if USER_DEBUG_ENABLE
 
-                    my_printf("=================================>\n");
-                    my_printf("check sum error\n");
-                    for (i = 0; i < ARRAY_SIZE(cmd_buff); i++)
-                    {
-                        my_printf("%02x ", (u16)cmd_buff[i]);
-                    }
-                    my_printf("=================================^\n");
+                    // my_printf("=================================>\n");
+                    // my_printf("check sum error\n");
+                    // for (i = 0; i < ARRAY_SIZE(cmd_buff); i++)
+                    // {
+                    //     my_printf("%02x ", (u16)cmd_buff[i]);
+                    // }
+                    // my_printf("=================================^\n");
 #endif
 
                     // timeout_cnt = 0;
@@ -162,7 +162,7 @@ void uart_data_handle(void)
 // 校验和正确
 #if USER_DEBUG_ENABLE
 
-                    my_printf("check sum ok\n");
+                    // my_printf("check sum ok\n");
 #endif
                     uart_data_handle_status = UART_DATA_HANDLE_STATUS_END;
                     is_recv_complete = 1;
@@ -200,25 +200,22 @@ void uart_data_handle(void)
         case 0x00: // 停止
             motor_0_status = 0;
 #if USER_DEBUG_ENABLE
-            my_printf("motor 0 stop\n");
+            // my_printf("motor 0 stop\n");
 #endif
-            // colorful_light_ctl.left_light_enable = 0; // 关闭对应的灯
 
             break;
         case 0x01: // 正转
             motor_0_status = 1;
 #if USER_DEBUG_ENABLE
-            my_printf("motor 0 forward\n");
+            // my_printf("motor 0 forward\n");
 #endif
-            colorful_light_ctl.left_light_enable = 1; // 点亮对应的灯
 
             break;
         case 0x02: // 反转
             motor_0_status = 2;
 #if USER_DEBUG_ENABLE
-            my_printf("motor 0 reverse\n");
+            // my_printf("motor 0 reverse\n");
 #endif
-            colorful_light_ctl.left_light_enable = 0; // 关闭对应的灯
 
             break;
         default:
@@ -234,25 +231,23 @@ void uart_data_handle(void)
         case 0x00: // 停止
             motor_1_status = 0;
 #if USER_DEBUG_ENABLE
-            my_printf("motor 1 stop\n");
+            // my_printf("motor 1 stop\n");
 #endif
-            // colorful_light_ctl.right_light_enable = 0; // 关闭对应的灯
 
             break;
         case 0x01: // 正转
             motor_1_status = 1;
 #if USER_DEBUG_ENABLE
-            my_printf("motor 1 forward\n");
+            // my_printf("motor 1 forward\n");
 #endif
-            colorful_light_ctl.right_light_enable = 1; // 点亮对应的灯
+
             break;
 
         case 0x02: // 反转
             motor_1_status = 2;
 #if USER_DEBUG_ENABLE
-            my_printf("motor 1 reverse\n");
+            // my_printf("motor 1 reverse\n");
 #endif
-            colorful_light_ctl.right_light_enable = 0;
             break;
 
         default:
@@ -268,16 +263,39 @@ void uart_data_handle(void)
     //      motor_0_status == 2) && // 反转
     //     (motor_1_status == 0 ||  // 停止
     //      motor_1_status == 2))   // 反转
-    if (motor_0_status == 2 && // 反转
-        motor_1_status == 2)   // 反转
+    // if (motor_0_status == 2 && // 反转
+    //     motor_1_status == 2)   // 反转
+    // {
+    //     // 如果两个电机都反转，关闭灯的电源
+    //     COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET();
+
+    // }
+    // else if (motor_0_status == 1 || motor_1_status == 1)
+    // {
+    //     // 如果两个电机之中有一个启动，打开电源
+    //     COLORFUL_LIGHT_POWER_CTL_PIN_SET();
+    // }
+
+    if (motor_0_status == 2)
     {
-        // 如果两个电机都反转，关闭灯的电源
-        COLORFUL_LIGHT_POWER_CTL_PIN_RESET();
+        // 如果电机0反转，关闭灯的电源
+        COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET();
     }
-    else if (motor_0_status == 1 || motor_1_status == 1)
+    else if (motor_0_status == 1) // 正转
     {
-        // 如果两个电机之中有一个启动，打开电源
-        COLORFUL_LIGHT_POWER_CTL_PIN_SET();
+        COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_SET();
+        colorful_light_ctl.left_light_enable = 1; // 点亮对应的灯
+    }
+
+    if (motor_1_status == 2)
+    {
+        // 如果电机1反转，关闭灯的电源
+        COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_RESET();
+    }
+    else if (motor_1_status == 1) // 正转
+    {
+        COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_SET();
+        colorful_light_ctl.right_light_enable = 1; // 点亮对应的灯
     }
 
     // 处理完成后，重新接收数据

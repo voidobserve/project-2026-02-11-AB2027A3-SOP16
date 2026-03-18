@@ -25,8 +25,8 @@ typedef u8 motor_cmd_t;
 
 enum
 {
-    MOTOR_INDEX_LEFT = 0x00,
-    MOTOR_INDEX_RIGHT = 0x01,
+    MOTOR_INDEX_LEFT = 0x01,
+    MOTOR_INDEX_RIGHT = 0x02,
 };
 typedef u8 motor_index_t;
 

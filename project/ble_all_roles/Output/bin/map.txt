@@ -3664,293 +3664,293 @@ LOAD Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx_tool.o
                 0x000000001000659a        0x4 Output\obj\project\ble_all_roles\strong_symbol.o
                 0x000000001000659a                ble_phy_update_enable
  .text.colorful_light_power_ctl_io_init
-                0x000000001000659e       0x36 Output\obj\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.o
+                0x000000001000659e       0x5c Output\obj\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.o
                 0x000000001000659e                colorful_light_power_ctl_io_init
  .text.colorful_light_set_static_color
-                0x00000000100065d4       0x4e Output\obj\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.o
-                0x00000000100065d4                colorful_light_set_static_color
+                0x00000000100065fa       0x4e Output\obj\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.o
+                0x00000000100065fa                colorful_light_set_static_color
  .text.uart_rxbuffer_get_count
-                0x0000000010006622       0x10 Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
-                0x0000000010006622                uart_rxbuffer_get_count
+                0x0000000010006648       0x10 Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
+                0x0000000010006648                uart_rxbuffer_get_count
  .text.uart_rxbuffer_get_byte
-                0x0000000010006632       0x42 Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
-                0x0000000010006632                uart_rxbuffer_get_byte
+                0x0000000010006658       0x42 Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
+                0x0000000010006658                uart_rxbuffer_get_byte
  .text.uart_transfer_init
-                0x0000000010006674       0x9e Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
-                0x0000000010006674                uart_transfer_init
+                0x000000001000669a       0x9e Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
+                0x000000001000669a                uart_transfer_init
  .text.user_uart_init
-                0x0000000010006712        0x8 Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
-                0x0000000010006712                user_uart_init
+                0x0000000010006738        0x8 Output\obj\project\ble_all_roles\user\driver_on_chip\user_uart.o
+                0x0000000010006738                user_uart_init
  .text.SPI_MasterInit1
-                0x000000001000671a       0x8e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x000000001000671a                SPI_MasterInit1
+                0x0000000010006740       0x8e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x0000000010006740                SPI_MasterInit1
  .text.SPI_ReadByte
-                0x00000000100067a8       0x7c Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x00000000100067a8                SPI_ReadByte
+                0x00000000100067ce       0x7c Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x00000000100067ce                SPI_ReadByte
  .text.SPI_SendByte
-                0x0000000010006824       0x8a Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x0000000010006824                SPI_SendByte
+                0x000000001000684a       0x8a Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x000000001000684a                SPI_SendByte
  .text.SIT2515_WriteByte
-                0x00000000100068ae       0x3e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x00000000100068ae                SIT2515_WriteByte
+                0x00000000100068d4       0x3e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x00000000100068d4                SIT2515_WriteByte
  .text.SIT2515_ReadByte
-                0x00000000100068ec       0x3e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x00000000100068ec                SIT2515_ReadByte
+                0x0000000010006912       0x3e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x0000000010006912                SIT2515_ReadByte
  .text.SIT2515_ReadMultipleData
-                0x000000001000692a       0x54 Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x000000001000692a                SIT2515_ReadMultipleData
+                0x0000000010006950       0x54 Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x0000000010006950                SIT2515_ReadMultipleData
  .text.SIT2515_Reset
-                0x000000001000697e       0x3e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x000000001000697e                SIT2515_Reset
+                0x00000000100069a4       0x3e Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x00000000100069a4                SIT2515_Reset
  .text.SIT2515_SPICS_Init
-                0x00000000100069bc       0x42 Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x00000000100069bc                SIT2515_SPICS_Init
+                0x00000000100069e2       0x42 Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x00000000100069e2                SIT2515_SPICS_Init
  .text.SIT2515_Init
-                0x00000000100069fe      0x156 Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x00000000100069fe                SIT2515_Init
+                0x0000000010006a24      0x158 Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x0000000010006a24                SIT2515_Init
  .text.CAN_Receive_Buffer
-                0x0000000010006b54       0x7c Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
-                0x0000000010006b54                CAN_Receive_Buffer
+                0x0000000010006b7c       0x7c Output\obj\project\ble_all_roles\user\hardware\SIT2515.o
+                0x0000000010006b7c                CAN_Receive_Buffer
  .text.uart_send_cmd
-                0x0000000010006bd0       0x6e Output\obj\project\ble_all_roles\user\uart_handle\uart_handle.o
-                0x0000000010006bd0                uart_send_cmd
+                0x0000000010006bf8       0x6e Output\obj\project\ble_all_roles\user\uart_handle\uart_handle.o
+                0x0000000010006bf8                uart_send_cmd
  .text.uart_data_handle
-                0x0000000010006c3e      0x25c Output\obj\project\ble_all_roles\user\uart_handle\uart_handle.o
-                0x0000000010006c3e                uart_data_handle
+                0x0000000010006c66      0x258 Output\obj\project\ble_all_roles\user\uart_handle\uart_handle.o
+                0x0000000010006c66                uart_data_handle
  .text.user_data_write
-                0x0000000010006e9a       0x1a Output\obj\project\ble_all_roles\user\user_main.o
-                0x0000000010006e9a                user_data_write
+                0x0000000010006ebe       0x1a Output\obj\project\ble_all_roles\user\user_main.o
+                0x0000000010006ebe                user_data_write
  .text.user_data_read
-                0x0000000010006eb4        0xe Output\obj\project\ble_all_roles\user\user_main.o
-                0x0000000010006eb4                user_data_read
+                0x0000000010006ed8        0xe Output\obj\project\ble_all_roles\user\user_main.o
+                0x0000000010006ed8                user_data_read
  .text.user_init
-                0x0000000010006ec2       0x96 Output\obj\project\ble_all_roles\user\user_main.o
-                0x0000000010006ec2                user_init
+                0x0000000010006ee6       0x94 Output\obj\project\ble_all_roles\user\user_main.o
+                0x0000000010006ee6                user_init
  .text.user_ws2812_service
-                0x0000000010006f58       0x30 Output\obj\project\ble_all_roles\user\user_main.o
-                0x0000000010006f58                user_ws2812_service
+                0x0000000010006f7a       0x30 Output\obj\project\ble_all_roles\user\user_main.o
+                0x0000000010006f7a                user_ws2812_service
  .text.can_handle
-                0x0000000010006f88       0xe2 Output\obj\project\ble_all_roles\user\user_main.o
-                0x0000000010006f88                can_handle
+                0x0000000010006faa       0x94 Output\obj\project\ble_all_roles\user\user_main.o
+                0x0000000010006faa                can_handle
  .text.user_main
-                0x000000001000706a       0x10 Output\obj\project\ble_all_roles\user\user_main.o
-                0x000000001000706a                user_main
+                0x000000001000703e       0x10 Output\obj\project\ble_all_roles\user\user_main.o
+                0x000000001000703e                user_main
  .text.ws2815_byte_reversed
-                0x000000001000707a       0x32 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
-                0x000000001000707a                ws2815_byte_reversed
+                0x000000001000704e       0x32 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
+                0x000000001000704e                ws2815_byte_reversed
  .text.ws281x_show
-                0x00000000100070ac      0x102 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
-                0x00000000100070ac                ws281x_show
+                0x0000000010007080      0x102 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
+                0x0000000010007080                ws281x_show
  .text.HAL_GetTick
-                0x00000000100071ae        0x8 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
-                0x00000000100071ae                HAL_GetTick
+                0x0000000010007182        0x8 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
+                0x0000000010007182                HAL_GetTick
  .text.ws281x_init
-                0x00000000100071b6       0xb6 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
-                0x00000000100071b6                ws281x_init
+                0x000000001000718a       0xb6 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_driver.o
+                0x000000001000718a                ws281x_init
  .text.Adafruit_NeoPixel_init
-                0x000000001000726c       0x8c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
-                0x000000001000726c                Adafruit_NeoPixel_init
+                0x0000000010007240       0x8c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
+                0x0000000010007240                Adafruit_NeoPixel_init
  .text.Adafruit_NeoPixel_show
-                0x00000000100072f8       0x10 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
-                0x00000000100072f8                Adafruit_NeoPixel_show
+                0x00000000100072cc       0x10 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
+                0x00000000100072cc                Adafruit_NeoPixel_show
  .text.Adafruit_NeoPixel_setPixelColor
-                0x0000000010007308       0x9e Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
-                0x0000000010007308                Adafruit_NeoPixel_setPixelColor
+                0x00000000100072dc       0x9e Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
+                0x00000000100072dc                Adafruit_NeoPixel_setPixelColor
  .text.Adafruit_NeoPixel_fill
-                0x00000000100073a6       0x36 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
-                0x00000000100073a6                Adafruit_NeoPixel_fill
+                0x000000001000737a       0x36 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
+                0x000000001000737a                Adafruit_NeoPixel_fill
  .text.Adafruit_NeoPixel_setBrightness
-                0x00000000100073dc       0x6c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
-                0x00000000100073dc                Adafruit_NeoPixel_setBrightness
+                0x00000000100073b0       0x6c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812_neo_pixel.o
+                0x00000000100073b0                Adafruit_NeoPixel_setBrightness
  .text.WS2812FX_set_coloQty
-                0x0000000010007448       0x1c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007448                WS2812FX_set_coloQty
+                0x000000001000741c       0x1c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x000000001000741c                WS2812FX_set_coloQty
  .text.WS2812FX_show
-                0x0000000010007464       0x10 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007464                WS2812FX_show
+                0x0000000010007438       0x10 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x0000000010007438                WS2812FX_show
  .text.WS2812FX_service
-                0x0000000010007474       0xe6 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007474                WS2812FX_service
+                0x0000000010007448       0xe6 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x0000000010007448                WS2812FX_service
  .text.WS2812FX_setColors
-                0x000000001000755a       0x2a Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x000000001000755a                WS2812FX_setColors
+                0x000000001000752e       0x2a Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x000000001000752e                WS2812FX_setColors
  .text.WS2812FX_setBrightness
-                0x0000000010007584        0x4 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007584                WS2812FX_setBrightness
+                0x0000000010007558        0x4 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x0000000010007558                WS2812FX_setBrightness
  .text.WS2812FX_getSpeed_seg
-                0x0000000010007588       0x16 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007588                WS2812FX_getSpeed_seg
+                0x000000001000755c       0x16 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x000000001000755c                WS2812FX_getSpeed_seg
  .text.WS2812FX_resetSegmentRuntimes
-                0x000000001000759e       0x14 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x000000001000759e                WS2812FX_resetSegmentRuntimes
+                0x0000000010007572       0x14 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x0000000010007572                WS2812FX_resetSegmentRuntimes
  .text.WS2812FX_start
-                0x00000000100075b2       0x14 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x00000000100075b2                WS2812FX_start
+                0x0000000010007586       0x14 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x0000000010007586                WS2812FX_start
  .text.WS2812FX_resetSegments
-                0x00000000100075c6       0x40 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x00000000100075c6                WS2812FX_resetSegments
+                0x000000001000759a       0x40 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x000000001000759a                WS2812FX_resetSegments
  .text.WS2812FX_init
-                0x0000000010007606       0x50 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007606                WS2812FX_init
+                0x00000000100075da       0x50 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x00000000100075da                WS2812FX_init
  .text.WS2812FX_resetSegmentRuntime
-                0x0000000010007656       0x40 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007656                WS2812FX_resetSegmentRuntime
+                0x000000001000762a       0x40 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x000000001000762a                WS2812FX_resetSegmentRuntime
  .text.WS2812FX_addActiveSegment
-                0x0000000010007696       0x4c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x0000000010007696                WS2812FX_addActiveSegment
+                0x000000001000766a       0x4c Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x000000001000766a                WS2812FX_addActiveSegment
  .text.WS2812FX_setSegment_colorsOptions
-                0x00000000100076e2       0x68 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
-                0x00000000100076e2                WS2812FX_setSegment_colorsOptions
+                0x00000000100076b6       0x68 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx2.o
+                0x00000000100076b6                WS2812FX_setSegment_colorsOptions
  .text.WS2812FX_mode_static
-                0x000000001000774a       0x38 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx_effect.o
-                0x000000001000774a                WS2812FX_mode_static
+                0x000000001000771e       0x38 Output\obj\project\ble_all_roles\user\ws2812_lib\ws2812fx_effect.o
+                0x000000001000771e                WS2812FX_mode_static
  .text.cm_loadpage
-                0x0000000010007782       0xb4 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x0000000010007756       0xb4 ..\..\libs\cpu\libplatform.a(cm.o)
  .text.cm_next_freepage
-                0x0000000010007836       0x42 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x000000001000780a       0x42 ..\..\libs\cpu\libplatform.a(cm.o)
  .text.cm_loadparam
-                0x0000000010007878        0x4 ..\..\libs\cpu\libplatform.a(cm.o)
-                0x0000000010007878                cm_loadparam
+                0x000000001000784c        0x4 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x000000001000784c                cm_loadparam
  .text.cm_factory
-                0x000000001000787c        0xa ..\..\libs\cpu\libplatform.a(cm.o)
-                0x000000001000787c                cm_factory
+                0x0000000010007850        0xa ..\..\libs\cpu\libplatform.a(cm.o)
+                0x0000000010007850                cm_factory
  .text.cm_addr_check
-                0x0000000010007886        0x4 ..\..\libs\cpu\libplatform.a(cm.o)
-                0x0000000010007886                cm_addr_check
+                0x000000001000785a        0x4 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x000000001000785a                cm_addr_check
  .text.cm_writepage
-                0x000000001000788a       0x2a ..\..\libs\cpu\libplatform.a(cm.o)
+                0x000000001000785e       0x2a ..\..\libs\cpu\libplatform.a(cm.o)
  .text.cm_movepage
-                0x00000000100078b4       0x50 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x0000000010007888       0x50 ..\..\libs\cpu\libplatform.a(cm.o)
  .text.cm_erase
-                0x0000000010007904       0x1e ..\..\libs\cpu\libplatform.a(cm.o)
+                0x00000000100078d8       0x1e ..\..\libs\cpu\libplatform.a(cm.o)
  .text.cm_release
-                0x0000000010007922       0xf8 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x00000000100078f6       0xf8 ..\..\libs\cpu\libplatform.a(cm.o)
  .text.cm_savepage
-                0x0000000010007a1a       0xb6 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x00000000100079ee       0xb6 ..\..\libs\cpu\libplatform.a(cm.o)
  .text.cm_check_loadpage
-                0x0000000010007ad0       0xb0 ..\..\libs\cpu\libplatform.a(cm.o)
- .text.cm_sync  0x0000000010007b80       0x3e ..\..\libs\cpu\libplatform.a(cm.o)
-                0x0000000010007b80                cm_sync
- .text.cm_read  0x0000000010007bbe       0x44 ..\..\libs\cpu\libplatform.a(cm.o)
-                0x0000000010007bbe                cm_read
+                0x0000000010007aa4       0xb0 ..\..\libs\cpu\libplatform.a(cm.o)
+ .text.cm_sync  0x0000000010007b54       0x3e ..\..\libs\cpu\libplatform.a(cm.o)
+                0x0000000010007b54                cm_sync
+ .text.cm_read  0x0000000010007b92       0x44 ..\..\libs\cpu\libplatform.a(cm.o)
+                0x0000000010007b92                cm_read
  .text.cm_write
-                0x0000000010007c02       0x5e ..\..\libs\cpu\libplatform.a(cm.o)
-                0x0000000010007c02                cm_write
- .text.cm_init  0x0000000010007c60      0x1be ..\..\libs\cpu\libplatform.a(cm.o)
-                0x0000000010007c60                cm_init
+                0x0000000010007bd6       0x5e ..\..\libs\cpu\libplatform.a(cm.o)
+                0x0000000010007bd6                cm_write
+ .text.cm_init  0x0000000010007c34      0x1be ..\..\libs\cpu\libplatform.a(cm.o)
+                0x0000000010007c34                cm_init
  .text.xcfg_init
-                0x0000000010007e1e       0x54 ..\..\libs\cpu\libplatform.a(xcfg.o)
-                0x0000000010007e1e                xcfg_init
+                0x0000000010007df2       0x54 ..\..\libs\cpu\libplatform.a(xcfg.o)
+                0x0000000010007df2                xcfg_init
  .text.platform_main
-                0x0000000010007e72      0x1ea ..\..\libs\cpu\libplatform.a(main.o)
-                0x0000000010007e72                platform_main
+                0x0000000010007e46      0x1ea ..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000010007e46                platform_main
  .text.main_startup
-                0x000000001000805c        0xe ..\..\libs\cpu\libplatform.a(main.o)
-                0x000000001000805c                main_startup
+                0x0000000010008030        0xe ..\..\libs\cpu\libplatform.a(main.o)
+                0x0000000010008030                main_startup
  .text.sys_irq_init
-                0x000000001000806a       0x8e ..\..\libs\cpu\libplatform.a(interrupt.o)
-                0x000000001000806a                sys_irq_init
+                0x000000001000803e       0x8e ..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x000000001000803e                sys_irq_init
  .text.soft_irq_init
-                0x00000000100080f8       0x3c ..\..\libs\cpu\libplatform.a(interrupt.o)
-                0x00000000100080f8                soft_irq_init
+                0x00000000100080cc       0x3c ..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x00000000100080cc                soft_irq_init
  .text.bthw_irq_init
-                0x0000000010008134       0x12 ..\..\libs\cpu\libplatform.a(interrupt.o)
-                0x0000000010008134                bthw_irq_init
+                0x0000000010008108       0x12 ..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x0000000010008108                bthw_irq_init
  .text.sys_timer_init
-                0x0000000010008146       0x84 ..\..\libs\cpu\libplatform.a(interrupt.o)
-                0x0000000010008146                sys_timer_init
+                0x000000001000811a       0x84 ..\..\libs\cpu\libplatform.a(interrupt.o)
+                0x000000001000811a                sys_timer_init
  .text.thread_btstack_create
-                0x00000000100081ca       0x8a ..\..\libs\cpu\libplatform.a(startup.o)
-                0x00000000100081ca                thread_btstack_create
+                0x000000001000819e       0x8a ..\..\libs\cpu\libplatform.a(startup.o)
+                0x000000001000819e                thread_btstack_create
  .text.thread_main_entry
-                0x0000000010008254       0x8a ..\..\libs\cpu\libplatform.a(startup.o)
+                0x0000000010008228       0x8a ..\..\libs\cpu\libplatform.a(startup.o)
  .text.startup.init
-                0x00000000100082de      0x10a ..\..\libs\cpu\libplatform.a(startup.o)
-                0x00000000100082de                platform_init
-                0x00000000100082e6                sys_startup
+                0x00000000100082b2      0x10a ..\..\libs\cpu\libplatform.a(startup.o)
+                0x00000000100082b2                platform_init
+                0x00000000100082ba                sys_startup
  .text.bt_set_timer_enable
-                0x00000000100083e8       0x18 ..\..\libs\cpu\libplatform.a(startup.o)
-                0x00000000100083e8                bt_set_timer_enable
+                0x00000000100083bc       0x18 ..\..\libs\cpu\libplatform.a(startup.o)
+                0x00000000100083bc                bt_set_timer_enable
  .text.sys_set_tmr_enable
-                0x0000000010008400       0x22 ..\..\libs\cpu\libplatform.a(startup.o)
-                0x0000000010008400                sys_set_tmr_enable
+                0x00000000100083d4       0x22 ..\..\libs\cpu\libplatform.a(startup.o)
+                0x00000000100083d4                sys_set_tmr_enable
  .text.sys_hook_init
-                0x0000000010008422        0x2 ..\..\libs\cpu\libplatform.a(sys_hook.o)
-                0x0000000010008422                sys_hook_init
+                0x00000000100083f6        0x2 ..\..\libs\cpu\libplatform.a(sys_hook.o)
+                0x00000000100083f6                sys_hook_init
  .text.pll0_vco_band_trimming
-                0x0000000010008424       0x5a ..\..\libs\cpu\libplatform.a(pll.o)
-                0x0000000010008424                pll0_vco_band_trimming
+                0x00000000100083f8       0x5a ..\..\libs\cpu\libplatform.a(pll.o)
+                0x00000000100083f8                pll0_vco_band_trimming
  .text.pll0_init
-                0x000000001000847e       0xd6 ..\..\libs\cpu\libplatform.a(pll.o)
-                0x000000001000847e                pll0_init
+                0x0000000010008452       0xd6 ..\..\libs\cpu\libplatform.a(pll.o)
+                0x0000000010008452                pll0_init
  .text.pll0_disable
-                0x0000000010008554       0x48 ..\..\libs\cpu\libplatform.a(pll.o)
-                0x0000000010008554                pll0_disable
+                0x0000000010008528       0x48 ..\..\libs\cpu\libplatform.a(pll.o)
+                0x0000000010008528                pll0_disable
  .text.pmu_set_buck_mode
-                0x000000001000859c       0x9e ..\..\libs\cpu\libplatform.a(pmu.o)
-                0x000000001000859c                pmu_set_buck_mode
+                0x0000000010008570       0x9e ..\..\libs\cpu\libplatform.a(pmu.o)
+                0x0000000010008570                pmu_set_buck_mode
  .text.pmu_voltage_configure
-                0x000000001000863a       0x6a ..\..\libs\cpu\libplatform.a(pmu.o)
-                0x000000001000863a                pmu_voltage_configure
+                0x000000001000860e       0x6a ..\..\libs\cpu\libplatform.a(pmu.o)
+                0x000000001000860e                pmu_voltage_configure
  .text.pmu_init
-                0x00000000100086a4      0x308 ..\..\libs\cpu\libplatform.a(pmu.o)
-                0x00000000100086a4                pmu_init
+                0x0000000010008678      0x308 ..\..\libs\cpu\libplatform.a(pmu.o)
+                0x0000000010008678                pmu_init
  .text.sleep.rc
-                0x00000000100089ac       0x3e ..\..\libs\cpu\libplatform.a(rc.o)
-                0x00000000100089ac                rc_sleep_get_freqcnt
+                0x0000000010008980       0x3e ..\..\libs\cpu\libplatform.a(rc.o)
+                0x0000000010008980                rc_sleep_get_freqcnt
  .text.debug_set
-                0x00000000100089ea       0x1a ..\..\libs\cpu\libplatform.a(debug.o)
-                0x00000000100089ea                debug_set
+                0x00000000100089be       0x1a ..\..\libs\cpu\libplatform.a(debug.o)
+                0x00000000100089be                debug_set
  .text.ota_pack_is_update_success
-                0x0000000010008a04        0x8 ..\..\libs\cpu\libplatform.a(fot_pack.o)
-                0x0000000010008a04                ota_pack_is_update_success
+                0x00000000100089d8        0x8 ..\..\libs\cpu\libplatform.a(fot_pack.o)
+                0x00000000100089d8                ota_pack_is_update_success
  .text.bsp.key.init
-                0x0000000010008a0c       0x38 ..\..\libs\cpu\libplatform.a(key.o)
-                0x0000000010008a0c                multiple_key_init
+                0x00000000100089e0       0x38 ..\..\libs\cpu\libplatform.a(key.o)
+                0x00000000100089e0                multiple_key_init
  .text.lock_init
-                0x0000000010008a44       0x1c ..\..\libs\cpu\libplatform.a(lock.o)
-                0x0000000010008a44                lock_init
+                0x0000000010008a18       0x1c ..\..\libs\cpu\libplatform.a(lock.o)
+                0x0000000010008a18                lock_init
  .text.patch_init
-                0x0000000010008a60       0x1e ..\..\libs\cpu\libplatform.a(patch.o)
-                0x0000000010008a60                patch_init
+                0x0000000010008a34       0x1e ..\..\libs\cpu\libplatform.a(patch.o)
+                0x0000000010008a34                patch_init
  .text.udivmoddi4
-                0x0000000010008a7e       0x96 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008a52       0x96 ..\..\libs\cpu\libplatform.a(sys.o)
  .text.sys_rst_init
-                0x0000000010008b14       0x7c ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008b14                sys_rst_init
+                0x0000000010008ae8       0x7c ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008ae8                sys_rst_init
  .text.sys_rst_dump
-                0x0000000010008b90       0x86 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008b90                sys_rst_dump
+                0x0000000010008b64       0x86 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008b64                sys_rst_dump
  .text.rc2m_clk_nhz_cal
-                0x0000000010008c16      0x100 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008c16                rc2m_clk_nhz_cal
+                0x0000000010008bea      0x100 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008bea                rc2m_clk_nhz_cal
  .text.rc2m_clk_nhz_get
-                0x0000000010008d16       0x10 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008d16                rc2m_clk_nhz_get
+                0x0000000010008cea       0x10 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008cea                rc2m_clk_nhz_get
  .text.sys_get_rand_key_init
-                0x0000000010008d26        0xa ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008d26                sys_get_rand_key_init
+                0x0000000010008cfa        0xa ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008cfa                sys_get_rand_key_init
  .text.xosc_init
-                0x0000000010008d30       0x92 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008d30                xosc_init
+                0x0000000010008d04       0x92 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008d04                xosc_init
  .text.bsp.param
-                0x0000000010008dc2       0x26 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008dc2                bt_save_xosc_cap
+                0x0000000010008d96       0x26 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008d96                bt_save_xosc_cap
  .text.bt_get_xosc_cap
-                0x0000000010008de8        0xc ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008de8                bt_get_xosc_cap
+                0x0000000010008dbc        0xc ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008dbc                bt_get_xosc_cap
  .text.bt_set_xosc_cap
-                0x0000000010008df4       0x18 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008df4                bt_set_xosc_cap
+                0x0000000010008dc8       0x18 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008dc8                bt_set_xosc_cap
  .text.bt_adj_xosc_cap
-                0x0000000010008e0c       0x72 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008e0c                bt_adj_xosc_cap
+                0x0000000010008de0       0x72 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008de0                bt_adj_xosc_cap
  .text.__udivdi3
-                0x0000000010008e7e        0x6 ..\..\libs\cpu\libplatform.a(sys.o)
-                0x0000000010008e7e                __udivdi3
+                0x0000000010008e52        0x6 ..\..\libs\cpu\libplatform.a(sys.o)
+                0x0000000010008e52                __udivdi3
  .text.sys_clk_cacl_curr
-                0x0000000010008e84       0x28 ..\..\libs\cpu\libplatform.a(sys_clk.o)
- *fill*         0x0000000010008eac      0x154 
+                0x0000000010008e58       0x28 ..\..\libs\cpu\libplatform.a(sys_clk.o)
+ *fill*         0x0000000010008e80      0x180 
  .text.set_sys_clk_do
                 0x0000000010009000      0x1ea ..\..\libs\cpu\libplatform.a(sys_clk.o)
                 0x0000000010009000                set_sys_clk_do
