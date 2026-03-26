@@ -23,6 +23,18 @@ enum
 };
 typedef u8 motor_cmd_t;
 
+
+// 定义电机状态（由单片机发送给蓝牙ic，单片机->蓝牙ic）
+enum
+{  
+    MOTOR_STATUS_NONE = 0x00, // 无状态，设备刚上电
+    MOTOR_STATUS_FORWARD,
+    MOTOR_STATUS_FORWARD_STOP, // 正转，但是电机停了下来
+    MOTOR_STATUS_REVERSE,
+    MOTOR_STATUS_REVERSE_STOP, // 反转，但是电机停了下来
+};
+typedef u8 motor_status_t;
+
 enum
 {
     MOTOR_INDEX_LEFT = 0x01,

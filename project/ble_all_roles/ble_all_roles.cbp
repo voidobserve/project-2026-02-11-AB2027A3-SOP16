@@ -19,6 +19,7 @@
 					<Add directory="user/uart_handle" />
 					<Add directory="user/hardware" />
 					<Add directory="user/colorful_light_ctl" />
+					<Add directory="user/user_delay_ctx" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -378,6 +379,10 @@
 		<Unit filename="user/uart_handle/uart_handle.h" />
 		<Unit filename="user/user_api.h" />
 		<Unit filename="user/user_config.h" />
+		<Unit filename="user/user_delay_ctx/user_delay_ctx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="user/user_delay_ctx/user_delay_ctx.h" />
 		<Unit filename="user/user_for_driver_on_chip/user_uart/user_uart.h" />
 		<Unit filename="user/user_for_driver_on_chip/user_uart_fot/user_uart_fot.h" />
 		<Unit filename="user/user_for_driver_on_chip/user_uart_high_speed/user_uart_fot.h" />

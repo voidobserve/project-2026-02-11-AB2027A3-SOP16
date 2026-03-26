@@ -225,7 +225,7 @@
 
 1713940829 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\xcfg.h
 
-1772423024 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config.h
+1774513255 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\config.h
 	"config_define.h"
 	"config_extra.h"
 
@@ -257,7 +257,7 @@
 
 1752545349 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_sys.h
 
-1700810850 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_service.h
+1774493168 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_service.h
 
 1742540452 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_init.h
 
@@ -322,7 +322,7 @@
 	"include.h"
 	"user_config.h"
 
-1770790921 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_bt.c
+1774513417 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\app\func_bt.c
 	"include.h"
 	"func.h"
 
@@ -351,7 +351,7 @@
 	"ble_user_service.h"
 	"bsp_io_key.h"
 
-1770801047 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_user_service.h
+1774493288 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_user_service.h
 
 1709728829 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_io_key.h
 	"driver_gpio.h"
@@ -400,7 +400,7 @@
 1764582512 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_fota_service.c
 	"include.h"
 
-1750402645 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_init.c
+1774490862 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_init.c
 	"include.h"
 	"ble_client.h"
 
@@ -412,16 +412,17 @@
 
 1710385876 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_fota_service.h
 
-1710385876 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_service.c
+1774494308 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_service.c
 	"include.h"
 	"ble_service.h"
 	"ble_user_service.h"
 	"ble_fota_service.h"
 
-1770801043 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_user_service.c
+1774507232 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\ble\ble_user_service.c
 	"include.h"
 	"ble_service.h"
 	"ble_init.h"
+	"user_config.h"
 
 1710207134 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\bsp\bsp_charge.c
 	"include.h"
@@ -604,17 +605,18 @@
 	<stdlib.h>
 	<string.h>
 
-1773812440 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
+1774517088 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_main.c
 	"user_config.h"
 	"user_uart.h"
 	"SIT2515.h"
 	"driver_uart.h"
 	"uart_handle.h"
 
-1773814399 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_config.h
+1774517222 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_config.h
 	"include.h"
 	"user_debug_io.h"
 	"colorful_light_ctl.h"
+	"user_delay_ctx.h"
 
 1718359603 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\ws2812_lib\ws2812_my_effect.h
 	"include.h"
@@ -689,10 +691,10 @@
 	"ws2812fx_effect.h"
 	"ws2812_my_effect.h"
 
-1773813862 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.h
+1774487251 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.h
 	"include.h"
 
-1773813388 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.c
+1774521309 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\uart_handle\uart_handle.c
 	"uart_handle.h"
 	"user_config.h"
 	"driver_uart.h"
@@ -720,4 +722,11 @@
 
 1773624304 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\colorful_light_ctl\colorful_light_ctl.c
 	"colorful_light_ctl.h"
+
+1774516302 d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_delay_ctx\user_delay_ctx.h
+	"include.h"
+
+1774517311 source:d:\a_workst\aworkst\2026-02-11-车启-电动踏板控制板-ab2027a3-sop16\code\project-2026-02-11-ab2027a3-sop16\project\ble_all_roles\user\user_delay_ctx\user_delay_ctx.c
+	"user_delay_ctx.h"
+	"user_config.h"
 

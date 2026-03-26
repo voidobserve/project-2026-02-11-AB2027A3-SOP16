@@ -61,8 +61,8 @@ void uart_data_handle(void)
     uint32_t colors[MAX_NUM_COLORS];
 
     // 存放最终得到的电机状态
-    static u8 motor_0_status = 0;
-    static u8 motor_1_status = 0;
+    static motor_status_t motor_0_status = 0;
+    static motor_status_t motor_1_status = 0;
 
     // 接收超时处理：
     if (0 == uart_rxbuffer_get_count())
@@ -188,6 +188,7 @@ void uart_data_handle(void)
     // }
     // my_printf("\n");
 
+#if 0
     // 处理一帧数据：
     switch (cmd_buff[2])
     {
@@ -232,8 +233,7 @@ void uart_data_handle(void)
             motor_1_status = 0;
 #if USER_DEBUG_ENABLE
             // my_printf("motor 1 stop\n");
-#endif
-
+#endif 
             break;
         case 0x01: // 正转
             motor_1_status = 1;
@@ -259,23 +259,6 @@ void uart_data_handle(void)
         break;
     }
 
-    // if ((motor_0_status == 0 ||  // 停止
-    //      motor_0_status == 2) && // 反转
-    //     (motor_1_status == 0 ||  // 停止
-    //      motor_1_status == 2))   // 反转
-    // if (motor_0_status == 2 && // 反转
-    //     motor_1_status == 2)   // 反转
-    // {
-    //     // 如果两个电机都反转，关闭灯的电源
-    //     COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET();
-
-    // }
-    // else if (motor_0_status == 1 || motor_1_status == 1)
-    // {
-    //     // 如果两个电机之中有一个启动，打开电源
-    //     COLORFUL_LIGHT_POWER_CTL_PIN_SET();
-    // }
-
     if (motor_0_status == 2)
     {
         // 如果电机0反转，关闭灯的电源
@@ -296,6 +279,55 @@ void uart_data_handle(void)
     {
         COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_SET();
         colorful_light_ctl.right_light_enable = 1; // 点亮对应的灯
+    }
+#endif
+
+    if (cmd_buff[2] == 0x01)
+    {
+        // 如果是第一个电机
+        motor_0_status = cmd_buff[3];
+    }
+    else
+    {
+        // 如果是第二个电机
+        motor_1_status = cmd_buff[3];
+    }
+
+    // USER_TO_DO 收到反转停止关闭灯光，收到正转或者正转停止才打开灯光，收到反转则不操作
+    if (motor_0_status == MOTOR_STATUS_NONE ||
+        motor_0_status == MOTOR_STATUS_REVERSE_STOP)
+    {
+        // 设备刚上电，或者是电机反转但是停了下来，关闭灯的电源
+        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET();
+        colorful_light_ctl.left_light_enable = 0; // 不使能对应的幻彩灯
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_ON);
+        user_delay_ctx_set(USER_DELAY_CTX_LED_LEFT_OFF, 500);
+    }
+    else if (motor_0_status == MOTOR_STATUS_FORWARD ||
+             motor_0_status == MOTOR_STATUS_FORWARD_STOP)
+    {
+        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_SET();  // 打开灯的电源
+        colorful_light_ctl.left_light_enable = 1; // 点亮对应的灯
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_OFF);
+        user_delay_ctx_set(USER_DELAY_CTX_LED_LEFT_ON, 500);
+    }
+
+    if (motor_1_status == MOTOR_STATUS_NONE ||
+        motor_1_status == MOTOR_STATUS_REVERSE_STOP)
+    {
+        // 设备刚上电，或者是电机反转但是停了下来，关闭灯的电源
+        // COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_RESET();
+        colorful_light_ctl.right_light_enable = 0; // 不使能对应的幻彩灯
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_ON);
+        user_delay_ctx_set(USER_DELAY_CTX_LED_RIGHT_OFF, 500);
+    }
+    else if (motor_1_status == MOTOR_STATUS_FORWARD ||
+             motor_1_status == MOTOR_STATUS_FORWARD_STOP)
+    {
+        // COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_SET();  // 打开灯的电源
+        colorful_light_ctl.right_light_enable = 1; // 点亮对应的灯
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_OFF);
+        user_delay_ctx_set(USER_DELAY_CTX_LED_RIGHT_ON, 500);
     }
 
     // 处理完成后，重新接收数据

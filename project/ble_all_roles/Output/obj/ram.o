@@ -28,7 +28,6 @@ SECTIONS
         *(.com_text*)
         *(.com_rodata*)
         *debug.o(.rodata*)
-        *(.com_sleep*)
         *(.com_periph.*)
         *(.data*)
         *(.sdata*)
@@ -44,6 +43,10 @@ SECTIONS
         *(.text.stack.send.*)
         . = ALIGN(512);
         __code_end_stack_send = .;
+        __code_start_sleep_send = .;
+        *(.com_sleep*)
+        . = ALIGN(512);
+        __code_end_sleep_send = .;
         *(.text*)
         *(.rodata*)
         *(.srodata*)

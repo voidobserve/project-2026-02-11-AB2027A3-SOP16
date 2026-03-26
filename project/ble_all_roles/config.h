@@ -16,22 +16,22 @@
 #define FUNC_LE_BQB_RF_EN               0   //是否打开蓝牙BQB测试功能
 #define FUNC_IODM_EN                    0   //是否打开小牛测控功能, 使用单线串口通信,默认： VUSB, 115200
 #define FUNC_TBOX_EN                    0   //是否打开测试盒产测功能，请阅读prod_test_tbox.h的测试盒产测说明
-#define FUNC_IDLE_EN                    1   //是否打开IDLE功能
+#define FUNC_IDLE_EN                    0   //是否打开IDLE功能
 
 /*****************************************************************************
  * Module    : 系统功能选择配置
  *****************************************************************************/
 #define SYS_CLK_SEL                     SYS_24M                 //选择系统时钟
 #define BUCK_MODE_EN                    0                       //是否BUCK MODE, 0:LDO MODE  1:BUCK MODE
-#define WK0_10S_RESET                   1                       //WK pin 10秒复位功能
-#define SYS_SLEEP_EN                    1                       //系统休眠使能
+#define WK0_10S_RESET                   0                       //WK pin 10秒复位功能
+#define SYS_SLEEP_EN                    0                       //系统休眠使能
 #define SYS_SLEEP_TIME                  0/*10*/                      //自动休眠时间(秒), 0为不自动休眠
 #define SYS_PWROFF_MODE                 PWROFF_MODE1            //软关机模式选择，模式1 VDDIO掉电，模式2 VDDIO不掉电
 #define SYS_OFF_TIME                    0                       //自动关机时间(秒), 0为不自动关机
 #define SYS_PWRUP_TIME                  2000                    //长按开机时间(毫秒), 0为立即开机
 #define BSP_UART_DEBUG_EN               0 /*GPIO_PB3*/                //串口打印调试使能[Baud=1500000]
 #define BSP_ADKEY_EN                    0                       //AD按键使能
-#define BSP_IOKEY_EN                    1                       //IO按鍵使能
+#define BSP_IOKEY_EN                    0                       //IO按鍵使能
 #define BSP_TOUCH_KEY_EN                0                       //触摸按键功能
 #define BSP_CHARGE_EN                   0                       //充电功能使能
 #define BSP_LED_EN                      0                       //LED指示灯使能
@@ -39,8 +39,8 @@
 /*****************************************************************************
  * Module    : 电池电量检测
  *****************************************************************************/
-#define BSP_VBAT_DETECT_EN              1                       //电池电量检测
-#define LP_PWROFF_EN                    1                       //低电关机使能
+#define BSP_VBAT_DETECT_EN              0                       //电池电量检测
+#define LP_PWROFF_EN                    0                       //低电关机使能
 #define LP_PWROFF_VAL                   2200                    //低电关机电量值（mv）
 
 /*****************************************************************************
@@ -101,7 +101,7 @@
 #define LE_MTU_EXCHANGE_EN              1           //连接后主动发起MTU使能
 #define LE_SM_SEND_SECURITY_REQ_TIME    500         //从机发起加密的延时，unit: ms
 #define LE_SM_ALWAYS_ACCEPT_LTK_REQ_EN  0           //SM总是接受LTK请求使能
-#define LE_DISCONN_RESTART_ADV_EN       0           //断连自动开广播使能
+#define LE_DISCONN_RESTART_ADV_EN       1           //断连自动开广播使能
 #define LE_RX_EXIT_SLEEP_EN             0           //RX到数据自动退出睡眠使能
 #define LE_PHY_2M_EN                    1           //支持2M包使能
 #define LE_PHY_UPDATE_EN                0           //连接后主动发起PHY使能

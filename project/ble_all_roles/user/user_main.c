@@ -25,6 +25,26 @@ void user_data_read(void)
 #endif
 }
 
+void led_left_pwr_on(void)
+{
+    COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_SET(); // 打开灯的电源
+}
+
+void led_left_pwr_off(void)
+{
+    COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET();
+}
+
+void led_right_pwr_on(void)
+{
+    COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_SET(); // 打开灯的电源
+}
+
+void led_right_pwr_off(void)
+{
+    COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_RESET();
+}
+
 // 初始化函数，在 bsp_sys.c -> bsp_sys_init() 中调用
 void user_init(void)
 {
@@ -32,7 +52,7 @@ void user_init(void)
 #if WS2812_LIB_EN
     WS2812FX_init(WS2812_LED_NUM_MAX, WS2812_NEO_TYPE);
     // WS2812FX_setBrightness(255);
-    WS2812FX_setBrightness(255 / 4); // 亮度
+    WS2812FX_setBrightness(255 / 4); // 亮度（255/4，已经调节好）
 
     // 设置上电默认样式
     // uws2812_style_powerup_default();
@@ -56,6 +76,7 @@ void user_init(void)
 
     colorful_light_power_ctl_io_init(); // 幻彩灯的电源控制脚
     SIT2515_Init();                     // CAN收发器
+    user_delay_ctx_init();
 
     user_data_read(); // 读取flash保存的数据
     if (user_data.valid != USER_DATA_VALID_VAL)
@@ -80,6 +101,7 @@ void user_init(void)
     colorful_light_ctl.left_light_enable = 0;
     colorful_light_ctl.right_light_enable = 0;
     colorful_light_set_static_color(user_data.color);
+    // delay_ms(10);
 }
 
 // 在 project/ble_all_roles/app/func.c -> func_process() 中调用
@@ -141,10 +163,8 @@ void can_handle(void)
 // 打开左边电机、打开左边幻彩灯
 #if USER_DEBUG_ENABLE
         my_printf("left open\n");
-#endif 
+#endif
         uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_FORWARD);
-        // colorful_light_ctl.left_light_enable = 1;
-        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
         break;
 
     case 0xAE:
@@ -152,10 +172,8 @@ void can_handle(void)
 // 打开右边电机、打开右边幻彩灯
 #if USER_DEBUG_ENABLE
         my_printf("right open\n");
-#endif 
+#endif
         uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_FORWARD);
-        // colorful_light_ctl.right_light_enable = 1;
-        // COLORFUL_LIGHT_RIGHT_POWER_CTL_PIN_SET(); // 打开幻彩灯电源
         break;
 
     case 0xAA: // 左边电机、幻彩灯打开了就关闭左边的，右边电机、幻彩灯打开了就关闭右边的
@@ -165,13 +183,32 @@ void can_handle(void)
 
         // 发送反转的控制命令，单片机收到后，执行反转的操作，电机过流或执行超时之后就会停止
         uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
-        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE); 
-        // colorful_light_ctl.left_light_enable = 0;
-        // colorful_light_ctl.right_light_enable = 0;
-        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET(); // 关闭幻彩灯电源
-        // COLORFUL_LIGHT_LEFT_POWER_CTL_PIN_RESET();
+        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
         break;
     }
+}
+
+// 处理蓝牙服务发送过来的数据
+void ble_user_server_message_deal(u8 *buff, u16 len)
+{
+    if (len < 6)
+    {
+        return;
+    }
+
+    if (buff[0] != 0x04 ||
+        buff[1] != 0x01 ||
+        buff[2] != 0x1E)
+    {
+        // 指令的前缀不一致，直接返回
+        return;
+    }
+
+    // buff[3]、buff[4]、buff[5]分别对应R、G、B的数值
+    user_data.color = (buff[3] << 16) | (buff[4] << 8) | buff[5];
+    // 隔一段时间才保存，每次收到有效数据时，都重置这个时间
+    user_delay_ctx_set(USER_DELAY_CTX_SAVE_DATA, USER_DATA_SAVE_INTERVAL_MS);
+    colorful_light_set_static_color(user_data.color);
 }
 
 // 在 project/ble_all_roles/app/func.c -> func_process() 中调用
@@ -180,6 +217,7 @@ void user_main(void)
 {
     uart_data_handle();
     can_handle();
+    user_delay_ctx_handle();
 
     // my_printf("user_main\n");
 }

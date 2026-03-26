@@ -1,12 +1,13 @@
 #include "include.h"
 #include "ble_service.h"
 #include "ble_init.h"
+#include "user_config.h"
 
 /*This macro is used to test the stability of multiple connections in att communication*/
 //#define BLE_CONNECTION_STABILITY_TEST
 
-static att_service_handler_t       ff20_service;
-static uint16_t ff22_client_config;
+static att_service_handler_t       ff00_service;
+static uint16_t ff02_client_config;
 
 #define BLE_CMD_BUF_LEN     4
 #define BLE_CMD_BUF_MASK    (BLE_CMD_BUF_LEN - 1)
@@ -94,7 +95,7 @@ static void ble_event_callback(uint8_t event_type, uint8_t *param, uint16_t size
 
             ble_cb_node[conidx].conhdl = 0;
             ble_cb_node[conidx].role = ROLE_UNKNOWN;
-            ff22_client_config = CCCD_DFT;
+            ff02_client_config = CCCD_DFT;
         } break;
 
         case BLE_EVT_CONNECT_PARAM_UPDATE_DONE: {
@@ -116,7 +117,7 @@ static uint16_t service_read_callback(uint16_t con_handle, uint16_t attribute_ha
 {
     printf("service_read_callback\n");
 
-    if(attribute_handle == ATT_CHARACTERISTIC_FF21_01_VALUE_HANDLE){
+    if(attribute_handle == ATT_CHARACTERISTIC_FF01_01_VALUE_HANDLE){
         u8 read_data[] = "hello";
         u8 data_len = sizeof(read_data) - 1;
         if(buffer){
@@ -133,21 +134,35 @@ static int service_write_callback(uint16_t con_handle, uint16_t attribute_handle
 {
     printf("service_write_callback\n");
 
-    if(attribute_handle == ATT_CHARACTERISTIC_FF22_01_CLIENT_CONFIGURATION_HANDLE){
-        ff22_client_config = GET_LE16(&buffer[0]);
-    }else if(attribute_handle == ATT_CHARACTERISTIC_FF21_01_VALUE_HANDLE){
+    if(attribute_handle == ATT_CHARACTERISTIC_FF02_01_CLIENT_CONFIGURATION_HANDLE){
+        ff02_client_config = GET_LE16(&buffer[0]);
+    }else if(attribute_handle == ATT_CHARACTERISTIC_FF01_01_VALUE_HANDLE){
         printf("BLE RX [%d]: \n", buffer_size);
         print_r(buffer, buffer_size);
 
-        u8 wptr = ble_user_cb.cmd_wptr & BLE_CMD_BUF_MASK;
-        ble_user_cb.cmd_wptr++;
-        if (buffer_size > BLE_RX_BUF_LEN) {
-            buffer_size = BLE_RX_BUF_LEN;
+#if USER_DEBUG_ENABLE
+
+        // 打印接收到的数据：
+        u32 i;
+        my_printf("recv form service_write: \n");
+        for (i = 0; i <buffer_size; i++) {
+            my_printf("%02x ", buffer[i]);
         }
-        memcpy(ble_user_cb.cmd[wptr].buf, buffer, buffer_size);
-        ble_user_cb.cmd[wptr].len = buffer_size;
-        ble_user_cb.cmd[wptr].handle = attribute_handle;
-        ble_user_cb.pending = 1;
+        my_printf("\n");
+
+#endif
+
+        ble_user_server_message_deal(buffer, buffer_size);
+
+        // u8 wptr = ble_user_cb.cmd_wptr & BLE_CMD_BUF_MASK;
+        // ble_user_cb.cmd_wptr++;
+        // if (buffer_size > BLE_RX_BUF_LEN) {
+        //     buffer_size = BLE_RX_BUF_LEN;
+        // }
+        // memcpy(ble_user_cb.cmd[wptr].buf, buffer, buffer_size);
+        // ble_user_cb.cmd[wptr].len = buffer_size;
+        // ble_user_cb.cmd[wptr].handle = attribute_handle;
+        // ble_user_cb.pending = 1;
 
         #if (SYS_SLEEP_TIME != 0)
         lowpwr_sleep_delay_reset();
@@ -166,18 +181,18 @@ void ble_user_service_init(void)
     printf("ble_user_service_init\n");
 
     // get service handle range
-	uint16_t start_handle = ATT_SERVICE_FF20_START_HANDLE;
-	uint16_t end_handle   = ATT_SERVICE_FF20_END_HANDLE;
+	uint16_t start_handle = ATT_SERVICE_FF00_START_HANDLE;
+	uint16_t end_handle   = ATT_SERVICE_FF00_END_HANDLE;
 
     // register service with ATT Server
-	ff20_service.start_handle   = start_handle;
-	ff20_service.end_handle     = end_handle;
-	ff20_service.read_callback  = &service_read_callback;
-	ff20_service.write_callback = &service_write_callback;
-	ff20_service.event_handler  = &ble_event_callback;
-	att_server_register_service_handler(&ff20_service);
+	ff00_service.start_handle   = start_handle;
+	ff00_service.end_handle     = end_handle;
+	ff00_service.read_callback  = &service_read_callback;
+	ff00_service.write_callback = &service_write_callback;
+	ff00_service.event_handler  = &ble_event_callback;
+	att_server_register_service_handler(&ff00_service);
 
-	ff22_client_config = CCCD_DFT;
+	ff02_client_config = CCCD_DFT;
 }
 
 #ifdef BLE_CONNECTION_STABILITY_TEST
@@ -188,10 +203,10 @@ int ble_user_send_data(uint8_t conidx, uint8_t* buf, uint16_t len)
 
     /*send data mobile phone*/
     if (ble_cb_node[conidx].role == ROLE_SLAVE) {
-        ret = ble_notify_for_handle(ble_cb_node[conidx].conhdl, ATT_CHARACTERISTIC_FF22_01_VALUE_HANDLE, buf, len);
+        ret = ble_notify_for_handle(ble_cb_node[conidx].conhdl, ATT_CHARACTERISTIC_FF02_01_VALUE_HANDLE, buf, len);
     } else if (ble_cb_node[conidx].role == ROLE_MASTER) {
         /*send data to slave*/
-        uint16_t uuid = 0xff21;
+        uint16_t uuid = 0xff01;
 
         server_info_t *svc_info = ble_get_server_info(conidx);
         uint8_t num = svc_info->characteristic_cnt;
@@ -248,7 +263,7 @@ void ble_user_service_proc(void)
     u8 len = ble_user_cb.cmd[rptr].len;
     //uint16_t handle = ble_user_cb.cmd[rptr].handle;
 
-    if(ff22_client_config){
+    if(ff02_client_config){
         printf("BLE TX [%d]: \n", len);
         print_r(ptr, len);
         uint8_t conidx;
@@ -270,7 +285,7 @@ void ble_user_service_proc(void)
 
         if (conidx != INVALID_CONIDX) {
             printf("BLE TX handle[%d]\n", ble_cb_node[conidx].conhdl);
-            ble_notify_for_handle(ble_cb_node[conidx].conhdl, ATT_CHARACTERISTIC_FF22_01_VALUE_HANDLE, ptr, len);
+            ble_notify_for_handle(ble_cb_node[conidx].conhdl, ATT_CHARACTERISTIC_FF02_01_VALUE_HANDLE, ptr, len);
         }
     }
 }

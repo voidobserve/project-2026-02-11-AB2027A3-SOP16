@@ -8,6 +8,7 @@
 #define USER_DEBUG_ENABLE 0
 
 #define USER_DATA_VALID_VAL 0xC5 // 校验，用于验证是不是第一次上电，之前写入的数据是否有效
+#define USER_DATA_SAVE_INTERVAL_MS 2000 // 每次保存数据的间隔时间
 
 // 需要掉电保存的数据
 typedef struct __attribute__((packed))
@@ -18,7 +19,6 @@ typedef struct __attribute__((packed))
 
 extern volatile user_data_t user_data;
  
-
 void user_data_write(void);
 void user_data_read(void);
 
@@ -27,10 +27,19 @@ void user_main(void);
 
 void user_ws2812_service(void);
 
+void ble_user_server_message_deal(u8 *buffer, u16 len);
+
+void led_left_pwr_on(void);
+void led_left_pwr_off(void);
+void led_right_pwr_on(void);
+void led_right_pwr_off(void);
+
+
 #if USER_DEBUG_ENABLE
 #include "user_debug_io.h"
 #endif
 
 #include "colorful_light_ctl.h"
+#include "user_delay_ctx.h"
 
 #endif
