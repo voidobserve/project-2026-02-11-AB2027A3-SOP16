@@ -2005,7 +2005,7 @@ uint16_t fc_music_twinkle(void)
 }
 #endif
 
-#if 0 // USER_TO_DO 这里先屏蔽声控的效果
+#if 0 // 这里先屏蔽声控的效果
 /*
  * 
  */

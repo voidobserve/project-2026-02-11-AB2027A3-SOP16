@@ -23,6 +23,7 @@ static const struct thread_cfg_cb thread_cfg =
     .dirver     =       {OS_THREAD_DRIVER_STACK_EN,         11,         OS_THREAD_DRIVER_STACK},
     .timer      =       {1,                                 16,         OS_THREAD_TIMER_STACK},
     .main       =       {1,                                 25,         OS_THREAD_MAIN_STACK},
+    // .main       =       {1,                                 0,         OS_THREAD_MAIN_STACK}, // 优先级改成比蓝牙还高，会导致蓝牙功能无法正常使用
 };
 
 uint32_t mem_heap_size_get(void)

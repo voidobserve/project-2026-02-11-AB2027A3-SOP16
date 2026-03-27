@@ -70,10 +70,6 @@ void user_init(void)
     // 初始化串口
     user_uart_init();
 
-#if USER_DEBUG_ENABLE
-    // user_debug_io_init();
-#endif
-
     colorful_light_power_ctl_io_init(); // 幻彩灯的电源控制脚
     SIT2515_Init();                     // CAN收发器
     user_delay_ctx_init();
@@ -101,6 +97,11 @@ void user_init(void)
     colorful_light_ctl.left_light_enable = 0;
     colorful_light_ctl.right_light_enable = 0;
     colorful_light_set_static_color(user_data.color);
+
+#if USER_DEBUG_ENABLE
+    user_debug_io_init();
+#endif
+
     // delay_ms(10);
 }
 
@@ -164,6 +165,7 @@ void can_handle(void)
 #if USER_DEBUG_ENABLE
         my_printf("left open\n");
 #endif
+        user_delay_ctx_cancel(USER_DELAY_CTX_MOTOR_OFF);
         uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_FORWARD);
         break;
 
@@ -173,6 +175,8 @@ void can_handle(void)
 #if USER_DEBUG_ENABLE
         my_printf("right open\n");
 #endif
+
+        user_delay_ctx_cancel(USER_DELAY_CTX_MOTOR_OFF);
         uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_FORWARD);
         break;
 
@@ -181,11 +185,27 @@ void can_handle(void)
         my_printf("close\n");
 #endif
 
+        // 先关闭灯光，再转动电机
+        colorful_light_ctl.left_light_enable = 0;
+        colorful_light_ctl.right_light_enable = 0;
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_ON);
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_ON);
+        user_delay_ctx_set(USER_DELAY_CTX_LED_LEFT_OFF, 50);
+        user_delay_ctx_set(USER_DELAY_CTX_LED_RIGHT_OFF, 50);
+ 
         // 发送反转的控制命令，单片机收到后，执行反转的操作，电机过流或执行超时之后就会停止
-        uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
-        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
+        // uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
+        // uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
+        user_delay_ctx_set(USER_DELAY_CTX_MOTOR_OFF, 60);
         break;
     }
+}
+
+// 串口发送指令，让两个电机都反转
+void uart_send_motor_reverse(void)
+{
+    uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
+    uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
 }
 
 // 处理蓝牙服务发送过来的数据
@@ -206,7 +226,7 @@ void ble_user_server_message_deal(u8 *buff, u16 len)
 
     // buff[3]、buff[4]、buff[5]分别对应R、G、B的数值
     user_data.color = (buff[3] << 16) | (buff[4] << 8) | buff[5];
-    // 隔一段时间才保存，每次收到有效数据时，都重置这个时间
+    // 隔一段时间才保存
     user_delay_ctx_set(USER_DELAY_CTX_SAVE_DATA, USER_DATA_SAVE_INTERVAL_MS);
     colorful_light_set_static_color(user_data.color);
 }
@@ -214,10 +234,13 @@ void ble_user_server_message_deal(u8 *buff, u16 len)
 // 在 project/ble_all_roles/app/func.c -> func_process() 中调用
 // 会循环调用，所以该函数内部不用写 while(1)
 void user_main(void)
-{
+{  
     uart_data_handle();
     can_handle();
     user_delay_ctx_handle();
+    user_ws2812_service();    
+
+    // delay_ms(10);
 
     // my_printf("user_main\n");
 }

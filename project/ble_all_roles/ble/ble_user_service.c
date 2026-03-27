@@ -141,7 +141,7 @@ static int service_write_callback(uint16_t con_handle, uint16_t attribute_handle
         print_r(buffer, buffer_size);
 
 #if USER_DEBUG_ENABLE
-
+#if 0
         // 打印接收到的数据：
         u32 i;
         my_printf("recv form service_write: \n");
@@ -149,7 +149,7 @@ static int service_write_callback(uint16_t con_handle, uint16_t attribute_handle
             my_printf("%02x ", buffer[i]);
         }
         my_printf("\n");
-
+#endif
 #endif
 
         ble_user_server_message_deal(buffer, buffer_size);

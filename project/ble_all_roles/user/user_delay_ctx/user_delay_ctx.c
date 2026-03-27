@@ -20,14 +20,16 @@ void user_delay_ctx_init(void)
     user_delay_ctx[USER_DELAY_CTX_LED_LEFT_OFF].callback = led_left_pwr_off;
     user_delay_ctx[USER_DELAY_CTX_LED_RIGHT_ON].callback = led_right_pwr_on;
     user_delay_ctx[USER_DELAY_CTX_LED_RIGHT_OFF].callback = led_right_pwr_off;
+
+    user_delay_ctx[USER_DELAY_CTX_MOTOR_OFF].callback = uart_send_motor_reverse;
 }
 
-// 设置延时任务，延时一段时间后执行（如果延时时间还没有结束，又设置了同一个延时任务，会重置延时时间）
-// USER_TO_DO 
+// 设置延时任务，延时一段时间后执行
 void user_delay_ctx_set(user_delay_ctx_id_t id, u32 delay_ms)
 {
     if (user_delay_ctx[id].is_enable == 1)
     {
+        // 由于单片机是一直发送电机的状态，蓝牙ic的串口接收中会重复收到这些状态，可能会重复进入该函数，会导致对应的任务延时时间一直无法到来
         return;
     }
 

@@ -22,7 +22,7 @@ void func_process(void)
 
     prod_test_process();
 
-    user_ws2812_service();
+  
     user_main();
 }
 

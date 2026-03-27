@@ -33,7 +33,7 @@ void led_left_pwr_on(void);
 void led_left_pwr_off(void);
 void led_right_pwr_on(void);
 void led_right_pwr_off(void);
-
+void uart_send_motor_reverse(void);
 
 #if USER_DEBUG_ENABLE
 #include "user_debug_io.h"

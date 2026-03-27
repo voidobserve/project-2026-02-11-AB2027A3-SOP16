@@ -23,6 +23,9 @@ typedef enum
     
     USER_DELAY_CTX_LED_RIGHT_ON,
     USER_DELAY_CTX_LED_RIGHT_OFF,
+
+    USER_DELAY_CTX_MOTOR_OFF,
+
     USER_DELAY_CTX_ID_MAX,
 } user_delay_ctx_id_t;
 
