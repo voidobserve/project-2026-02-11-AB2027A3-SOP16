@@ -201,6 +201,27 @@ void uart_data_handle(void)
         motor_1_status = cmd_buff[3];
     }
 
+    /*
+        如果左灯点亮，但是收到了电机反转或者反转停止的信号，需要关掉灯
+    */
+    if (colorful_light_ctl.left_light_enable &&
+        (motor_0_status == MOTOR_STATUS_REVERSE ||
+         motor_0_status == MOTOR_STATUS_REVERSE_STOP))
+    {
+        colorful_light_ctl.left_light_enable = 0;
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_ON);
+        led_left_pwr_off(); // 立即关闭led
+    }
+
+    if (colorful_light_ctl.right_light_enable &&
+        (motor_1_status == MOTOR_STATUS_REVERSE ||
+         motor_1_status == MOTOR_STATUS_REVERSE_STOP))
+    {
+        colorful_light_ctl.right_light_enable = 0;
+        user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_ON);
+        led_right_pwr_off(); // 立即关闭led
+    }
+
     if (motor_0_status == MOTOR_STATUS_FORWARD_STOP &&
         last_motor_0_status != MOTOR_STATUS_FORWARD_STOP)
     {
