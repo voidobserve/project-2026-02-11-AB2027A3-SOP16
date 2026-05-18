@@ -60,11 +60,9 @@ void uart_data_handle(void)
     volatile u8 is_recv_complete = 0; // 是否接收到完整的一帧指令
 
     // 存放上一次的电机状态
-    static volatile motor_status_t last_motor_0_status = MOTOR_STATUS_NONE;
-    static volatile motor_status_t last_motor_1_status = MOTOR_STATUS_NONE;
+    // static volatile motor_status_t last_motor_0_status = MOTOR_STATUS_NONE;
+    // static volatile motor_status_t last_motor_1_status = MOTOR_STATUS_NONE;
     // 存放最终得到的电机状态（这里如果不加static修饰，会有问题）
-    static volatile motor_status_t motor_0_status = MOTOR_STATUS_NONE;
-    static volatile motor_status_t motor_1_status = MOTOR_STATUS_NONE;
 
     // 接收超时处理：
     if (0 == uart_rxbuffer_get_count())
@@ -209,7 +207,7 @@ void uart_data_handle(void)
          motor_0_status == MOTOR_STATUS_REVERSE_STOP))
     {
         colorful_light_ctl.left_light_enable = 0;
-        user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_ON);
+        // user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_ON);
         led_left_pwr_off(); // 立即关闭led
     }
 
@@ -218,37 +216,37 @@ void uart_data_handle(void)
          motor_1_status == MOTOR_STATUS_REVERSE_STOP))
     {
         colorful_light_ctl.right_light_enable = 0;
-        user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_ON);
+        // user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_ON);
         led_right_pwr_off(); // 立即关闭led
     }
 
-    if (motor_0_status == MOTOR_STATUS_FORWARD_STOP &&
-        last_motor_0_status != MOTOR_STATUS_FORWARD_STOP)
+    // 灯光没有开，但是电机已经在正转停止
+    if (colorful_light_ctl.left_light_enable == 0 &&
+        motor_0_status == MOTOR_STATUS_FORWARD_STOP)
     {
         // 电机正转，停下来时，再打开灯光，防止电机运转时造成灯光闪烁
         colorful_light_ctl.left_light_enable = 1;
-        user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_OFF);
-        user_delay_ctx_set(USER_DELAY_CTX_LED_LEFT_ON, 50);
+        led_left_pwr_on();
     }
 
-    if (motor_1_status == MOTOR_STATUS_FORWARD_STOP &&
-        last_motor_1_status != MOTOR_STATUS_FORWARD_STOP)
+    // 灯光没有开，但是电机已经在正转停止
+    if (colorful_light_ctl.right_light_enable == 0 &&
+         motor_1_status == MOTOR_STATUS_FORWARD_STOP)
     {
         // 电机正转，停下来时，再打开灯光，防止电机运转时造成灯光闪烁
         colorful_light_ctl.right_light_enable = 1;
-        user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_OFF);
-        user_delay_ctx_set(USER_DELAY_CTX_LED_RIGHT_ON, 50);
+        led_right_pwr_on();
     }
 
-    if (last_motor_0_status != motor_0_status)
-    {
-        last_motor_0_status = motor_0_status;
-    }
+    // if (last_motor_0_status != motor_0_status)
+    // {
+    //     last_motor_0_status = motor_0_status;
+    // }
 
-    if (last_motor_1_status != motor_1_status)
-    {
-        last_motor_1_status = motor_1_status;
-    }
+    // if (last_motor_1_status != motor_1_status)
+    // {
+    //     last_motor_1_status = motor_1_status;
+    // }
 
     // 处理完成后，重新接收数据
     // timeout_cnt = 0;

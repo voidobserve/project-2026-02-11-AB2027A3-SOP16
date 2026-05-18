@@ -16,7 +16,7 @@
 volatile unsigned char CAN_R_Buffer[8];  // CAN接收数据保存缓冲区
 volatile unsigned char CAN_R_RecNum = 0; // 接收数据个数
 
-#define STANDARD_ID 0x501
+#define STANDARD_ID 0x02E1
 /**********************************************************************************
  * 文件名  ：SIT2515.c
  * 描述    ：SIT2515驱动
@@ -486,7 +486,7 @@ unsigned char CAN_Receive_Buffer(unsigned char *CAN_RX_Buf)
         // my_printf("RXB0SIDH = %02x,  RXB0SIDL = %02x\n", sid_h, sid_l);
         sid = (sid_h << 3) | (sid_l >> 5);
         // my_printf("sid = %x\n", sid);
-        // if (sid == STANDARD_ID) // USER_TO_DO　测试时，屏蔽这里，接收所有数据帧
+        if (sid == STANDARD_ID) // USER_TO_DO　测试时，屏蔽这里，接收所有数据帧
         {
             if ((sid_l & 0x10) == 0) // 数据帧，非远程帧
             {
@@ -517,7 +517,7 @@ unsigned char CAN_Receive_Buffer(unsigned char *CAN_RX_Buf)
         // my_printf("RXB1SIDH = %02x,  RXB1SIDL = %02x\n", sid_h, sid_l);
         sid = (sid_h << 3) | (sid_l >> 5);
         // my_printf("sid = %x\n", sid);
-        // if (sid == STANDARD_ID) // USER_TO_DO　测试时，屏蔽这里，接收所有数据帧
+        if (sid == STANDARD_ID) // USER_TO_DO　测试时，屏蔽这里，接收所有数据帧
         {
             // my_printf("sid = %x\n", sid);
             if ((sid_l & 0x10) == 0) // 数据帧，非远程帧

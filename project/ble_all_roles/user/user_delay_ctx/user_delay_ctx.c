@@ -16,12 +16,15 @@ void user_delay_ctx_init(void)
 
     // 注册延时任务：
     user_delay_ctx[USER_DELAY_CTX_SAVE_DATA].callback = user_data_write;
-    user_delay_ctx[USER_DELAY_CTX_LED_LEFT_ON].callback = led_left_pwr_on;
-    user_delay_ctx[USER_DELAY_CTX_LED_LEFT_OFF].callback = led_left_pwr_off;
-    user_delay_ctx[USER_DELAY_CTX_LED_RIGHT_ON].callback = led_right_pwr_on;
-    user_delay_ctx[USER_DELAY_CTX_LED_RIGHT_OFF].callback = led_right_pwr_off;
+    // user_delay_ctx[USER_DELAY_CTX_LED_LEFT_ON].callback = led_left_pwr_on;
+    // user_delay_ctx[USER_DELAY_CTX_LED_LEFT_OFF].callback = led_left_pwr_off;
+    // user_delay_ctx[USER_DELAY_CTX_LED_RIGHT_ON].callback = led_right_pwr_on;
+    // user_delay_ctx[USER_DELAY_CTX_LED_RIGHT_OFF].callback = led_right_pwr_off;
 
-    user_delay_ctx[USER_DELAY_CTX_MOTOR_OFF].callback = uart_send_motor_reverse;
+    // user_delay_ctx[USER_DELAY_CTX_MOTOR_OFF].callback = uart_send_motor_reverse;
+
+    // user_delay_ctx[USER_DELAY_CTX_MOTOR_LEFT_OFF].callback = uart_send_motor_left_reverse;
+    // user_delay_ctx[USER_DELAY_CTX_MOTOR_RIGHT_OFF].callback = uart_send_motor_right_reverse;
 }
 
 // 设置延时任务，延时一段时间后执行

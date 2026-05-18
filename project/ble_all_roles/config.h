@@ -21,7 +21,7 @@
 /*****************************************************************************
  * Module    : 系统功能选择配置
  *****************************************************************************/
-#define SYS_CLK_SEL                     SYS_24M                 //选择系统时钟
+#define SYS_CLK_SEL                     SYS_160M                 //选择系统时钟
 #define BUCK_MODE_EN                    0                       //是否BUCK MODE, 0:LDO MODE  1:BUCK MODE
 #define WK0_10S_RESET                   0                       //WK pin 10秒复位功能
 #define SYS_SLEEP_EN                    0                       //系统休眠使能
