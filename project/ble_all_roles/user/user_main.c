@@ -80,6 +80,7 @@ void user_init(void)
 
     colorful_light_power_ctl_io_init(); // 幻彩灯的电源控制脚
     SIT2515_Init();                     // CAN收发器
+
     user_delay_ctx_init();
 
     user_data_read(); // 读取flash保存的数据
@@ -169,6 +170,7 @@ void can_handle(void)
     //         return;
     //     }
 
+#if 0
     cmd = buf[2];
     if (cmd == 0x40 ||
         cmd == 0xC0 ||
@@ -179,15 +181,7 @@ void can_handle(void)
     {
 #if USER_DEBUG_ENABLE
         my_printf("left open\n");
-#endif
-        // user_delay_ctx_cancel(USER_DELAY_CTX_LED_LEFT_OFF);
-        // user_delay_ctx_cancel(USER_DELAY_CTX_LED_RIGHT_OFF);
-
-        // 不能立即开灯，电机运转期间，电流过大，会导致灯一直频闪
-        // colorful_light_ctl.left_light_enable = 1;
-        // colorful_light_ctl.right_light_enable = 1;
-        // led_left_pwr_on();
-        // led_right_pwr_on();
+#endif 
 
         // 电机没有在正转，才执行
         if (motor_0_status != MOTOR_STATUS_FORWARD &&
@@ -247,6 +241,76 @@ void can_handle(void)
 
             uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
         }
+    }
+#endif
+
+    // USER_TO_DO 可能要加CAN应答，否则上位机会一直发送数据，导致重复执行了对应的指令
+
+    cmd = buf[2];
+    if (cmd == 0xAB ||
+        cmd == 0xEA || // 0xEA 有冲突
+        cmd == 0xEB ||
+        cmd == 0xFA ||
+        cmd == 0xAF ||
+        cmd == 0xBF ||
+        cmd == 0xEF ||
+        cmd == 0xFE ||
+        cmd == 0xBB ||
+        cmd == 0xBA &&
+            (motor_0_status == MOTOR_STATUS_NONE ||
+             motor_0_status == MOTOR_STATUS_REVERSE_STOP)) // 只有刚上电，或者是反转停止，才执行接下来的正转
+    {
+        // 收到了 打开左边电机 的指令
+
+        uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_FORWARD);
+        motor_0_status = MOTOR_STATUS_FORWARD; // 立即设置状态，防止下一次重复进入
+    }
+    else if (cmd == 0xAE ||
+             cmd == 0xEA || // 0xEA 有冲突
+             cmd == 0xEE ||
+             cmd == 0xAA &&
+                 (motor_0_status == MOTOR_STATUS_NONE ||
+                  motor_0_status == MOTOR_STATUS_FORWARD_STOP)) // 只有刚上电，或者是正转停止，才执行接下来的反转
+    {
+        // 收到了 关闭左边电机 的指令
+
+        // 先关闭灯光，再转动电机
+        colorful_light_ctl.left_light_enable = 0;
+        led_left_pwr_off();
+
+        uart_send_cmd(MOTOR_INDEX_LEFT, MOTOR_CMD_REVERSE);
+        motor_0_status = MOTOR_STATUS_REVERSE; // 立即设置状态，防止下一次重复进入
+    }
+
+    if (cmd == 0xAE ||
+        cmd == 0xFA ||
+        cmd == 0xBE ||
+        cmd == 0xFF ||
+        cmd == 0xEE ||
+        cmd == 0xEA ||
+        cmd == 0xEB ||
+        cmd == 0xAB || // 0xAB 有冲突
+        cmd == 0xFB ||
+        cmd == 0xBF &&
+            (motor_1_status == MOTOR_STATUS_NONE ||
+             motor_1_status == MOTOR_STATUS_REVERSE_STOP)) // 只有刚上电，或者是反转停止，才执行接下来的正转
+    {
+        // 收到了 打开右边电机 的指令
+
+        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_FORWARD);
+        motor_1_status = MOTOR_STATUS_FORWARD; // 立即设置状态，防止下一次重复进入
+    }
+    else if (cmd == 0xAA ||
+             cmd == 0xBB ||
+             cmd == 0xBA ||
+             cmd == 0xAB && // 0xAB 有冲突
+                 (motor_1_status == MOTOR_STATUS_NONE ||
+                  motor_1_status == MOTOR_STATUS_FORWARD_STOP)) // 只有刚上电，或者是正转停止，才执行接下来的反转
+    {
+        // 收到了 关闭右边电机 的指令
+
+        uart_send_cmd(MOTOR_INDEX_RIGHT, MOTOR_CMD_REVERSE);
+        motor_1_status = MOTOR_STATUS_REVERSE; // 立即设置状态，防止下一次重复进入
     }
 }
 

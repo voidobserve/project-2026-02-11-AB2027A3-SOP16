@@ -2,9 +2,34 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="user\ws2812_lib\ws2812_driver.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="user\hardware\SIT2515.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2478" topLine="103" />
+			<Cursor1 position="21534" topLine="501" />
+		</Cursor>
+	</File>
+	<File name="user\driver_on_chip\user_uart.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="320" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="Output\bin\xcfg.xm" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2606" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="user\ws2812_lib\ws2812fx_effect.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="56400" topLine="2005" />
+		</Cursor>
+	</File>
+	<File name="app\func.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="76" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="user\user_main.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3762" topLine="129" />
 		</Cursor>
 	</File>
 	<File name="user\uart_handle\uart_handle.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -15,19 +40,14 @@
 			<Collapse line="71" />
 		</Folding>
 	</File>
-	<File name="user\user_config.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ble\ble_user_service.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="583" topLine="17" />
+			<Cursor1 position="2120" topLine="64" />
 		</Cursor>
 	</File>
-	<File name="user\driver_on_chip\user_uart.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="user\ws2812_lib\ws2812_driver.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="320" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="user\hardware\SIT2515.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="21534" topLine="501" />
+			<Cursor1 position="2478" topLine="103" />
 		</Cursor>
 	</File>
 	<File name="bsp\bsp_sys.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -35,19 +55,14 @@
 			<Cursor1 position="318" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="app\func.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="user\user_config.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="76" topLine="0" />
+			<Cursor1 position="583" topLine="17" />
 		</Cursor>
 	</File>
-	<File name="user\ws2812_lib\ws2812fx_effect.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="xcfg.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="56400" topLine="2005" />
-		</Cursor>
-	</File>
-	<File name="user\user_main.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6926" topLine="221" />
+			<Cursor1 position="1467" topLine="16" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

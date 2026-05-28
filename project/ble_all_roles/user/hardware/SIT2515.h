@@ -419,6 +419,18 @@ extern volatile unsigned char CAN_R_RecNum;
 void SIT2515_SPICS_Init(void);
 void SIT2515_Init(void);
 unsigned char CAN_Receive_Buffer(unsigned char *CAN_RX_Buf);
+
+// // 新增：接收完整CAN帧（包含ID、长度、数据）
+// typedef struct {
+//     unsigned short can_id;      // CAN ID (11位标准帧)
+//     unsigned char data_len;     // 数据长度 (0-8)
+//     unsigned char data[8];      // 数据内容 D0-D7
+//     unsigned char is_extended;  // 是否为扩展帧
+//     unsigned char is_remote;    // 是否为远程帧
+// } can_frame_raw_t;
+
+// unsigned char CAN_Receive_Frame(can_frame_raw_t *frame);
+
 void CAN_Send_Buffer(unsigned char *CAN_TX_Buf,unsigned char len);
 void SIT2515_ShowReg(void);
 unsigned char SIT2515_ReadByte(unsigned char addr);

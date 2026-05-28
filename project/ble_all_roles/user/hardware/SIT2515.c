@@ -16,7 +16,8 @@
 volatile unsigned char CAN_R_Buffer[8];  // CAN接收数据保存缓冲区
 volatile unsigned char CAN_R_RecNum = 0; // 接收数据个数
 
-#define STANDARD_ID 0x02E1
+// #define STANDARD_ID 0x02E1
+#define STANDARD_ID 0x012A
 /**********************************************************************************
  * 文件名  ：SIT2515.c
  * 描述    ：SIT2515驱动
